@@ -1,0 +1,84 @@
+#summary A list of differences between nsp and scilab
+
+= Build a row of a matrix (or simply a row vector) element by element =
+
+With scilab and nsp, you could use both a space or a comma as a separator between two elements:
+
+{{{
+x = [0  1  %e  %pi]  // or x = [0, 1,  %e,  %pi]
+}}}
+ 
+but the behavior could be different when an element is given by a non constant expression like in:
+
+{{{
+x = [0  -1  -sin(2)-3 ]
+}}}
+ 
+With scilab you will get a `1x3` vector `x = [0 ,  -1  , -sin(2)-3 ]`, while in nsp you will get a `1x1` vector `x = [-1-sin(2)-3 ]`. In nsp we recommend to use only comma to separate row elements (so you could use any blank chars to improve the presentation of
+any non constant expression.
+
+ 
+= Empty matrices =
+
+Scilab only knows the `0x0` empty matrix. In nsp we have choosen to follow the matlab way of using `0x0`, `mx0` and `0xn` empty matrices (which was suggested to matlab by several users). To test  if a matrix is empty you could use the isempty function ( `A == []` will work only if `A` is an `0x0` empty matrix). Note that multiplying a `mx0` empty matrix to a `0xn` empty matrix will give a `mxn` matrix of zeros.
+
+ 
+= Zeros, ones =
+
+In scilab if `A` is a matrix already defined then `zeros(A)` and `ones(A)` returns a matrix  filled with `0` or `1` of same size than `A`. In matlab you have to use `zeros(size(A))` and `ones(size(A))` to get the same effect. We have finally choose the matlab way. Note that nsp still uses `rand(A)`, `randn(A)` to produce random matrix ([0,1) uniform deviates and N(0,1) normal deviates) but this may be change to be consistent with ones and zeros. For all these functions you could use the usual syntax (`zeros(m,n)`, `ones(m,n)`, `rand(m,n)`) to be compatible among scilab, matlab, nsp, octave, freemat.
+
+ 
+= Graphics = 
+
+Nsp graphics are under development. Currently nsp graphics consists in the old scilab graphic mode cleaned but an "object system" is in under construction. We will try to tell more about this subject. 
+
+Some differences (with old scilab graphics):
+
+    * Sgrayplot don't exist in nsp under this name but as an named option of grayplot (`shade=%t`). 
+    * It is possible to use different colormaps in a same graphic window (the color specification refers to the last setted colormap) :
+{{{
+    x = linspace(0,2*%pi,60); z = cos(x')*cos(x);
+    xbasc()
+    subplot(1,2,1);
+    xset("colormap", hotcolormap(128))
+    grayplot(x,x,z,shade=%t)
+    subplot(1,2,2);
+    xset("colormap", jetcolormap(128))
+    plot3d1(x,x,z)
+}}}
+    * There is no legend function, with plot2d you can use `leg="leg1@leg2"` and `leg_pos=string`  to specify the legend position. Btw to learn about optional named argument without looking in the documentation, you can enter at the prompt a call with a stupid name as optional argument like `plot2d(x,x,toto=0)`. The error answer should display all the valid optional named argument available for the function. Moreover in some cases (string arguments restricted in a list) you could also get the list of the valid entries. To see what is available for the leg_pos optional named argument, try:
+{{{
+    x = linspace(0,2*%pi,60)';
+    xbasc()
+    plot2d(x,[cos(x),sin(x)],style=[2,5],leg="cosine@sine",leg_pos="foo")
+}}}
+
+
+= Writting nsp functions =
+
+== Optional named arguments ==
+
+Management of optional named argument is simpler than in scilab. You list them after the other arguments and add a default value. Here is an example with 2 optional named arguments:
+{{{
+function x = myfsolve(f,x0, tol=%eps, meth="secant")
+
+   // 
+   .............
+endfunction
+}}}
+The fact that `tol` and `meth`, the 2 last formal arguments, are initialised transforms them in optional named argument. Calls to myfsolve can take the forms:
+{{{
+x = myfsolve(f,x0) 
+x = myfsolve(f,x0, meth="regula falsi")
+x = myfsolve(f,x0, tol=1e-6, meth="newton")
+x = myfsolve(f,x0, meth="newton", tol=1e-6)
+}}}
+that is _optional named arguments could be in any order_. Inside the code you don't have to play with the `exists(tol,"local")`. When the default init value could be long or depends on other parameters you can use a special value like `myoptional=[]`. And then test the value against  `[]` to initialize the variable:
+{{{
+function x = foo(A, x, tol=[])
+  // we want to initialize tol in function of the number of rows of A
+  if tol  == []  then, tol = %eps*size(A,1), end
+   ....
+endfunction
+}}}
+
