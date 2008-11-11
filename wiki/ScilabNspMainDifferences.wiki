@@ -22,7 +22,7 @@ any non constant expression.
  
 == Empty matrices ==
 
-Scilab only knows the `0x0` empty matrix. In nsp we have choosen to follow the matlab way of using `0x0`, `mx0` and `0xn` empty matrices (which was suggested to matlab by several users). To test  if a matrix is empty you could use the isempty function ( `A == []` will work only if `A` is an `0x0` empty matrix). Note that multiplying a `mx0` empty matrix to a `0xn` empty matrix will give a `mxn` matrix of zeros.
+Scilab only knows the `0x0` empty matrix. In nsp we have choosen to follow the matlab way of using `0x0`, `mx0` and `0xn` empty matrices (which was suggested to matlab by several users). To test  if a matrix is empty you could use the `isempty` function ( `A == []` will work only if `A` is an `0x0` empty matrix). Note that multiplying a `mx0` empty matrix to a `0xn` empty matrix will give a `mxn` matrix of zeros. Note that this function exists in scilab so using it (in place of `A == []`) increases compatibility with the others matlab-like.
 
  
 == Zeros, ones ==
