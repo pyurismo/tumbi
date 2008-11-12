@@ -1,6 +1,6 @@
 = A list of differences between nsp and scilab =
 
-<wiki:toc max_depth="3" /> 
+<wiki:toc max_depth="4" /> 
 
 == Build a row of a matrix (or simply a row vector) element by element ==
 
