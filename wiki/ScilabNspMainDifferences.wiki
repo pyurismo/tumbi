@@ -2,6 +2,14 @@
 
 <wiki:toc max_depth="4" /> 
 
+== Build a non existing vector with a loop ==
+
+If x don't exist and is created with a loop:
+{{{
+for i=1:5, x(i) = i, end
+}}} 
+scilab will create a column vector while nsp (and matlab) create a row vector.
+
 == Build a row of a matrix (or simply a row vector) element by element ==
 
 With scilab and nsp, you could use both a space or a comma as a separator between two elements:
