@@ -11,7 +11,7 @@ for i=1:5, x(i) = i, end
 scilab will create a column vector while nsp (and matlab) create a row vector.
 Note that it is the same if x was initially a scalar.
 
-== Build a row of a matrix (or simply a row vector) element by element ==
+== Build a row of a matrix element by element (row concatenation) ==
 
 With scilab and nsp, you could use both a space or a comma as a separator between two elements:
 
