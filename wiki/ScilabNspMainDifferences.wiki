@@ -83,3 +83,23 @@ function x = foo(A, x, tol=[])
    ....
 endfunction
 }}}
+
+
+=== Testing argument type ===
+
+With scilab this is done with the `type` or `typeof` functions. In nsp you could use the `type` function or the `is` function but the nsp `type` function doesn't work like the scilab 's one. Before going further we must say that the type of an object in nsp (such as a matrix of real/complex numbers, a matrix of strings, an array of cells, a list, a function, ...) is itself an abstract object call of "type" _type_. But to be easier to manipulate, each different _type_, have 2 synonyms one is a string and the other a short string. Moreover there is a default variable `%types` (an hash table) which contains all the different _types_ in nsp, here is a table for main object types :
+
+|| usual name || in hash table  ||  string  ||  short string ||
+|| matrix of real/complex numbers || `%types.Mat` || `"Mat"` || `"m"` ||
+|| sparse matrix (of real/complex) || `%types.SpColMat` || `"SpColMat"` || `"sp"` ||
+|| matrix of strings || `%types.SMat` || `"SMat"` || `"s"` ||
+|| matrix of cells || `%types.SMat` || `"Cells"` || `"ce"` ||
+|| list ||`%types.List` || `"List"` || `"l"` ||
+|| matrix of polynomials || `%types.PMat` || `"PMat"` || `"p"` ||
+|| hash table || `%types.Hash` || `"Hash"` || `"h"` ||
+|| function (macro) || `%types.PList` || `"PList"` || `"pl"` ||
+|| function (primitive) || `%types.Func` || `"Func"` || `"f"` ||
+
+
+
+
