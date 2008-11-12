@@ -65,11 +65,9 @@ Some differences (with old scilab graphics):
 }}}
 
 
-== Writting nsp functions ==
+== Optional named arguments ==
 
-=== Optional named arguments ===
-
-Management of optional named argument is simpler than in scilab. You list them after the other arguments and add a default value. Here is an example with 2 optional named arguments:
+Management of function 's optional named arguments is simpler than in scilab. You list them after the other arguments and add a default value. Here is an example with 2 optional named arguments:
 {{{
 function x = myfsolve(f,x0, tol=%eps, meth="secant")
 
@@ -94,9 +92,9 @@ endfunction
 }}}
 
 
-=== Testing argument type ===
+== Testing argument type ==
 
-====introduction====
+===introduction===
 With scilab this is done with the `type` or `typeof` functions. In nsp you could use the `type` function or the `is` function but the nsp `type` function doesn't work like the scilab 's one. Before going further we must say that the type of an object in nsp (such as a matrix of real/complex numbers, a matrix of strings, an array of cells, a list, a function, ...) is itself an abstract object call of "type" _type_. But to be easier to manipulate, each different _type_, have 2 synonyms one is a string and the other a short string. Moreover there is a default variable `%types` (an hash table) which contains all the different _types_ in nsp, here is a table for main object types :
 
 || usual name || in hash table  ||  string  ||  short string ||
@@ -110,7 +108,7 @@ With scilab this is done with the `type` or `typeof` functions. In nsp you could
 || function (macro) || `%types.PList` || `"PList"` || `"pl"` ||
 || function (primitive) || `%types.Func` || `"Func"` || `"f"` ||
 
-==== testing argument type using type ====
+=== testing argument type using `type` ===
 The string synonym of the _type_ of an object Obj is got using `type(Obj,"string")` and the short string synonym with `type(Obj,"short")`. So testing if `Obj` is a matrix of real or complex numbers could be done with :
 {{{
 if type(Obj,"string") == "Mat" then
@@ -122,13 +120,13 @@ if type(Obj) == %types.Mat then
 }}}
 but operator == is not defined for the type _type_ . In place you could use the `is` function.
 
-==== testing argument type using is ====
+=== testing argument type using `is` ===
 Testing if `Obj` is a matrix of real/complex number could be done with:
 {{{
 if is(Obj,%types.Mat) then
 }}}
 
-==== some examples ====
+=== some examples ===
 Very often you should wait for a real scalar `c` or a real vector `x`, such tests could be done with:
 {{{
 if is(c,%types.Mat) && isreal(c) && isscalar(c) then
