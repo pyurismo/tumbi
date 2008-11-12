@@ -9,6 +9,7 @@ If x don't exist and is created with a loop:
 for i=1:5, x(i) = i, end
 }}} 
 scilab will create a column vector while nsp (and matlab) create a row vector.
+Note that it is the same if x was initially a scalar.
 
 == Build a row of a matrix (or simply a row vector) element by element ==
 
