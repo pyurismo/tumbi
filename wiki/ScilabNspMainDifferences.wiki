@@ -82,10 +82,10 @@ function y = runge(x)
 endfunction
 }}}
 
-== behavior of `==` and `~=` operators ==
+== behavior of equality/non equality operators ==
 to be done
 
-== behavior of `&` and `|` , usage of `&&` and `||` ==
+== if test and boolean operator ==
 to be done
 
 == zeros, ones ==
