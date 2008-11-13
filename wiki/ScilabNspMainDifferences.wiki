@@ -53,7 +53,7 @@ Multiplying a `mx0` empty matrix to a `0xn` empty matrix will give a `mxn` matri
 
 == addition, substraction between a scalar and a vector or a matrix ==
 
-The matlab language follows the rules of linear algebra, if _A,,1,,_ and _A,,2,,_ are 2 matrices, _A,,1 + _A,,2,,_ and _A,,1 - _A,,2,,_ are well defined if there have the same size, but there is an exception. One of them could be a scalar (that is a `1x1` matrix).
+The matlab language follows the rules of linear algebra, if _A,,1,,_ and _A,,2,,_ are 2 matrices, _A,,1,, + A,,2,,_ and _A,,1,, - A,,2,,_ are well defined if there have the same size, but there is an exception. One of them could be a scalar (that is a `1x1` matrix).
 Suppose that _A_ is a _m x n_ matrix, and _s_ a scalar, then in all cases we have:
 {{{
   s + A  ->  B a m x n matrix (with B(i,j) = s + A(i,j))
