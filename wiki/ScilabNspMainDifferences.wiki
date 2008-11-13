@@ -99,7 +99,7 @@ x = 1
 b = x <= 0 & x(2)==1  // this raise an error because x has only one component
 if ( x <= 0 & x(2)==1 ) then, b=%t, else, b=%f, end // this work
 }}}
-
+to be continued
 
 == zeros, ones ==
 
