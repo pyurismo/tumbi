@@ -142,7 +142,7 @@ that is _optional named arguments could be in any order_. Inside the code you do
 {{{
 function x = foo(A, x, tol=[])
   // we want to initialize tol in function of the number of rows of A
-  if tol  == []  then, tol = %eps*size(A,1), end
+  if tol.equal[[]] then, tol = %eps*size(A,1), end
    ....
 endfunction
 }}}
