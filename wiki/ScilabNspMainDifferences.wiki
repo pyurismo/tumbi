@@ -61,7 +61,7 @@ Suppose that _A_ is a _m x n_ matrix, and _s_ a scalar, then in all cases we hav
   A + s  ->  B a m x n matrix (with B(i,j) = s + A(i,j))
   A - s  ->  B a m x n matrix (with B(i,j) = A(i,j) - s)
 }}}
-And this is true for any possible values for _m_ and _n_ 0 comprised. So when _A_ is empty we get a matrix _B_ which is empty (of same size than A). In *scilab the rule is different in this case*: when _A_ is an empty matrix (so the 0x0 empty matrix) then _s + []_ is equal to _s_. In *nsp have choosen the matlab behavior*. In many cases its results in shorter piece of code. Here is an example. Suppose you want to code the following function:
+And this is true for any possible values for _m_ and _n_ 0 comprised. So when _A_ is empty we get a matrix _B_ which is empty (of same size than A). In *scilab the rule is different in this case*: when _A_ is an empty matrix (so the 0x0 empty matrix) then _s + []_ is equal to _s_. In *nsp have choosen the matlab behavior*. In many cases its results in shorter pieces of code. Here is an example. Suppose you want to code the following function:
 {{{
    runge(x) = 1 / (1 + x^2)
 }}} 
@@ -74,11 +74,19 @@ endfunction
 But in scilab such a code don't return the empty matrix if x is empty. You have to add a test:
 {{{
 function y = runge(x)
-  if isempty(x) then, y = [], else, y = 1 ./ (1 + x.^2), end
+  if isempty(x) then
+     y = []
+  else
+     y = 1 ./ (1 + x.^2)
+  end
 endfunction
 }}}
 
+== behavior of == and ~= operators
+to be done
 
+== behavior of & and |, usage of && and ||
+to be done
 
 == zeros, ones ==
 
