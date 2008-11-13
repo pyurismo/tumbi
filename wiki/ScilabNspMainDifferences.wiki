@@ -50,8 +50,9 @@ A.equal[zeros(3,0)]
 }}}
 Multiplying a `mx0` empty matrix to a `0xn` empty matrix will give a `mxn` matrix of zeros.
 
+== operations between a scalar and a vector or a matrix ==
 
-== addition, substraction between a scalar and a vector or a matrix ==
+=== addition, substraction between a scalar and a vector or a matrix ===
 
 The matlab language follows the rules of linear algebra, if _A,,1,,_ and _A,,2,,_ are 2 matrices, _A,,1,, + A,,2,,_ and _A,,1,, - A,,2,,_ are well defined if there have the same size, but there is an exception. One of them could be a scalar (that is a `1x1` matrix).
 Suppose that _A_ is a _m x n_ matrix, and _s_ a scalar, then in all cases we have:
@@ -82,8 +83,13 @@ function y = runge(x)
 endfunction
 }}}
 
-== behavior of equality/non equality operators ==
-to be done
+===comparizons between a scalar and a vector or matrix===
+
+The same problem arises when you compare to numerical vector says `x op y` where op could be `==`, `~=`, `<=`, `<`, `>=`, `>'. Normally both `x` and `y` should be of same size and the result is a boolean vector `b` with `b(i)` true if `x(i) op y(i)` is true. Like before it is allowed that one can be a scalar and the result should be a boolean vector of same size than the other operand. So if you compare:
+{{{
+ b = [] <= 1
+}}}
+the result should be the same size than [], that is an empty (boolean) matrix. In *scilab* this rule is generally used but not for the `==` and `~=` operators while *nsp* follows this rule for all comparizon operators. 
 
 == if test and boolean operator ==
 to be done
