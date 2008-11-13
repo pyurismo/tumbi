@@ -28,7 +28,6 @@ x = [0  -1  -sin(2)-3 ]
 With scilab you will get a `1x3` vector `x = [0 ,  -1  , -sin(2)-3 ]`, while in nsp you will get a `1x1` vector `x = [-1-sin(2)-3 ]`. In nsp we recommend to use only comma to separate row elements (so you could use any blank chars to improve the presentation of
 any non constant expression.
 
-
  
 == Empty matrices ==
 
@@ -52,8 +51,36 @@ A.equal[zeros(3,0)]
 Multiplying a `mx0` empty matrix to a `0xn` empty matrix will give a `mxn` matrix of zeros.
 
 
- 
-== Zeros, ones ==
+== addition, substraction between a scalar and a vector or a matrix
+
+The matlab language follows the rules of linear algebra, if _A,,1,,_ and _A,,2,,_ are 2 matrices, _A,,1 + _A,,2,,_ and _A,,1 - _A,,2,,_ are well defined if there have the same size, but there is an exception. One of them could be a scalar (that is a `1x1` matrix).
+Suppose that _A_ is a _m x n_ matrix, and _s_ a scalar, then in all cases we have:
+{{{
+  s + A  ->  B a m x n matrix (with B(i,j) = s + A(i,j))
+  s - A  ->  B a m x n matrix (with B(i,j) = s - A(i,j))
+  A + s  ->  B a m x n matrix (with B(i,j) = s + A(i,j))
+  A - s  ->  B a m x n matrix (with B(i,j) = A(i,j) - s)
+}}}
+And this is true for any possible values for _m_ and _n_ 0 comprised. So when _A_ is empty we get a matrix _B_ which is empty (of same size than A). In *scilab the rule is different in this case*: when _A_ is an empty matrix (so the 0x0 empty matrix) then _s + []_ is equal to _s_. In *nsp have choosen the matlab behavior*. In many cases its results in shorter piece of code. Here is an example. Suppose you want to code the following function:
+{{{
+   runge(x) = 1 / (1 + x^2)
+}}} 
+With a matlab-like environment you certainly want to code the function such that it returns a vector y if x is a vector (with y(i) = runge(x(i)) and you want that y is empty if x is so. The following code can be used in nsp (or in matlab if you remove the `endfunction` keyword):
+{{{
+function y = runge(x)
+  y = 1 ./ (1 + x.^2)
+endfunction
+}}}
+But in scilab such a code don't return the empty matrix if x is empty. You have to add a test:
+{{{
+function y = runge(x)
+  if isempty(x) then, y = [], else, y = 1 ./ (1 + x.^2), end
+endfunction
+}}}
+
+
+
+== zeros, ones ==
 
 In scilab if `A` is a matrix already defined then `zeros(A)` and `ones(A)` returns a matrix  filled with `0` or `1` of same size than `A`. In matlab you have to use `zeros(size(A))` and `ones(size(A))` to get the same effect. We have finally choose the matlab way. Note that nsp still uses `rand(A)`, `randn(A)` to produce random matrix ([0,1) uniform deviates and N(0,1) normal deviates) but this may be change to be consistent with ones and zeros. For all these functions you could use the usual syntax (`zeros(m,n)`, `ones(m,n)`, `rand(m,n)`) to be compatible among scilab, matlab, nsp, octave, freemat.
 
