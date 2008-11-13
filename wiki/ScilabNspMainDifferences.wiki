@@ -85,7 +85,7 @@ endfunction
 == behavior of `==` and `~=` operators ==
 to be done
 
-== behavior of `&` and `|`, usage of `&&` and `||` }}
+== behavior of `&` and `|` , usage of `&&` and `||` ==
 to be done
 
 == zeros, ones ==
