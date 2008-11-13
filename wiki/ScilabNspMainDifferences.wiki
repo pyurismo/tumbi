@@ -91,8 +91,15 @@ The same problem arises when you compare to numerical vector says `x op y` where
 }}}
 the result should be the same size than [], that is an empty (boolean) matrix. In *scilab* this rule is generally used but not for the `==` and `~=` operators while *nsp* applies the rule for all comparizon operators. 
 
-== if test and boolean operator ==
-to be done
+== if test and boolean operators ==
+
+In scilab boolean operators may have a different behavior when a boolean expression is embedded in a if statement or not. Here is an example:
+{{{
+x = 1
+b = x <= 0 & x(2)==1  // this raise an error because x has only one component
+if ( x <= 0 & x(2)==1 ) then, b=%t, else, b=%f, end // this work
+}}}
+
 
 == zeros, ones ==
 
