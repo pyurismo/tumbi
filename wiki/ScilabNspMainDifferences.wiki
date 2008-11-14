@@ -99,7 +99,17 @@ x = 1
 b = x <= 0 & x(2)==1  // this raise an error because x has only one component
 if ( x <= 0 & x(2)==1 ) then, b=%t, else, b=%f, end // this work
 }}}
-to be continued
+The reason of the short cut in the if statement is that like the first test `x <= 0` is false and the operator is an _and_ there is no need to evaluate the second boolean expression. This is really practical in a large number of situations (this is the rule used by many language like C). Nevertheless as the boolean operator in the matlab-like
+language have a meaning with vector it is not possible to do this outside an if statement. For example you could have the following case:
+{{{
+x = 1;
+y = rand(1,5);
+b = x <= 0 & y <= 0.5;
+}}}
+Here the second expression leads to a boolean vector of size `1 x 5` so the final result is a `1 x 5` boolean vector of false value which was impossible to guess without evaluating at least the dimension of the second expression. Btw in a _if ( boolean_exp )_
+expression if the _boolean_exp_ returns a vector, the and product of the components is done to decide if the test is true or false. 
+
+To be continued
 
 == zeros, ones ==
 
