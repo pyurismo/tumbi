@@ -91,7 +91,7 @@ The same problem arises when you compare to numerical vector says `x op y` where
 }}}
 the result should be the same size than [], that is an empty (boolean) matrix. In *scilab* this rule is generally used but not for the `==` and `~=` operators while *nsp* applies the rule for all comparizon operators. 
 
-===other shot cut involving a scalar and a vector or matrix===
+===other short cut involving a scalar and a vector or matrix===
 
 There are some functions which take normally 2 (or more) matrices of same size and output a matrix of this given size (examples: `min(A1,A2,...)`, `max(A1,A2,...)`) and often the shortcut of using a scalar in place of a matrix is really practical. So such functions could have 2 differents arguments size `1 x 1` (aka scalar) and an other one `m x n` (all arguments which are not scalar should be a same size  `m x n`). When this short cut is used the result should be of size `m x n` but you can met some *differences* between scilab and nsp in the case `m` or `n` is 0 (we don't say that nsp is completly clear and regular on this, only that the behavior between scilab and nsp could be different in these special cases). To be continued with examples...
   
