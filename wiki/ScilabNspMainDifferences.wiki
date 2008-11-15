@@ -2,6 +2,14 @@
 
 <wiki:toc max_depth="4" /> 
 
+== The famous `scalar./vector` ambiguity ==
+
+The element-wise `./` division is used normaly on two vectors or matrices of same size but as a short cut, one can be a scalar, so one used expressions like:
+{{{
+y = 1./(1 + x.^2)
+}}}
+Here a problem arises with scilab because the . just after the 1 is considered as part of the number and so the operator seen by the interpretor is just `/` and not `./`. So you have to either put a blank between the 1 and the point or a pair of paranthesis, etc... In nsp the point is attributed to the operator. Btw note that in nsp `scalar/matrix` is not defined.   
+
 == Build a non existing vector with a loop ==
 
 If x don't exist and is created with a loop:
