@@ -2,6 +2,10 @@
 
 <wiki:toc max_depth="4" /> 
 
+== loading of .sci files ==
+
+With scilab you can load pure .sci function file (a file with only function definitions) with `getf` command or the more general `exec` command. In nsp `getf` don't exist so *use*  `exec`.
+
 == The famous scalar./vector ambiguity ==
 
 The element-wise `./` division is used normaly on two vectors or matrices of same size but as a short cut, one can be a scalar, so one used expressions like:
