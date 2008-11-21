@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="4" /> 
 
-== The famous `scalar./vector` ambiguity ==
+== The famous scalar./vector ambiguity ==
 
 The element-wise `./` division is used normaly on two vectors or matrices of same size but as a short cut, one can be a scalar, so one used expressions like:
 {{{
@@ -200,7 +200,7 @@ With scilab this is done with the `type` or `typeof` functions. In nsp you could
 || function (macro) || `%types.PList` || `"PList"` || `"pl"` ||
 || function (primitive) || `%types.Func` || `"Func"` || `"f"` ||
 
-=== testing argument type using `type` ===
+=== testing argument type using type ===
 The string synonym of the _type_ of an object Obj is got using `type(Obj,"string")` and the short string synonym with `type(Obj,"short")`. So testing if `Obj` is a matrix of real or complex numbers could be done with :
 {{{
 if type(Obj,"string") == "Mat" then
@@ -212,7 +212,7 @@ if type(Obj) == %types.Mat then
 }}}
 but operator == is not defined for the type _type_ . In place you could use the `is` function.
 
-=== testing argument type using `is` ===
+=== testing argument type using is ===
 Testing if `Obj` is a matrix of real/complex number could be done with:
 {{{
 if is(Obj,%types.Mat) then
