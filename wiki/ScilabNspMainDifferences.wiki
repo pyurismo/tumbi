@@ -126,7 +126,12 @@ b = x <= 0 & y <= 0.5;
 Here the second expression leads to a boolean vector of size `1 x 5` so the final result is a `1 x 5` boolean vector of false value which was impossible to guess without evaluating at least the dimension of the second expression. Btw in a _if ( boolean_exp )_
 expression if the _boolean_exp_ returns a vector, the and product of the components is done to decide if the test is true or false. 
 
-To be continued
+In nsp (and in matlab, octave) to have shortcut evaluations, you must use the dedicated operators `&&` and `||`. They can be used outside an if or a while with the same behavior) but they are essentially useful in this context. So in nsp:
+{{{
+x = 1
+b = x <= 0 & x(2)==1  // this raise an error because x has only one component
+b = x <= 0 && x(2)==1 // don't raison an error
+}}}
 
 == zeros, ones ==
 
