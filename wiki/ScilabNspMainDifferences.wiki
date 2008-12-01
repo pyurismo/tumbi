@@ -8,7 +8,7 @@ With scilab you can load pure .sci function file (a file with only function defi
 
 == Editor ==
 
-Nsp don't come with an integrated editor like scipad (there is a kind of edit window but without the very bases of a minimal editor). So you have to use an external one (emacs, nedit, vi, ...)
+Nsp don't come with an integrated editor like scipad (there is a kind of edit window but without the minimal basic features of a editor). So you have to use an external one (emacs, nedit, vi, ...)
 
 == The famous scalar./vector ambiguity ==
 
