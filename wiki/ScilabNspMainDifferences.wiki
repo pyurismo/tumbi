@@ -303,4 +303,4 @@ if is(t,%types.Hash) && t.iskey["type"] && t.type == "toto" then
 }}}
 
 === cubersome changes ===
-Scilab tlist/mlist are also useful to define new data types with overloading features. You can have defined +,-,*,/,\,... for the new type toto and used expressions like t*u + b. This is currently not possible in nsp. Like for scilab you must provide functions which do these operations, but you can't substitute, says, toto_mult_toto by *.
+Scilab tlist/mlist are also useful to define new data types with overloading features. You can have defined `+,-,*,/,\,...` for the new type toto and used expressions like `t*u + b`. This is currently not possible in nsp. Like for scilab you must provide functions which do these operations, but you can't substitute, says, toto_mult_toto by `*`.
