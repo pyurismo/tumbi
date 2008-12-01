@@ -6,6 +6,10 @@
 
 With scilab you can load pure .sci function file (a file with only function definitions) with `getf` command or the more general `exec` command. In nsp `getf` don't exist so *use*  `exec`.
 
+== Editor ==
+
+Nsp don't come with an integrated editor like scipad (there is a kind of edit window but without the very bases of a minimal editor). So you have to use an external one (emacs, nedit, vi, ...)
+
 == The famous scalar./vector ambiguity ==
 
 The element-wise `./` division is used normaly on two vectors or matrices of same size but as a shortcut, one can be a scalar, so one used expressions like:
@@ -269,4 +273,34 @@ if is(x,%types.Mat) && isreal(x) && isvector(x) then
 ...
 }}}
 
- Here you see another differences with scilab (what is &&) a future section of this page.
+ Here you see another differences with scilab (what is &&) which have been discussed below.
+
+== tlist,mlist ==
+
+Nsp don't have these scilab structures but have hash tables. Depending of your use of tlist/mlist in a scilab code, it could be easy to replace your code or not. In nsp a call of the form:
+{{{
+t = tlist(["toto","x","y"], val_x, val_y)
+}}}
+creates an hash-table with 2 fields "x" and "y" (exactly like a scilab tlist) and with 2 additional fields:
+{{{
+type which in this example is filled with "toto"
+tlist which is a boolean equal to %t
+}}}
+=== easy changes (or no changes at all) ===
+Any expression involving only the fields "x" and "y" (e.g. `t.x` and `t.y` will behave like for a scilab tlist (`t.x = expression` will change the field value and `t.x` could be used in any expression to get the field value).
+
+A first change occurs if you test the type of your tlist in a scilab code:
+{{{
+if typeof(t) == "toto" then
+}}}
+should be changed in:
+{{{
+if t.type == "toto" then
+}}} 
+May be the following is more robust (as t should be an hash table which should have type as key):
+{{{
+if is(t,%types.Hash) && t.iskey["type"] && t.type == "toto" then
+}}}
+
+=== cubersome changes ===
+Scilab tlist/mlist are also useful to define new data types with overloading features. You can have defined +,-,*,/,\,... for the new type toto and used expressions like t*u + b. This is currently not possible in nsp. Like for scilab you must provide functions which do these operations, but you can't substitute, says, toto_mult_toto by *.
