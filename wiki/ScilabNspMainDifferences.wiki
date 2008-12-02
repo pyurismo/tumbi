@@ -308,7 +308,7 @@ Scilab tlist/mlist are also useful to define new data types with overloading fea
 
 = Hypermatrices =
 Nsp don't have yet hypermatrices. If you need such a feature, there are several functions (not yet documented) which can help (to simulate nd arrays by 1d or 2d arrays):
-  *ndind2ind
-  *sub2ind
-  *ndgrid
+  * ndind2ind
+  * sub2ind
+  * ndgrid
 to be continued with an example.
