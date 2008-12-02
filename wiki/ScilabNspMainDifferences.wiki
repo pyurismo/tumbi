@@ -1,16 +1,14 @@
-= A list of differences between nsp and scilab =
-
 <wiki:toc max_depth="4" /> 
 
-== Loading of .sci files ==
+= Loading of .sci files =
 
 With scilab you can load pure .sci function file (a file with only function definitions) with `getf` command or the more general `exec` command. In nsp `getf` don't exist so *use*  `exec`.
 
-== Editor ==
+= Editor =
 
 Nsp don't come with an integrated editor like scipad (there is a kind of edit window but without the minimal basic features of a editor). So you have to use an external one (emacs, nedit, vi, ...)
 
-== The famous scalar./vector ambiguity ==
+= The famous scalar./vector ambiguity =
 
 The element-wise `./` division is used normaly on two vectors or matrices of same size but as a shortcut, one can be a scalar, so one used expressions like:
 {{{
@@ -18,7 +16,7 @@ y = 1./(1 + x.^2)
 }}}
 Here a problem arises with scilab because the . just after the 1 is considered as part of the number and so the operator seen by the interpretor is just `/` and not `./`. So you have to either put a blank between the 1 and the point or a pair of paranthesis, etc... In nsp the point is attributed to the operator. Btw note that in nsp `scalar/matrix` is not defined.   
 
-== Build a non existing vector with a loop ==
+= Build a non existing vector with a loop =
 
 If x don't exist and is created with a loop:
 {{{
@@ -27,7 +25,7 @@ for i=1:5, x(i) = i, end
 scilab will create a column vector while nsp (and matlab) create a row vector.
 Note that it is the same if x was initially a scalar.
 
-== Build a row of a matrix element by element (row concatenation) ==
+= Build a row of a matrix element by element (row concatenation) =
 
 With scilab and nsp, you could use both a space or a comma as a separator between two elements:
 
@@ -45,7 +43,7 @@ With scilab you will get a `1x3` vector `x = [0 ,  -1  , -sin(2)-3 ]`, while in 
 any non constant expression.
 
 
-== Behavior in case of error ==
+= Behavior in case of error =
 
 When the scilab interpretor met an (non catched) error, a message is displayed and the control returns at the first prompt level. With nsp the interpretor make a pause just after the line of code which raises the error. So you can examine the local variables, enter instructions, etc... If you don't like this behavior, just enter `quit` to returns at the first prompt level. Here is a simple example. Enter the following function:
 {{{
@@ -76,7 +74,7 @@ ans	=		r (1x2)
 }}}
 
  
-== Empty matrices ==
+= Empty matrices =
 
 Scilab only knows the `0x0` empty matrix. In nsp we have choosen to follow the matlab way of using `0x0`, `mx0` and `0xn` empty matrices (which was suggested to matlab by several users). Expressions like `zeros(0,n)`, `ones(m,0)`, `rand(0,n)`, `randn(m,0)` give such empty matrices. To test  if a matrix is empty (in the general meaning) you could use the `isempty` function:
 {{{
@@ -97,9 +95,9 @@ A.equal[zeros(3,0)]
 }}}
 Multiplying a `mx0` empty matrix to a `0xn` empty matrix will give a `mxn` matrix of zeros.
 
-== Operations between a scalar and a vector or a matrix ==
+= Operations between a scalar and a vector or a matrix =
 
-=== addition, substraction between a scalar and a vector or a matrix ===
+== addition, substraction between a scalar and a vector or a matrix ==
 
 The matlab language follows the rules of linear algebra, if _A,,1,,_ and _A,,2,,_ are 2 matrices, _A,,1,, + A,,2,,_ and _A,,1,, - A,,2,,_ are well defined if there have the same size, but there is an exception. One of them could be a scalar (that is a `1x1` matrix).
 Suppose that _A_ is a _m x n_ matrix, and _s_ a scalar, then in all cases we have:
@@ -130,7 +128,7 @@ function y = runge(x)
 endfunction
 }}}
 
-===comparizons between a scalar and a vector or matrix===
+==comparizons between a scalar and a vector or matrix==
 
 The same problem arises when you compare to numerical vector says `x op y` where op could be `==`, `~=`, `<=`, `<`, `>=`, `>'. Normally both `x` and `y` should be of same size and the result is a boolean vector `b` with `b(i)` true if `x(i) op y(i)` is true. Like before it is allowed that one can be a scalar and the result should be a boolean vector of same size than the other operand. So if you compare:
 {{{
@@ -138,12 +136,12 @@ The same problem arises when you compare to numerical vector says `x op y` where
 }}}
 the result should be the same size than [], that is an empty (boolean) matrix. In *scilab* this rule is generally used but not for the `==` and `~=` operators while *nsp* applies the rule for all comparizon operators. 
 
-===other shortcut involving a scalar and a vector or matrix===
+==other shortcut involving a scalar and a vector or matrix==
 
 There are some functions which take normally 2 (or more) matrices of same size and output a matrix of this given size (examples: `min(A1,A2,...)`, `max(A1,A2,...)`) and often the shortcut of using a scalar in place of a matrix is really practical. So such functions could have 2 differents arguments size `1 x 1` (aka scalar) and an other one `m x n` (all arguments which are not scalar should be a same size  `m x n`). When this shortcut is used the result should be of size `m x n` but you can met some *differences* between scilab and nsp in the case `m` or `n` is 0 (we don't say that nsp is completly clear and regular on this, only that the behavior between scilab and nsp could be different in these special cases). To be continued with examples...
   
 
-== If test and boolean operators ==
+= If test and boolean operators =
 
 In scilab boolean operators may have a different behavior when a boolean expression is embedded in a if statement or not. Here is an example:
 {{{
@@ -168,13 +166,13 @@ b = x <= 0 & x(2)==1  // this raise an error because x has only one component
 b = x <= 0 && x(2)==1 // don't raise an error
 }}}
 
-== Zeros, ones ==
+= Zeros, ones =
 
 In scilab if `A` is a matrix already defined then `zeros(A)` and `ones(A)` returns a matrix  filled with `0` or `1` of same size than `A`. In matlab you have to use `zeros(size(A))` and `ones(size(A))` to get the same effect. We have finally choose the matlab way. Note that nsp still uses `rand(A)`, `randn(A)` to produce random matrix ([0,1) uniform deviates and N(0,1) normal deviates) but this may be change to be consistent with ones and zeros. For all these functions you could use the usual syntax (`zeros(m,n)`, `ones(m,n)`, `rand(m,n)`) to be compatible among scilab, matlab, nsp, octave, freemat.
 
 
  
-== Graphics == 
+= Graphics = 
 
 Nsp graphics are under development. Currently nsp graphics consists in the old scilab graphic mode cleaned but an "object system" is in under construction. We will try to tell more about this subject. 
 
@@ -201,7 +199,7 @@ Some differences (with old scilab graphics):
 
 
 
-== Optional named arguments ==
+= Optional named arguments =
 
 Management of function 's optional named arguments is simpler than in scilab. You list them after the other arguments and add a default value. Here is an example with 2 optional named arguments:
 {{{
@@ -228,9 +226,9 @@ endfunction
 }}}
 
 
-== Testing argument type ==
+= Testing argument type =
 
-===introduction===
+==introduction==
 With scilab this is done with the `type` or `typeof` functions. In nsp you could use the `type` function or the `is` function but the nsp `type` function doesn't work like the scilab 's one. Before going further we must say that the type of an object in nsp (such as a matrix of real/complex numbers, a matrix of strings, an array of cells, a list, a function, ...) is itself an abstract object call of "type" _type_. But to be easier to manipulate, each different _type_, have 2 synonyms one is a string and the other a short string. Moreover there is a default variable `%types` (an hash table) which contains all the different _types_ in nsp, here is a table for main object types :
 
 || usual name || in hash table  ||  string  ||  short string ||
@@ -244,7 +242,7 @@ With scilab this is done with the `type` or `typeof` functions. In nsp you could
 || function (macro) || `%types.PList` || `"PList"` || `"pl"` ||
 || function (primitive) || `%types.Func` || `"Func"` || `"f"` ||
 
-=== testing argument type using type ===
+== testing argument type using type ==
 The string synonym of the _type_ of an object Obj is got using `type(Obj,"string")` and the short string synonym with `type(Obj,"short")`. So testing if `Obj` is a matrix of real or complex numbers could be done with :
 {{{
 if type(Obj,"string") == "Mat" then
@@ -256,13 +254,13 @@ if type(Obj) == %types.Mat then
 }}}
 but operator == is not defined for the type _type_ . In place you could use the `is` function.
 
-=== testing argument type using is ===
+== testing argument type using is ==
 Testing if `Obj` is a matrix of real/complex number could be done with:
 {{{
 if is(Obj,%types.Mat) then
 }}}
 
-=== some examples ===
+== some examples ==
 Very often you should wait for a real scalar `c` or a real vector `x`, such tests could be done with:
 {{{
 if is(c,%types.Mat) && isreal(c) && isscalar(c) then
@@ -275,7 +273,7 @@ if is(x,%types.Mat) && isreal(x) && isvector(x) then
 
  Here you see another differences with scilab (what is &&) which have been discussed below.
 
-== Tlist,mlist ==
+= Tlist,mlist =
 
 Nsp don't have these scilab structures but have hash tables. Depending of your use of tlist/mlist in a scilab code, it could be easy to replace your code or not. In nsp a call of the form:
 {{{
@@ -289,7 +287,7 @@ For a `mlist` the only difference is that the field _tlist_ of the hash table is
 h.iskey["name"]
 }}}
 
-=== easy changes (or no changes at all) ===
+== easy changes (or no changes at all) ==
 Any expression involving only the fields "x" and "y" (e.g. `t.x` and `t.y` will behave like for a scilab tlist (`t.x = expression` will change the field value and `t.x` could be used in any expression to get the field value).
 
 A first change occurs if you test the type of your tlist in a scilab code:
@@ -305,5 +303,5 @@ May be the following is more robust (as t should be an hash table which should h
 if is(t,%types.Hash) && t.iskey["type"] && t.type == "toto" then
 }}}
 
-=== cubersome changes ===
+== cubersome changes ==
 Scilab tlist/mlist are also useful to define new data types with overloading features. You can have defined `+,-,*,/,\,...` for the new type toto and used expressions like `t*u + b`. This is currently not possible in nsp. Like for scilab you must provide functions which do these operations, but you can't substitute, says, toto_mult_toto by `*`.
