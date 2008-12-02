@@ -45,7 +45,7 @@ any non constant expression.
 
 = Behavior in case of error =
 
-When the scilab interpretor met an (non catched) error, a message is displayed and the control returns at the first prompt level. With nsp the interpretor make a pause just after the line of code which raises the error. So you can examine the local variables, enter instructions, etc... If you don't like this behavior, just enter `quit` to returns at the first prompt level. Here is a simple example. Enter the following function:
+When the scilab interpretor met an (non catched) error, a message is displayed and the control returns at the first prompt level. With nsp the interpretor make a pause just after the line of code which raises the error. So you can examine the local variables, enter instructions, etc... If you don't like this behavior, just enter `quit` to return at the first prompt level. Here is a simple example. Enter the following function:
 {{{
 function C = foo(A,B)
    C = A*B
