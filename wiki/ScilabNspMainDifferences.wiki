@@ -282,8 +282,8 @@ Nsp don't have these scilab structures but have hash tables. Depending of your u
 t = tlist(["toto","x","y"], val_x, val_y)
 }}}
 creates an hash-table with 2 fields "x" and "y" (exactly like a scilab tlist) and with 2 additional fields:
-# `type` which, in this example, has the value "toto"
-# `tlist` which is a boolean (%t)
+  # `type` which, in this example, has the value "toto"
+  # `tlist` which is a boolean (%t)
 For a `mlist` the only difference is that the field _tlist_ of the hash table is replaced by the field _mlist_. To test if a field _name_ (a key) exists in a nsp hash table `h` you can use:
 {{{
 h.iskey["name"]
