@@ -275,7 +275,7 @@ if is(x,%types.Mat) && isreal(x) && isvector(x) then
 
  Here you see another differences with scilab (what is &&) which have been discussed below.
 
-== tlist,mlist ==
+== Tlist,mlist ==
 
 Nsp don't have these scilab structures but have hash tables. Depending of your use of tlist/mlist in a scilab code, it could be easy to replace your code or not. In nsp a call of the form:
 {{{
@@ -286,6 +286,11 @@ creates an hash-table with 2 fields "x" and "y" (exactly like a scilab tlist) an
 type which in this example is filled with "toto"
 tlist which is a boolean equal to %t
 }}}
+If you use `mlist` in place of `tlist` the only difference is that the field _tlist_ of the hash table is replace by the field _mlist_. To test if a field _name_ (a key) exists in a nsp hash table `h` you can use:
+{{{
+h.iskey["name"]
+}}}
+
 === easy changes (or no changes at all) ===
 Any expression involving only the fields "x" and "y" (e.g. `t.x` and `t.y` will behave like for a scilab tlist (`t.x = expression` will change the field value and `t.x` could be used in any expression to get the field value).
 
