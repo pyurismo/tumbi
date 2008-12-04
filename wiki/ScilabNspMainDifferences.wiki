@@ -2,7 +2,7 @@
 
 = Loading of .sci files =
 
-With scilab you can load pure .sci function file (a file with only function definitions) with `getf` command or the more general `exec` command. In nsp `getf` don't exist so *use*  `exec`.
+With scilab you can load pure .sci function file (a file with only function definitions) with `getf` command or the more general `exec` command. In nsp `getf` doesn't exist so *use*  `exec`.
 
 = Editor =
 
