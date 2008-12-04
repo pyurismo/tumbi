@@ -76,7 +76,7 @@ ans	=		r (1x2)
  
 = Empty matrices =
 
-Scilab only knows the `0x0` empty matrix. In nsp we have choosen to follow the matlab way of using `0x0`, `mx0` and `0xn` empty matrices (which was suggested to matlab by several users). Expressions like `zeros(0,n)`, `ones(m,0)`, `rand(0,n)`, `randn(m,0)` give such empty matrices. To test  if a matrix is empty (in the general meaning) you could use the `isempty` function:
+Scilab only knows the `0x0` empty matrix. In nsp we have chosen to follow the matlab way of using `0x0`, `mx0` and `0xn` empty matrices (which was suggested to matlab by several users). Expressions like `zeros(0,n)`, `ones(m,0)`, `rand(0,n)`, `randn(m,0)` give such empty matrices. To test  if a matrix is empty (in the general meaning) you can use the `isempty` function:
 {{{
   if isempty(A) then
      ....
