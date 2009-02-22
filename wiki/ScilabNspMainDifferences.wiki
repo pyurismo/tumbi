@@ -1,5 +1,9 @@
 <wiki:toc max_depth="4" /> 
 
+= No stacksize =
+
+With nsp, you don't need to play with the famous stacksize scilab instruction to get or retrieve memory from the system.
+
 = Loading of .sci files =
 
 With scilab you can load pure .sci function file (a file with only function definitions) with `getf` command or the more general `exec` command. In nsp `getf` doesn't exist so *use*  `exec`.
