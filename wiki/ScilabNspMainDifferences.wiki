@@ -313,6 +313,8 @@ Nsp don't yet have hypermatrices. If you need such a feature, there are several 
   * ndgrid
 to be continued with an example.
 
+
+
 = Some slight differences in various functions =
 
 == spec ==
@@ -324,8 +326,8 @@ when the eigenvectors are needed, that is with two output arguments:
 There are two differences :
   * the eigenvalues 'lambda' are given in a vector (like in the simple call
     'lambda = spec(A)') and not in a diagonal matrix
-  * the eigenvalues are the first output argument, the matrix of eigenvectors
-    'V' coming in second.
+  * the eigenvalues vector is the first output argument, the matrix of eigenvectors
+    'V' coming next.
 spec is documented in the help.
 
 == svd ==
