@@ -305,31 +305,3 @@ if is(t,%types.Hash) && t.iskey["type"] && t.type == "toto" then
 
 == cubersome changes ==
 Scilab tlist/mlist are also useful to define new data types with overloading features. You can have defined `+,-,*,/,\,...` for the new type toto and used expressions like `t*u + b`. This is currently not possible in nsp. Like for scilab you must provide functions which do these operations, but you can't substitute, says, toto_mult_toto by `*`.
-
-= Hypermatrices =
-
-Nsp don't yet have hypermatrices. If you need such a feature, there are several functions (not yet documented) which can help (to simulate nd arrays by 1d or 2d arrays):
-  * ndind2ind
-  * sub2ind
-  * ndgrid
-to be continued with an example.
-
-
-
-= Some slight differences in various functions =
-
-== spec ==
-(thanks to M. Fuentes). In nsp, spec behaves differently than scilab spec function (or matlab eig) when the eigenvectors are needed, that is with two output arguments:
-{{{
-    [lambda, V] = spec(A)
-}}}
-There are two differences :
-  * the eigenvalues _lambda_ are given in a vector (like in the simple call `lambda = spec(A)`) and not in a diagonal matrix
-  * the eigenvalues vector is the first output argument, the matrix of eigenvectors _V_ coming second.
-spec is documented in the help.
-
-== svd ==
-svd (which is defined in nsp but not currently documented) returns always the singular values in a vector, even for call which returns left and right singular vectors:
-{{{
-    [U,sigma,V] = svd(A)
-}}}
