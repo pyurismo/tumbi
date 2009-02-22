@@ -324,14 +324,14 @@ when the eigenvectors are needed, that is with two output arguments:
     [lambda, V] = spec(A)
 }}}
 There are two differences :
-  * the eigenvalues 'lambda' are given in a vector (like in the simple call
-    'lambda = spec(A)') and not in a diagonal matrix
+  * the eigenvalues _lambda_ are given in a vector (like in the simple call
+    `lambda = spec(A)`) and not in a diagonal matrix
   * the eigenvalues vector is the first output argument, the matrix of eigenvectors
-    'V' coming next.
+    _V_ coming second.
 spec is documented in the help.
 
 == svd ==
-svd which is defined in nsp (but not currently documented), returns always the
+svd (which is defined in nsp but not currently documented) returns always the
 singular values in a vector, even for call which returns left and right singular
 vectors:
 {{{
