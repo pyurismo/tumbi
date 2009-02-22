@@ -1,5 +1,5 @@
-<wiki:toc max_depth="4" /> 
-#sidebar TableOfContents
+<wiki:toc max_depth="3" /> 
+
 
 = Loading of .sci files =
 
