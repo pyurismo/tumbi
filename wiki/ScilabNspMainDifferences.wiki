@@ -1,4 +1,5 @@
-#summary <wiki:toc max_depth="4" />
+#summary 4
+<wiki:toc max_depth="4" />
 
 = No stacksize =
 
