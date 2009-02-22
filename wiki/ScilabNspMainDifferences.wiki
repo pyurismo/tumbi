@@ -1,25 +1,30 @@
 <wiki:toc max_depth="4" />
 
+----
 = No stacksize =
 
 With nsp, you don't need to play with the famous stacksize scilab instruction to get or retrieve memory from the system.
 
+----
 = Loading of .sci files =
 
 With scilab you can load pure .sci function file (a file with only function definitions) with `getf` command or the more general `exec` command. In nsp `getf` doesn't exist so *use*  `exec`.
 
+----
 = Editor =
 
 Nsp don't come with an integrated editor like scipad (there is a kind of edit window but without the minimal basic features of a editor). So you have to use an external one (emacs, nedit, vi, ...)
 
+----
 = The famous scalar./vector ambiguity =
 
 The element-wise `./` division is used normaly on two vectors or matrices of same size but as a shortcut, one can be a scalar, so one used expressions like:
 {{{
 y = 1./(1 + x.^2)
 }}}
-Here a problem arises with scilab because the . just after the 1 is considered as part of the number and so the operator seen by the interpretor is just `/` and not `./`. So you have to either put a blank between the 1 and the point or a pair of paranthesis, etc... In nsp the point is attributed to the operator. Btw note that in nsp `scalar/matrix` is not defined.   
-
+Here a problem arises with scilab because the . just after the 1 is considered as part of the number and so the operator seen by the interpretor is just `/` and not `./`. So you have to either put a blank between the 1 and the point or a pair of paranthesis, etc... In nsp the point is attributed to the operator. Btw note that in nsp `scalar/matrix` is not defined.
+   
+----
 = Build a non existing vector with a loop =
 
 If x don't exist and is created with a loop:
@@ -29,6 +34,7 @@ for i=1:5, x(i) = i, end
 scilab will create a column vector while nsp (and matlab) create a row vector.
 Note that it is the same if x was initially a scalar.
 
+----
 = Build a row of a matrix element by element (row concatenation) =
 
 With scilab and nsp, you could use both a space or a comma as a separator between two elements:
@@ -46,7 +52,7 @@ x = [0  -1  -sin(2)-3 ]
 With scilab you will get a `1x3` vector `x = [0 ,  -1  , -sin(2)-3 ]`, while in nsp you will get a `1x1` vector `x = [-1-sin(2)-3 ]`. In nsp we recommend to use only comma to separate row elements (so you could use any blank chars to improve the presentation of
 any non constant expression.
 
-
+----
 = Behavior in case of error =
 
 When the scilab interpretor met an (non catched) error, a message is displayed and the control returns at the first prompt level. With nsp the interpretor make a pause just after the line of code which raises the error. So you can examine the local variables, enter instructions, etc... If you don't like this behavior, just enter `quit` to return at the first prompt level. Here is a simple example. Enter the following function:
@@ -77,7 +83,7 @@ ans	=		r (1x2)
 	==>foo(A,B)
 }}}
 
- 
+----
 = Empty matrices =
 
 Scilab only knows the `0x0` empty matrix. In nsp we have chosen to follow the matlab way of using `0x0`, `mx0` and `0xn` empty matrices (which was suggested to matlab by several users). Expressions like `zeros(0,n)`, `ones(m,0)`, `rand(0,n)`, `randn(m,0)` give such empty matrices. To test  if a matrix is empty (in the general meaning) you can use the `isempty` function:
@@ -99,6 +105,7 @@ A.equal[zeros(3,0)]
 }}}
 Multiplying a `mx0` empty matrix to a `0xn` empty matrix will give a `mxn` matrix of zeros.
 
+----
 = Operations between a scalar and a vector or a matrix =
 
 == addition, substraction between a scalar and a vector or a matrix ==
@@ -144,7 +151,7 @@ the result should be the same size than [], that is an empty (boolean) matrix. I
 
 There are some functions which take normally 2 (or more) matrices of same size and output a matrix of this given size (examples: `min(A1,A2,...)`, `max(A1,A2,...)`) and often the shortcut of using a scalar in place of a matrix is really practical. So such functions could have 2 differents arguments size `1 x 1` (aka scalar) and an other one `m x n` (all arguments which are not scalar should be a same size  `m x n`). When this shortcut is used the result should be of size `m x n` but you can met some *differences* between scilab and nsp in the case `m` or `n` is 0 (we don't say that nsp is completly clear and regular on this, only that the behavior between scilab and nsp could be different in these special cases). To be continued with examples...
   
-
+----
 = If test and boolean operators =
 
 In scilab boolean operators may have a different behavior when a boolean expression is embedded in a if statement or not. Here is an example:
@@ -170,12 +177,12 @@ b = x <= 0 & x(2)==1  // this raise an error because x has only one component
 b = x <= 0 && x(2)==1 // don't raise an error
 }}}
 
+----
 = Zeros, ones =
 
 In scilab if `A` is a matrix already defined then `zeros(A)` and `ones(A)` returns a matrix  filled with `0` or `1` of same size than `A`. In matlab you have to use `zeros(size(A))` and `ones(size(A))` to get the same effect. We have finally choose the matlab way. Note that nsp still uses `rand(A)`, `randn(A)` to produce random matrix ([0,1) uniform deviates and N(0,1) normal deviates) but this may be change to be consistent with ones and zeros. For all these functions you could use the usual syntax (`zeros(m,n)`, `ones(m,n)`, `rand(m,n)`) to be compatible among scilab, matlab, nsp, octave, freemat.
 
-
- 
+----
 = Graphics = 
 
 Nsp graphics are under development. Currently nsp graphics consists in the old scilab graphic mode cleaned but an "object system" is in under construction. We will try to tell more about this subject. 
@@ -202,7 +209,7 @@ Some differences (with old scilab graphics):
 }}}
 
 
-
+----
 = Optional named arguments =
 
 Management of function 's optional named arguments is simpler than in scilab. You list them after the other arguments and add a default value. Here is an example with 2 optional named arguments:
@@ -229,7 +236,7 @@ function x = foo(A, x, tol=[])
 endfunction
 }}}
 
-
+----
 = Testing argument type =
 
 ==introduction==
@@ -277,7 +284,7 @@ if is(x,%types.Mat) && isreal(x) && isvector(x) then
 
  Here you see another differences with scilab (what is &&) which have been discussed below.
 
-
+----
 = Tlist,mlist =
 
 Nsp don't have these scilab structures but have hash tables. Depending of your use of tlist/mlist in a scilab code, it could be easy to replace your code or not. In nsp a call of the form:
@@ -311,6 +318,7 @@ if is(t,%types.Hash) && t.iskey["type"] && t.type == "toto" then
 == cubersome changes ==
 Scilab tlist/mlist are also useful to define new data types with overloading features. You can have defined `+,-,*,/,\,...` for the new type toto and used expressions like `t*u + b`. This is currently not possible in nsp. Like for scilab you must provide functions which do these operations, but you can't substitute, says, toto_mult_toto by `*`.
 
+----
 = Hypermatrices =
 
 Nsp don't yet have hypermatrices. If you need such a feature, there are several functions (not yet documented) which can help (to simulate nd arrays by 1d or 2d arrays):
@@ -319,8 +327,7 @@ Nsp don't yet have hypermatrices. If you need such a feature, there are several 
   * ndgrid
 to be continued with an example.
 
-
-
+----
 = Some slight differences in various functions =
 
 == spec ==
