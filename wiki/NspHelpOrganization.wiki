@@ -1,0 +1,282 @@
+#summary discussion about how to organize the nsp help
+
+<wiki:toc max_depth="3" />
+
+=organization=
+
+==introduction==
+Here is a proposal for help organization (to be completed, don't hesitate !). Currently some chapters of this proposal (like "basic arrays functions") don't yet exist (and waiting for such an organization we have put many help pages in a "misc chapter").
+
+Remarks:
+  * a help page could be referenced by several chapters (for instance the umfpack page is referenced both by the data type and the linear algebra chapters).
+  * In fact the "summary page" of each chapter should be written by hand and this lets an additionnal freedom to organize the chapter presentation.
+  * a page (which is a latex file) can contain the description of several functions (examples: min, max, minmax functions, sum and prod functions, complex, real, imag functions).
+  * functions/methods/topics already documented are ~~strikeout~~ (but the corresponding help page could be completed and improved in many cases).
+  * many functions already in nsp have not been yet referenced in this note (work in progress, don't hesitate to complete this note). 
+
+==organization squeleton==
+
+===data_types chapter===
+
+  # ~~Object~~ - Nsp general object
+  # ~~Mat~~ - matrix of numbers 
+  # ~~Smat~~ - matrix of strings 
+  # ~~Bmat~~ - boolean matrix 
+  # ~~Pmat~~ - polynomial matrix 
+  # ~~List~~ - list of nsp objects 
+  # ~~Cells~~ - matrix of nsp objects 
+  # ~~hash~~ - hash tables 
+  # ~~MaxMat~~ - Max plus matrix 
+  # ~~File~~ - file data type 
+  # ~~Serial~~ - Container for nsp serialized object 
+  # ~~SndFile~~ - sound file data type 
+  # ~~gdate~~ - days representation 
+  # ~~Umfpack~~ - datatype for LU factorization of sparse matrices 
+  # ~~Cholmod~~ - datatype for Cholesky factorization of sparse matrices
+  # SpColMat - sparse matrix
+
+===basic arrays functions===
+
+  This chapter don't yet exist. It could present operations, functions and
+  methods which can be applied on or are useful for all kind of array oriented data
+  type (and sometime on other ones)
+
+   # indexing arrays (and insertion, extraction, deletion)
+   # sub2ind
+   # ndind2ind
+   # size, ~~length~~, numel
+   # perm_elem
+   # concatr concatd
+   # matrix, redim et reshape
+   # repmat - replicate a matrix
+   # ~~perms~~ - generate all permutations of a vector
+   # isvector, isscalar
+
+===numbers (properties, display,...)===
+
+   # ~~format~~ - number printing and display format
+   # ~~number_properties~~ - determine floating-point parameters 
+   # ~~frexp~~ - dissect floating-point numbers into base 2 exponent and mantissa
+   # ~~isreal~~ - check if a variable has real or complex entries
+   # ~~complex~~ - build complex numbers from real and imaginary parts
+   # ~~real~~ - extract real part of a complex scalar, vector or matrix
+   # ~~imag~~ - extract imaginary part of a complex scalar, vector or matrix
+   # ~~angle, arg~~ - compute argument of a complex (or real) scalar, vector or matrix
+   # ~~isfinite~~ - check for ”Finite” entries 
+   # ~~isnan~~ - check for ”NaN” entries 
+   # ~~isinf~~ - check for ”Infinite entries 
+   # ~~nearfloat~~ - get previous or next floating-point number
+   # ~~primes~~ - computes prime numbers
+   # ~~isprime~~ - primality test
+   # ~~factor~~ - prime factorization of an integer
+   # clean, floor, ceil, round
+
+===basic functions or methods for numerical matrices===
+
+This chapter don't yet exist. 
+
+  # real and complex numbers, floating point number (link to floating point and integer numbers properties)
+  # empty matrices rules
+  # ~~format~~ (display of matrices, which is also referenced by the previous chapter)
+  # linspace, logspace
+  # : operator
+  # ~~ndgrid~~
+  # usual operators +, -, *, /, .*, ./, ^, .^
+  # ~~zeros, ones~~
+  # ~~eye~~
+  # ~~sum, prod~~
+  # ~~cumsum, cumprod~~
+  # ~~diff~~
+  # triu, tril
+  # ~~diag~~, setdiag
+  # ~~min, max, minmax~~
+  # ~~scale_cols, scale_rows~~
+  # add, blas_ger, blas_apxy
+  # ~~dot~~ - scalar product of 2 vectors (or matrices) 
+  # ~~cross~~ - cross product of 2 vectors
+
+===searching and sorting===
+
+Find, search, sort, set functions...
+
+  # ~~find~~ - returns indices of the true or non zeros components of a vector or matrix
+  # mfind -  
+  # ~~has~~ - (method) test if a vector or list has a given element
+  # ~~bsearch~~ - binary search 
+  # ~~sort~~ - general sort function 
+  # ~~unique~~ - compute unique components of a vector or of a list 
+  # ~~union~~ - compute the union of two vectors or two lists 
+  # ~~setdiff~~ - compute the set difference between two vectors or two lists
+  # ~~intersect~~ - compute the set intersection of two vectors or two lists
+  # ~~setxor~~ - computes elements exclusive to two vectors or two lists
+  # issorted - sort test
+
+===numerics (ode, f(x)=0, integrals, interpolation, optimization,...)===
+
+Possibly this chapter could be split in the future...
+
+  # ~~linear_interpn~~ - n dimensional linear interpolation 
+  # ~~splin~~ - build a cubic interpolation spline or sub-spline 
+  # ~~interp~~ - eval a cubic interpolation spline or sub-spline 
+  # ~~splin2d~~ - build a bicubic interpolation spline or sub-spline 
+  # ~~interp2d~~ - eval a bicubic interpolation spline or sub-spline 
+  # ~~intg~~ - one dimensional integration over a finite or infinite interval 
+  # ~~int2d~~ - two dimensional integration over a rectangle or a set of triangles 
+  # ~~ode~~ - ordinary differential equations solver 
+  # ~~fsolve~~ - non linear equations solver 
+  # ~~fsolve_lsq~~ - non linear least square solver 
+  # ~~derivative~~ - approximation of first and second derivatives of a function
+
+===chapter signal=== 
+
+This one don't yet exist. May be we can put it inside numerics ?
+
+  # fft, ifft
+  # fft2, ifft2
+  # conv
+  # conv2
+  # rot90, fliplr, flipud
+  # fftshift, ifftshift
+
+
+===linear algebra chapter===
+
+  # the backslash operator
+  # ~~qr~~ - QR factorization
+  # rank
+  # svd
+  # ~~lu~~ - LU factorization (for full matrix)
+  # det
+  # inv 
+  # ~~chol~~ - Cholesky factorization (for full matrix) 
+  # ~~umfpack_create,umfpack_solve~~ - LU factorization (for sparse matrix) 
+  # ~~spec~~ - matrix spectrum, eigenvalues and eigenvectors
+  # gspec
+  # ~~solve~~ - solve a linear system
+  # ~~kernel~~ - computes an orthonormal basis of the null space of a matrix
+  # ~~orth~~ - computes an orthonormal basis of the range of a matrix
+  # ~~norm~~ - vector and matrix norm
+  # ~~rcond~~ - estimation of the reciprocal condition in 1-norm
+  # ~~issymmetric~~ - symmetry or hermitian test
+  # ~~istriangular~~ - upper or lower triangular test
+  # ~~lower_upper_bandwidths~~ - computes lower and upper bandwidths
+  # ~~pmult~~ - special matrix multiplication
+  # expm
+  # solve_banded
+  # lsq
+  # schur
+  # hess
+  # balanc
+
+
+===elementary and special math func===
+
+don't yet exist.
+
+  * elementary
+  # modulo, mod
+  # floor, ceil, round, clean
+
+  * elementary transcendental
+  # sqrt
+  # exp, log, lop1p
+  # sin, asin, sinpi, cos, acos, tan, atan
+  # sinh, asinh, cosh, acosh, tanh, atanh
+
+  * special math func
+  # gamma, gammaln
+  # erf, erfc
+  # bessel
+  # ~~legendre~~
+  # ....
+
+  * special stat func (could be referenced by a statistic chapter ?)
+  # ~~pdf~~ - probability density or mass functions
+  # kcdf, kcdflim
+  # ~~cdfbet~~ - beta cdf and invcdf function 
+  # ~~cdfbin~~ - binomial cdf and invcdf function 
+  # ~~cdfchi~~ - chi square cdf and invcdf function 
+  # ~~cdfchn~~ - non central chi square cdf and invcdf function 
+  # ~~cdff~~ - f cdf and invcdf function 
+  # ~~cdffnc~~ - non central f cdf and invcdf function 
+  # ~~cdfgam~~ - gamma cdf and invcdf function 
+  # ~~cdfnbn~~ - negative binomial cdf and invcdf function 
+  # ~~cdfnor~~ - normal cdf and invcdf function 
+  # ~~cdfpoi~~ - poisson cdf and invcdf function 
+  # ~~cdft~~ - student t cdf and invcdf function 
+  # ~~cdftnc~~ - non central student t cdf and invcdf function
+
+===Strings chapter===
+
+Function related to the string matrix data type.
+
+  # ~~ascii~~ - ascii conversion 
+  # ~~capitalize~~ - capitalize strings
+  # ~~catenate~~ - string concatenation 
+  # ~~concat~~ - string matrices concatenation 
+  # ~~getfile~~ - return the contents of a file in a column string vector 
+  # ~~isalnum~~ - checks for an alphanumeric character
+  # ~~isalpha~~ - checks for an alphabetic character
+  # ~~isascii~~ - checks for 7-bit unsigned char value that fits into the ASCII character set
+  # ~~isdigit~~ - checks for a digit (0 through 9)
+  # ~~isgraph~~ - checks for any printable character except space
+  # ~~islower~~ - checks for a lower-case character
+  # ~~isprint~~ - checks for any printable character including space
+  # ~~ispunct~~ - checks for any printable character which is not a space or an alphanumeric character
+  # ~~isspace~~ - checks for white-space characters
+  # ~~isupper~~ - checks for an uppercase letter
+  # ~~isxdigit~~ - checks for a hexadecimal digits
+  # ~~length~~ - length of object 
+  # ~~m2s,string~~ - convert matrix and object to string matrix 
+  # ~~part~~ - substring extraction from indices
+  # ~~putfile~~ - write a string matrix in a file in column order mode 
+  # ~~regexp,regsub~~ - search, substitution based on regular expressions
+  # ~~split~~ - string splitting
+  # ~~strindex~~ - search occurences of a string in a string
+  # ~~strcmp~~ - compare two string with strcmp 
+  # ~~stripblanks~~ - removes leading and trailing white-space characters
+  # ~~strstr~~ - locate a substring in a string matrix
+  # ~~strsubst~~ - sub-string substitution in a string matrix
+  # ~~tolower~~ - convert letter to lower case
+  # ~~toupper~~ - convert letter to upper case
+
+===Gui chapter===
+
+  Currently only old scilab gui functions are described may be we have to put here the gtk stuff
+ 
+  # ~~x_choices~~ - interactive dialog using a small subset of Gtk widgets
+  # ~~x_choose~~ - interactive choices
+  # ~~x_dialog~~ - gtk dialog
+  # ~~xgetfile~~ - dialog to get a file or folder path
+  # ~~x_matrix~~ - edit a matrix
+  # ~~x_mdialog~~ - dialogs
+  # ~~x_message_modeless~~ - a message in a Gtk modeless window
+  # ~~x_message~~ - a message in a Gtk window
+
+===Graphics chapter===
+
+  to be done once the new graphics will be available ?
+
+
+=latex help related explanations=
+
+The nsp help is build from latex pages. It is converted in html using 
+Eitan Gurary [http://www.cse.ohio-state.edu/~gurari/TeX4ht/mn.html ht4latex] code.
+
+This section _needs certainly supplementary explanations_
+
+==tricks==
+
+The file `nsp2/man/src/model/model.tex` gives several tricks. In particular there are different ways to introduce nsp code. You can also look at existing help pages.
+
+==the summary chapter file==
+
+These source files are located in `nsp2/man/src/`. Once you have wrote an help page (to place in a `nsp2/man/src/chapter_name` directory) you should add two entries (an hyperlink and an input command) inside its corresponding summary chapter file (generally `nsp2/man/src/chapter_name.tex`). See one of these files.
+
+==compilation==
+
+Different solutions:
+  * in `nsp2/man/html/generated`, enter `make manual`. All the manual is compiled (this is time consuming); latex errors are displayed and the system wait for an answer (as usual you can enter x to continue). Note that the index is not updated.
+  * in  `nsp2/man/html`, enter `make manual`. Use only this way when you are sure that the whole help compiles (otherwise latex errors freeze the compilation). The index is updated.
+  * Jpc says: on obtient le man d'un example particulier en tapant `make` dans `nsp2/man/html-one` ou `make
+  MANPAGE=model/model.tex` (par defaut on obtient le man de model). 
