@@ -258,14 +258,14 @@ Function related to the string matrix data type.
   to be done once the new graphics will be available ?
 
 
-=latex help related complements
+=latex help related explanations=
 
 The nsp help is build from latex pages. It is converted in html using 
 Eitan Gurary [http://www.cse.ohio-state.edu/~gurari/TeX4ht/mn.html ht4latex] code.
 
-==tricks==
+This section _needs certainly supplementary explanations_
 
-_needs supplementary explanations_
+==tricks==
 
 The file `nsp2/man/src/model/model.tex` gives several tricks. In particular there are several ways to introduce nsp code. Also you can also look at existing help page...
 
@@ -273,4 +273,10 @@ The file `nsp2/man/src/model/model.tex` gives several tricks. In particular ther
 
 these source files are located at `nsp2/man/src/`. Once you have wrote an help page you should add two entries inside its corresponding summary chapter file (an hyperlink and
 an input command). See one of these files.
- 
+
+==compilation==
+
+Different solutions:
+  * in `nsp2/man/html/generated`, enter `make manual`. All the manual is compiled (this is time consuming); latex errors are displayed and the system wait for an answer (as usual you can enter x to continue). Note that the index is not updated.
+  * in  `nsp2/man/html`, enter `make manual`. Use only this way when you are sure that the whoole help compiles (otherwise latex errors freeze the compilation). The index is updated.
+  * Jpc says: on obtient le man d'un example particulier en tapant `make` dans `nsp2/man/html-one` ou `make MANPAGE=model/model.tex` (par defaut on obtient le man de model). 
