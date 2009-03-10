@@ -239,6 +239,8 @@ Function related to the string matrix data type.
 
 ===Gui chapter===
 
+  Currently only old scilab gui functions are described may be we have to put here the gtk stuff
+ 
   # ~~x_choices~~ - interactive dialog using a small subset of Gtk widgets
   # ~~x_choose~~ - interactive choices
   # ~~x_dialog~~ - gtk dialog
