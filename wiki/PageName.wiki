@@ -170,38 +170,38 @@ This one don't yet exist. May be we can put it inside numerics ?
 
 don't yet exist.
 
-  # elementary
-  ## modulo, mod
-  ## floor, ceil, round, clean
+  * elementary
+  # modulo, mod
+  # floor, ceil, round, clean
 
-  # elementary transcendental
-  ## sqrt
-  ## exp, log, lop1p
-  ## sin, asin, sinpi, cos, acos, tan, atan
-  ## sinh, asinh, cosh, acosh, tanh, atanh
+  * elementary transcendental
+  # sqrt
+  # exp, log, lop1p
+  # sin, asin, sinpi, cos, acos, tan, atan
+  # sinh, asinh, cosh, acosh, tanh, atanh
 
-  # special math func
-  ## gamma, gammaln
-  ## erf, erfc
-  ## bessel
-  ## ~~legendre~~
-  ## ....
+  * special math func
+  # gamma, gammaln
+  # erf, erfc
+  # bessel
+  # ~~legendre~~
+  # ....
 
-  # special stat func (could be referenced by a statistic chapter ?)
-  ## ~~pdf~~ - probability density or mass functions
-  ## kcdf, kcdflim
-  ## ~~cdfbet~~ - beta cdf and invcdf function 
-  ## ~~cdfbin~~ - binomial cdf and invcdf function 
-  ## ~~cdfchi~~ - chi square cdf and invcdf function 
-  ## ~~cdfchn~~ - non central chi square cdf and invcdf function 
-  ## ~~cdff~~ - f cdf and invcdf function 
-  ## ~~cdffnc~~ - non central f cdf and invcdf function 
-  ## ~~cdfgam~~ - gamma cdf and invcdf function 
-  ## ~~cdfnbn~~ - negative binomial cdf and invcdf function 
-  ## ~~cdfnor~~ - normal cdf and invcdf function 
-  ## ~~cdfpoi~~ - poisson cdf and invcdf function 
-  ## ~~cdft~~ - student t cdf and invcdf function 
-  ## ~~cdftnc~~ - non central student t cdf and invcdf function
+  * special stat func (could be referenced by a statistic chapter ?)
+  # ~~pdf~~ - probability density or mass functions
+  # kcdf, kcdflim
+  # ~~cdfbet~~ - beta cdf and invcdf function 
+  # ~~cdfbin~~ - binomial cdf and invcdf function 
+  # ~~cdfchi~~ - chi square cdf and invcdf function 
+  # ~~cdfchn~~ - non central chi square cdf and invcdf function 
+  # ~~cdff~~ - f cdf and invcdf function 
+  # ~~cdffnc~~ - non central f cdf and invcdf function 
+  # ~~cdfgam~~ - gamma cdf and invcdf function 
+  # ~~cdfnbn~~ - negative binomial cdf and invcdf function 
+  # ~~cdfnor~~ - normal cdf and invcdf function 
+  # ~~cdfpoi~~ - poisson cdf and invcdf function 
+  # ~~cdft~~ - student t cdf and invcdf function 
+  # ~~cdftnc~~ - non central student t cdf and invcdf function
 
 ===Strings chapter===
 
