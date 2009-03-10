@@ -16,7 +16,7 @@ Remarks:
 
 ==organization squeleton==
 
-===data_types chapter===
+===data_types===
 
   # ~~Object~~ - Nsp general object
   # ~~Mat~~ - matrix of numbers 
@@ -127,7 +127,7 @@ Possibly this chapter could be split in the future...
   # ~~fsolve_lsq~~ - non linear least square solver 
   # ~~derivative~~ - approximation of first and second derivatives of a function
 
-===chapter signal=== 
+===signal processing === 
 
 This one don't yet exist. May be we can put it inside numerics ?
 
@@ -139,7 +139,7 @@ This one don't yet exist. May be we can put it inside numerics ?
   # fftshift, ifftshift
 
 
-===linear algebra chapter===
+===linear algebra===
 
   # the backslash operator
   # ~~qr~~ - QR factorization
@@ -206,7 +206,7 @@ don't yet exist.
   # ~~cdft~~ - student t cdf and invcdf function 
   # ~~cdftnc~~ - non central student t cdf and invcdf function
 
-===Strings chapter===
+===String manipulation===
 
 Function related to the string matrix data type.
 
@@ -240,7 +240,7 @@ Function related to the string matrix data type.
   # ~~tolower~~ - convert letter to lower case
   # ~~toupper~~ - convert letter to upper case
 
-===Gui chapter===
+===Gui===
 
   Currently only old scilab gui functions are described may be we have to put here the gtk stuff
  
@@ -253,7 +253,7 @@ Function related to the string matrix data type.
   # ~~x_message_modeless~~ - a message in a Gtk modeless window
   # ~~x_message~~ - a message in a Gtk window
 
-===Graphics chapter===
+===Graphics===
 
   to be done once the new graphics will be available ?
 
