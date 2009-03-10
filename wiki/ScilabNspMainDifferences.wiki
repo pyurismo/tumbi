@@ -1,3 +1,4 @@
+#summary scilab nsp main differences
 <wiki:toc max_depth="4" />
 
 ----
