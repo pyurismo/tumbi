@@ -277,5 +277,5 @@ These source files are located in `nsp2/man/src/`. Once you have wrote an help p
 
 Different solutions:
   * in `nsp2/man/html/generated`, enter `make manual`. All the manual is compiled (this is time consuming); latex errors are displayed and the system wait for an answer (as usual you can enter x to continue). Note that the index is not updated.
-  * in  `nsp2/man/html`, enter `make manual`. Use only this way when you are sure that the whoole help compiles (otherwise latex errors freeze the compilation). The index is updated.
+  * in  `nsp2/man/html`, enter `make manual`. Use only this way when you are sure that the whole help compiles (otherwise latex errors freeze the compilation). The index is updated.
   * Jpc says: on obtient le man d'un example particulier en tapant `make` dans `nsp2/man/html-one` ou `make MANPAGE=model/model.tex` (par defaut on obtient le man de model). 
