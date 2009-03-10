@@ -4,6 +4,7 @@
 
 =organization=
 
+==introduction==
 Here is a proposal for help organization (to be completed, don't hesitate !). Currently some chapters of this proposal (like "basic arrays functions") don't yet exist (and waiting for such an organization we have put many help pages in a "misc chapter").
 
 Remarks:
@@ -12,6 +13,8 @@ Remarks:
   * a page (which is a latex file) can contain the description of several functions (examples: min, max, minmax functions, sum and prod functions, complex, real, imag functions).
   * functions/methods/topics already documented are ~~strikeout~~ (but the corresponding help page could be completed and improved in many cases).
   * many functions already in nsp have not been yet referenced in this note (work in progress, don't hesitate to complete this note). 
+
+==organization squeleton==
 
 ===data_types chapter===
 
@@ -253,3 +256,21 @@ Function related to the string matrix data type.
 ===Graphics chapter===
 
   to be done once the new graphics will be available ?
+
+
+=latex help related complements
+
+The nsp help is build from latex pages. It is converted in html using 
+Eitan Gurary [http://www.cse.ohio-state.edu/~gurari/TeX4ht/mn.html ht4latex] code.
+
+==tricks==
+
+_needs supplementary explanations_
+
+The file `nsp2/man/src/model/model.tex` gives several tricks. In particular there are several ways to introduce nsp code. Also you can also look at existing help page...
+
+==the summary chapter file==
+
+these source files are located at `nsp2/man/src/`. Once you have wrote an help page you should add two entries inside its corresponding summary chapter file (an hyperlink and
+an input command). See one of these files.
+ 
