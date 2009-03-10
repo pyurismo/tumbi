@@ -1,39 +1,36 @@
-#summary Nsp help note
+#Nsp help note
+<wiki:toc max_depth="3" />
 
 ==organization==
 
-Here is a proposal for help organization (to be completed, don't hesitate). 
-Currently some chapters of this proposal (like "basic arrays functions") 
-don't yet exist (and waiting for such an organization we have put many 
-help pages in a "misc chapter").
+Here is a proposal for help organization (to be completed, don't hesitate !). Currently some chapters of this proposal (like "basic arrays functions") don't yet exist (and waiting for such an organization we have put many help pages in a "misc chapter").
 
-Note that a help page could be referenced by several chapters
-(for instance the umfpack page is referenced both by the data 
-type and the linear algebra chapters). In fact the "summary page"
-of each chapter should be written by hand and this lets an
+Remarks:
+* a help page could be referenced by several chapters (for instance the umfpack page is referenced both by the data type and the linear algebra chapters).
+* In fact the "summary page" of each chapter should be written by hand and this lets an
 additionnal freedom to organize the chapter presentation.
-Also a page (which is a latex file) can contain the description
-of several functions (examples: min, max, minmax functions,
-sum and prod functions, complex, real, imag functions).
+* a page (which is a latex file) can contain the description of several functions (examples: min, max, minmax functions, sum and prod functions, complex, real, imag functions).
+* functions/methods/topics already documented are ~~strikeout~~ (but the corresponding help page could be completed and improved in many cases).
+* many functions already in nsp have not been yet referenced in this note (work in progress). 
 
 ===data_types chapter===
 
-  #~~Object~~ - Nsp general object
-  #~~Mat~~ - matrix of numbers 
-  #~~Smat~~ - matrix of strings 
-  #~~Bmat~~ - boolean matrix 
-  #~~Pmat~~ - polynomial matrix 
-  #~~List~~ - list of nsp objects 
-  #~~Cells~~ - matrix of nsp objects 
-  #~~hash~~ - hash tables 
-  #~~MaxMat~~ - Max plus matrix 
-  #~~File~~ - file data type 
-  #~~Serial~~ - Container for nsp serialized object 
-  #~~SndFile~~ - sound file data type 
-  #~~gdate~~ - days representation 
-  #~~Umfpack~~ - datatype for LU factorization of sparse matrices 
-  #~~Cholmod~~ - datatype for Cholesky factorization of sparse matrices (to be continued)
-  #~~SpColMat~~ - to be done
+  # ~~Object~~ - Nsp general object
+  # ~~Mat~~ - matrix of numbers 
+  # ~~Smat~~ - matrix of strings 
+  # ~~Bmat~~ - boolean matrix 
+  # ~~Pmat~~ - polynomial matrix 
+  # ~~List~~ - list of nsp objects 
+  # ~~Cells~~ - matrix of nsp objects 
+  # ~~hash~~ - hash tables 
+  # ~~MaxMat~~ - Max plus matrix 
+  # ~~File~~ - file data type 
+  # ~~Serial~~ - Container for nsp serialized object 
+  # ~~SndFile~~ - sound file data type 
+  # ~~gdate~~ - days representation 
+  # ~~Umfpack~~ - datatype for LU factorization of sparse matrices 
+  # ~~Cholmod~~ - datatype for Cholesky factorization of sparse matrices
+  # SpColMat - sparse matrix
 
 ===basic arrays functions===
 
@@ -48,9 +45,9 @@ sum and prod functions, complex, real, imag functions).
    # perm_elem
    # concatr concatd
    # matrix, redim et reshape
-   # repmat
+   # repmat - replicate a matrix
    # ~~perms~~ - generate all permutations of a vector
-   # ....
+   # isvector, isscalar
 
 ===numbers (properties, display,...)===
 
@@ -69,6 +66,7 @@ sum and prod functions, complex, real, imag functions).
    # ~~primes~~ - computes prime numbers
    # ~~isprime~~ - primality test
    # ~~factor~~ - prime factorization of an integer
+   # clean, floor, ceil, round
 
 ===basic functions or methods for numerical matrices===
 
@@ -92,13 +90,14 @@ This chapter don't yet exist.
   # ~~scale_cols, scale_rows~~
   # add, blas_ger, blas_apxy
   # ~~dot~~ - scalar product of 2 vectors (or matrices) 
-  # ~~cross~~ - cross product of 2 vectors 
+  # ~~cross~~ - cross product of 2 vectors
 
 ===searching and sorting===
 
 Find, search, sort, set functions...
 
-  # ~~find~~ - returns indices of the true or non zeros components of a vector or matrix 
+  # ~~find~~ - returns indices of the true or non zeros components of a vector or matrix
+  # mfind -  
   # ~~has~~ - (method) test if a vector or list has a given element
   # ~~bsearch~~ - binary search 
   # ~~sort~~ - general sort function 
@@ -107,6 +106,7 @@ Find, search, sort, set functions...
   # ~~setdiff~~ - compute the set difference between two vectors or two lists
   # ~~intersect~~ - compute the set intersection of two vectors or two lists
   # ~~setxor~~ - computes elements exclusive to two vectors or two lists
+  # issorted - sort test
 
 ===numerics (ode, f(x)=0, integrals, interpolation, optimization,...)===
 
@@ -170,20 +170,26 @@ This one don't yet exist. May be we can put it inside numerics ?
 
 don't yet exist.
 
+  # elementary
+  ## modulo, mod
+  ## floor, ceil, round, clean
+
   # elementary transcendental
-  ## exp, log
-  ## sin, cos, tan, atan
-  ## sinh, cosh, tanh, atanh
-  ## ....
+  ## sqrt
+  ## exp, log, lop1p
+  ## sin, asin, sinpi, cos, acos, tan, atan
+  ## sinh, asinh, cosh, acosh, tanh, atanh
 
   # special math func
-  ## gamma
+  ## gamma, gammaln
+  ## erf, erfc
   ## bessel
   ## ~~legendre~~
   ## ....
 
   # special stat func (could be referenced by a statistic chapter ?)
-  ## ~~pdf~~ - probability density or mass functions 
+  ## ~~pdf~~ - probability density or mass functions
+  ## kcdf, kcdflim
   ## ~~cdfbet~~ - beta cdf and invcdf function 
   ## ~~cdfbin~~ - binomial cdf and invcdf function 
   ## ~~cdfchi~~ - chi square cdf and invcdf function 
