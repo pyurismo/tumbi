@@ -267,12 +267,11 @@ This section _needs certainly supplementary explanations_
 
 ==tricks==
 
-The file `nsp2/man/src/model/model.tex` gives several tricks. In particular there are several ways to introduce nsp code. Also you can also look at existing help page...
+The file `nsp2/man/src/model/model.tex` gives several tricks. In particular there are different ways to introduce nsp code. You can also look at existing help pages.
 
 ==the summary chapter file==
 
-these source files are located at `nsp2/man/src/`. Once you have wrote an help page you should add two entries inside its corresponding summary chapter file (an hyperlink and
-an input command). See one of these files.
+These source files are located in `nsp2/man/src/`. Once you have wrote an help page (to place in a `nsp2/man/src/chapter_name` directory) you should add two entries (an hyperlink and an input command) inside its corresponding summary chapter file (generally `nsp2/man/src/chapter_name.tex`). See one of these files.
 
 ==compilation==
 
