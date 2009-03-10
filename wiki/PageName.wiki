@@ -1,4 +1,4 @@
-#summary Nsp help note
+#summary Nsp help notes
 
 <wiki:toc max_depth="3" />
 
