@@ -126,6 +126,7 @@ Possibly this chapter could be split in the future...
   # ~~fsolve~~ - non linear equations solver 
   # ~~fsolve_lsq~~ - non linear least square solver 
   # ~~derivative~~ - approximation of first and second derivatives of a function
+  # optim
 
 ===signal processing === 
 
