@@ -100,7 +100,7 @@ This chapter don't yet exist.
 Find, search, sort, set functions...
 
   # ~~find~~ - returns indices of the true or non zeros components of a vector or matrix
-  # mfind -  
+  # ~~mfind~~ -  
   # ~~has~~ - (method) test if a vector or list has a given element
   # ~~bsearch~~ - binary search 
   # ~~sort~~ - general sort function 
