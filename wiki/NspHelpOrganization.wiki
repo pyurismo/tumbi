@@ -283,7 +283,7 @@ This section _needs certainly supplementary explanations_
 
 ==tricks==
 
-The file `nsp2/man/src/model/model.tex` gives several tricks. In particular there are different ways to introduce nsp code but we recommend to use the `Verbatim` environment recently provided by Jpc (which is much much simpler than using \begin{program} \HCode, etc...):
+The file `nsp2/man/src/model/model.tex` gives several tricks. In particular there are different ways to introduce nsp code but we recommend to use the `Verbatim` (note the upper case V) which is much much simpler than using \begin{program} \HCode, etc...):
 
 {{{
 \begin{Verbatim}
@@ -292,7 +292,7 @@ is in its own text file
 \end{Verbatim}
 }}}
 
-Caution: Note the upper case V. 
+Caution: currently there are some problems of copy-paste inside the nsp command window with webkit-gtk as help browser (due to some coding of the blank char).
 
 ==the summary chapter file==
 
