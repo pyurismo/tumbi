@@ -78,7 +78,7 @@ This chapter don't yet exist.
   # real and complex numbers, floating point number (link to floating point and integer numbers properties)
   # empty matrices rules
   # ~~format~~ (display of matrices, which is also referenced by the previous chapter)
-  # linspace, logspace
+  # ~~linspace~~, logspace
   # : operator
   # ~~ndgrid~~
   # usual operators +, -, *, /, .*, ./, ^, .^
