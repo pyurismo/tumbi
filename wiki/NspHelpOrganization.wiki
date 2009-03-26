@@ -242,21 +242,6 @@ Function related to the string matrix data type.
   # ~~toupper~~ - convert letter to upper case
 
 ===Gui===
-%% \begin{program}\HCode{function y=f(x)\Hnewline
-%% y = zeros(size(x));\Hnewline
-%% [ind1, ind2, ind3, indNan] = mfind(x,"<=",0,"<=",\%pi/2,"<=",\%inf);\Hnewline
-%% y(ind1) = 1;\Hnewline
-%% y(ind2) = cos(x(ind2));\Hnewline
-%% y(ind3) = x(ind3) - \%pi/2;\Hnewline
-%% y(indNan) = \%nan\Hnewline
-%% endfunction\Hnewline
-%% x = linspace(-1,\%pi,400)';\Hnewline
-%% y = f(x);\Hnewline
-%% plot2d(x,y);\Hnewline
-%% f(\%nan)\Hnewline
-%% f(\%inf)\Hnewline
-%% f(-\%inf)}
-%% \end{program}
 
   Currently only old scilab gui functions are described may be we have to put here the gtk stuff
  
