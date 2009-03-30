@@ -5,7 +5,7 @@
 =organization=
 
 ==introduction==
-Here is a proposal for help organization (to be completed, don't hesitate !). Currently some chapters of this proposal (like "basic arrays functions") don't yet exist (and waiting for such an organization we have put many help pages in a "misc chapter").
+Here is a proposal for help organization (to be completed, don't hesitate !). Currently some chapters of this proposal don't yet exist (and waiting for such an organization we have put many help pages in a "misc chapter").
 
 Remarks:
   * a help page could be referenced by several chapters (for instance the umfpack page is referenced both by the data type and the linear algebra chapters).
@@ -37,18 +37,16 @@ Remarks:
 
 ===basic arrays functions===
 
-  This chapter don't yet exist. It could present operations, functions and
-  methods which can be applied on or are useful for all kind of array oriented data
-  type (and sometime on other ones)
+  This chapter present operations, functions and methods which can be applied on or are useful for all kind of array oriented data type (and sometime on other ones)
 
    # indexing arrays (and insertion, extraction, deletion)
    # sub2ind
    # ndind2ind
-   # size, ~~length~~, numel
+   # ~~size~~, ~~length~~, ~~numel~~
    # perm_elem
    # concatr concatd
    # matrix, redim et reshape
-   # repmat - replicate a matrix
+   # ~~repmat~~ - replicate a matrix
    # ~~perms~~ - generate all permutations of a vector
    # isvector, isscalar
 
