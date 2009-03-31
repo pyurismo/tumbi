@@ -264,7 +264,11 @@ Something which seems also possible would be to use:
 {{{
 if type(Obj) == %types.Mat then
 }}}
-but operator == is not defined for the type _type_ . In place you could use the `is` function.
+but the operator == is not defined for the type _type_ so you have to use the equal method:
+{{{
+if type(Obj).equal[%types.Mat]
+}}}
+or the `is` function.
 
 == testing argument type using is ==
 Testing if `Obj` is a matrix of real/complex number could be done with:
