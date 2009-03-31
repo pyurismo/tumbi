@@ -49,6 +49,7 @@ Remarks:
    # ~~repmat~~ - replicate a matrix
    # ~~perms~~ - generate all permutations of a vector
    # ~~isvector~~, ~~isscalar~~, ~~isempty~~
+   # is, type - query object type -
 
 ===numbers (properties, display,...)===
 
