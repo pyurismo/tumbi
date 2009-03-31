@@ -48,7 +48,7 @@ Remarks:
    # ~~matrix~~, ~~redim~~ et reshape
    # ~~repmat~~ - replicate a matrix
    # ~~perms~~ - generate all permutations of a vector
-   # isvector, isscalar
+   # ~~isvector~~, ~~isscalar~~, ~~isempty~~
 
 ===numbers (properties, display,...)===
 
