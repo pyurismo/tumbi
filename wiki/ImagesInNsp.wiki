@@ -1,4 +1,6 @@
-# some nsp features related to images
+#summary some nsp features related to images
+
+<wiki:toc max_depth="3" />
 
 == load an image in nsp from a file ==
 
