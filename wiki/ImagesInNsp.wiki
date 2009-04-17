@@ -101,11 +101,11 @@ im.save["toto.png","png"]
 In nsp near all gtk widgets are interfaced so it is possible to display images in various ways. You could have a look at the gtk2 nsp demonstration scripts (`nsp2/demos/gtk2`). There is no quick and easy image visualization function, so here is a very basic one you can complete/adapt to your needs.
 
 {{{
-function very_basic_image_draw(im, maxsize=1000, title="")
+function basic_image_draw(im, maxsize=1000, title="")
 
    // im: image (pixbuf) to draw
    // maxsize: limit the max size of the image to maxsize pixels
-   // title: a scalar string window title 
+   // title: a scalar string (window title) 
 
    if ( ~is(im,%types.GdkPixbuf) ) then
       error("first argument should be an image (a GdkPixbuf object)")
@@ -132,4 +132,11 @@ function very_basic_image_draw(im, maxsize=1000, title="")
    window.add[frame]
    window.show_all[]
 endfunction
+}}}
+
+Some usages:
+{{{
+   basic_image_draw(im)
+   basic_image_draw(im, title="a title")
+   basic_image_draw(im, title="a title", maxsize=200)
 }}}
