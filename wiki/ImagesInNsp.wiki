@@ -75,7 +75,7 @@ matrix `C{4}` is present. Currently these matrices are Mat object that is matric
 
 == create a nsp image from R, G, B and alpha matrices ==
 
- The `cellstopixbuf` function lets to create an image from 3 matrices (or 4 if the alpha channel is provided) :
+The `cellstopixbuf` function lets to create an image from 3 matrices (or 4 if the alpha channel is provided) :
 {{{
  im = cellstopixbuf(C)
 }}}
