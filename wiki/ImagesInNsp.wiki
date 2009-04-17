@@ -11,7 +11,7 @@ Use the `gdk_pixbuf_new_from_file`:
 
 usual image formats (png, jpg, gif, bmp,...) are supported. 
 
-== the nsp image type in nsp ==
+== the nsp image type ==
 
 The loaded image im is a nsp object of type GdkPixbuf :
 
