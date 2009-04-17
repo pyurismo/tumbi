@@ -112,7 +112,7 @@ function very_basic_image_draw(im, maxsize=1000, title="")
    end
    window = gtkwindow_new()
    window.set_title[title]
-   window.set_border_width[4]
+   window.set_border_width[2]
    frame = gtkframe_new();
    // limit max size of the image to maxsize
    w = im.get_width[]
