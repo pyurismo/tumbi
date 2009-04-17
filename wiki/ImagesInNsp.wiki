@@ -47,19 +47,19 @@ bool = im.get_has_alpha[]
 L = im.get_bits_per_sample[]
 }}}
 
- Another one which lets to create a new image by scaling:
+Another one which lets to create a new image by scaling:
 
 {{{
-im_new = im.scale_simple[W/2,H/2,"GDK_INTERP_BILINEAR"]
+   im_new = im.scale_simple[W/2,H/2,"GDK_INTERP_BILINEAR"]
 }}}
 
 You can have an overview of all available methods in nsp with:
 {{{
-im.get_method_names[]  
+   im.get_method_names[]  
 }}}
 or better with:
 {{{
- im.get_method_names[0] 
+   im.get_method_names[0] 
 }}}
 to get methods specific for these objects (and not methods herited from father object classes).
  
@@ -67,12 +67,11 @@ to get methods specific for these objects (and not methods herited from father o
 
 You can get R, G, B (and alpha channel if any) using:
 {{{
- C = pixbuftocells(im)
+   C = pixbuftocells(im)
 }}}
-
-`C{1},C{2},C{3}` are R,G,B matrices with intensities values (integers between [0,255])
+`C{1},C{2},C{3}` are R,G,B matrices with intensities values (integers between `[0,255]`)
 If the alpha channel is present (that is if `im.get_has_alpha[]` return TRUE) a fourth
-matrix `C{4}` is present. Currently these matrices are Mat object that is made of double precision numbers.
+matrix `C{4}` is present. Currently these matrices are Mat object that is matrices made of double precision numbers.
 
 == create a nsp image from R, G, B and alpha matrices ==
 
@@ -80,7 +79,7 @@ matrix `C{4}` is present. Currently these matrices are Mat object that is made o
 {{{
  im = cellstopixbuf(C)
 }}}
-  where `C` is an arrays of (3 or 4) cells which are matrices (all of same size and all with integer values between 0 and 255). These array of cells could be build with:
+where `C` is an arrays of (3 or 4) cells which are matrices (all of same size and all with integer values between 0 and 255). These array of cells could be build with:
 {{{
   C = { R, G, B };   // or C = { R, G, B, A };
 }}}
