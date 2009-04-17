@@ -4,7 +4,7 @@
 
 == load an image in nsp from a file ==
 
-Use the `gdk_pixbuf_new_from_file`:
+Use the `gdk_pixbuf_new_from_file` function:
 {{{
   im = gdk_pixbuf_new_from_file(image_file_name);
 }}}
