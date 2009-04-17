@@ -79,7 +79,7 @@ The `cellstopixbuf` function lets to create an image from 3 matrices (or 4 if th
 {{{
  im = cellstopixbuf(C)
 }}}
-where `C` is an arrays of (3 or 4) cells which are matrices (all of same size and all with integer values between 0 and 255). These array of cells could be build with:
+where `C` is an array of (3 or 4) cells which are matrices (all of same size and all with integer values between 0 and 255). These array of cells could be build with:
 {{{
   C = { R, G, B };   // or C = { R, G, B, A };
 }}}
@@ -98,7 +98,7 @@ im.save["toto.png","png"]
 
 == display a nsp image ==
 
-In nsp near all gtk widget are interfaced so it is possible to display images in various ways. You could have a look at the gtk2 nsp demonstration scripts (`nsp2/demos/gtk2`). There is no quick and easy image visualization function, so here is a very basic one you can complete/adapt to your needs.
+In nsp near all gtk widgets are interfaced so it is possible to display images in various ways. You could have a look at the gtk2 nsp demonstration scripts (`nsp2/demos/gtk2`). There is no quick and easy image visualization function, so here is a very basic one you can complete/adapt to your needs.
 
 {{{
 function very_basic_image_draw(im, maxsize=1000, title="")
