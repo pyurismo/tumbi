@@ -32,9 +32,9 @@ or with the `is` function:
   is(im,%types.GdkPixbuf)
 }}}
 
-== nsp methods related to the image type ==
+== methods related to the nsp images ==
 
- There are some methods which apply on such object, alas not already documented (this page is a first try) but are nsp equivalent of methods defined in gdk for such objects. You can have a look at the gdk pixbuffer documentation:
+ There are some methods which apply on such objects, alas not already documented (this page is a first try) but are nsp equivalent of methods defined in gdk for such objects. You can have a look at the gdk pixbuffer documentation:
 
       [http://library.gnome.org/devel/gdk-pixbuf/stable]
 
