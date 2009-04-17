@@ -13,21 +13,21 @@ usual image formats (png, jpg, gif, bmp,...) are supported.
 
 == the nsp image type ==
 
-The loaded image im is a nsp object of type GdkPixbuf :
-
+The loaded image im is a nsp object of type `GdkPixbuf`:
+{{{
 type(im,"string")
 ans	=		s (1x1)
 
   GdkPixbuf
+}}}
+In the following we also call such object _nsp images_ (but
+`GdkPixBuf` is the real name). 
 
-In the following we also call such object "nsp images" (but
-GdkPixBuf is the real name). 
-
-You could test if `im` is a "nsp image" using:
+You could test if `im` is a _nsp image_ using:
 {{{
    type(im,"string") == "GdkPixbuf"
 }}}
- or with the `is` function:
+or with the `is` function:
 {{{
   is(im,%types.GdkPixbuf)
 }}}
