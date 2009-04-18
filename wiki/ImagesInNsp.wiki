@@ -86,11 +86,11 @@ where `C` is an array of (3 or 4) cells which are matrices (all of same size and
  
 == create a nsp image from a graphic window ==
 
-It is possible to save the current graphic window using:
+It is possible to save the current graphic window as a _nsp image_ using:
 {{{
   im = xget_pixbuf()
 }}}
-If you have several graphic windows open, you can select the active one with:
+If you have several graphic windows opened, you can select the active one with:
 {{{
   xset("window",win_number)
 }}}
