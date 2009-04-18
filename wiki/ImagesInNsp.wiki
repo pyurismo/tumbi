@@ -84,6 +84,17 @@ where `C` is an array of (3 or 4) cells which are matrices (all of same size and
   C = { R, G, B };   // or C = { R, G, B, A };
 }}}
  
+== create a nsp image from a graphic window ==
+
+It is possible to save the current graphic window using:
+{{{
+  im = xget_pixbuf()
+}}}
+If you have several graphic windows open, you can select the active one with:
+{{{
+  xset("window",win_number)
+}}}
+
 == save a nsp image to a file ==
 
 Use the `save` method:
