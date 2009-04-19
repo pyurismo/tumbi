@@ -38,7 +38,7 @@ There are some methods which apply on such objects, alas not already documented 
 
       [http://library.gnome.org/devel/gdk-pixbuf/stable]
 
- Some (basic) examples:
+Some (basic) examples:
 
 {{{
 W = im.get_width[]
