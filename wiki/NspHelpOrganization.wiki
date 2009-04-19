@@ -34,6 +34,7 @@ Remarks:
   # ~~Umfpack~~ - datatype for LU factorization of sparse matrices 
   # ~~Cholmod~~ - datatype for Cholesky factorization of sparse matrices
   # SpColMat - sparse matrix
+  # GdkPixbuf - nsp image type (currently see the ImageInNsp wikipage)
 
 ===basic arrays functions===
 
