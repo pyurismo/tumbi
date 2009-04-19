@@ -43,7 +43,7 @@ Remarks:
    # sub2ind
    # ndind2ind
    # ~~size~~, ~~length~~, ~~numel~~
-   # perm_elem
+   # ~~perm_elem~~
    # concatr concatd
    # ~~matrix~~, ~~redim~~ et reshape
    # ~~repmat~~ - replicate a matrix
@@ -108,7 +108,7 @@ Find, search, sort, set functions...
   # ~~setdiff~~ - compute the set difference between two vectors or two lists
   # ~~intersect~~ - compute the set intersection of two vectors or two lists
   # ~~setxor~~ - computes elements exclusive to two vectors or two lists
-  # issorted - sort test
+  # ~~issorted~~ - sort test
 
 ===numerics (ode, f(x)=0, integrals, interpolation, optimization,...)===
 
