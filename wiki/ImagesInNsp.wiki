@@ -31,7 +31,7 @@ or with the `is` function:
 {{{
   is(im,%types.GdkPixbuf)
 }}}
-(see ScilabNspMainDifferences#Testing_argument_type).
+(see [http://code.google.com/p/tumbi/wiki/ScilabNspMainDifferences#Testing_argument_type]).
 
 == methods related to nsp images ==
 
