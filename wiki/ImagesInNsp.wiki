@@ -6,7 +6,7 @@
 
 Use the `gdk_pixbuf_new_from_file` function:
 {{{
-  im = gdk_pixbuf_new_from_file(image_file_name);
+im = gdk_pixbuf_new_from_file(image_file_name);
 }}}
 
 usual image formats (png, jpg, gif, bmp,...) are supported. 
