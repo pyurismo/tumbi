@@ -25,11 +25,11 @@ In the following we also call such object _nsp images_ (but
 
 You could test if `im` is a _nsp image_ using:
 {{{
-   type(im,"string") == "GdkPixbuf"
+type(im,"string") == "GdkPixbuf"
 }}}
 or with the `is` function:
 {{{
-  is(im,%types.GdkPixbuf)
+is(im,%types.GdkPixbuf)
 }}}
 (see [http://code.google.com/p/tumbi/wiki/ScilabNspMainDifferences#Testing_argument_type]).
 
@@ -51,16 +51,16 @@ L = im.get_bits_per_sample[]
 Another one which lets to create a new image by scaling:
 
 {{{
-   im_new = im.scale_simple[W/2,H/2,"GDK_INTERP_BILINEAR"]
+im_new = im.scale_simple[W/2,H/2,"GDK_INTERP_BILINEAR"]
 }}}
 
 You can have an overview of all available methods in nsp with:
 {{{
-   im.get_method_names[]  
+im.get_method_names[]  
 }}}
 or better with:
 {{{
-   im.get_method_names[0] 
+im.get_method_names[0] 
 }}}
 to get methods specific for these objects (and not methods herited from father object classes).
  
@@ -68,7 +68,7 @@ to get methods specific for these objects (and not methods herited from father o
 
 You can get R, G, B (and alpha channel if any) using:
 {{{
-   C = pixbuftocells(im)
+C = pixbuftocells(im)
 }}}
 `C{1},C{2},C{3}` are R,G,B matrices with intensities values (integers between `[0,255]`)
 If the alpha channel is present (that is if `im.get_has_alpha[]` return TRUE) a fourth
@@ -78,22 +78,22 @@ matrix `C{4}` is present. Currently these matrices are Mat object that is matric
 
 The `cellstopixbuf` function lets to create an image from 3 matrices (or 4 if the alpha channel is provided) :
 {{{
- im = cellstopixbuf(C)
+im = cellstopixbuf(C)
 }}}
 where `C` is an array of (3 or 4) cells which are matrices (all of same size and all with integer values between 0 and 255). These array of cells could be build with:
 {{{
-  C = { R, G, B };   // or C = { R, G, B, A };
+C = { R, G, B };   // or C = { R, G, B, A };
 }}}
  
 == create a nsp image from a graphic window ==
 
 It is possible to save the current graphic window as a _nsp image_ using:
 {{{
-  im = xget_pixbuf()
+im = xget_pixbuf()
 }}}
 If you have several graphic windows opened, you can select the active one with:
 {{{
-  xset("window",win_number)
+xset("window",win_number)
 }}}
 
 == save a nsp image to a file ==
@@ -148,7 +148,7 @@ endfunction
 
 Some usages:
 {{{
-   basic_image_draw(im)
-   basic_image_draw(im, title="a title")
-   basic_image_draw(im, title="a title", maxsize=200)
+basic_image_draw(im)
+basic_image_draw(im, title="a title")
+basic_image_draw(im, title="a title", maxsize=200)
 }}}
