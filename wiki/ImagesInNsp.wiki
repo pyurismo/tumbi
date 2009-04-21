@@ -127,7 +127,7 @@ function show_image(file)
   window = gtkwindow_new()
   vbox = gtkvbox_new(homogeneous=%f,spacing=8);
   window.add[vbox]
-  image= gtkimage_new('file',gtk_logo);
+  image= gtkimage_new('file',file);
   vbox.pack_start[image,expand=%f,fill=%f,padding=0]
   window.show_all[]
 endfunction
