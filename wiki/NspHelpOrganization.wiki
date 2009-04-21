@@ -73,7 +73,7 @@ Remarks:
 
 ===basic functions or methods for numerical matrices===
 
-This chapter don't yet exist. 
+This chapter don't yet exist (already existing help pages are in the misc chapter). 
 
   # real and complex numbers, floating point number (link to floating point and integer numbers properties)
   # empty matrices rules
@@ -172,7 +172,7 @@ This one don't yet exist. May be we can put it inside numerics ?
 
 ===elementary and special math func===
 
-don't yet exist.
+don't yet exist.(already existing help pages are in the misc chapter). 
 
   * elementary
   # modulo, mod
