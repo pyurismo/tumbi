@@ -4,12 +4,21 @@
 
 == load an image in nsp from a file ==
 
-Use the `gdk_pixbuf_new_from_file` function:
+You can use the `gdk_pixbuf_new_from_file` function:
 {{{
 im = gdk_pixbuf_new_from_file(image_file_name);
 }}}
+to obtain in nsp an object containing a gdk GdkPixbuf object. As explained in gtk documentation the GdkPixbuf structure contains information that describes an image in memory. 
 
-usual image formats (png, jpg, gif, bmp,...) are supported. 
+You can also use 
+{{{
+gtkimage_new('file',gtk_logo);
+}}}
+if you want a widget displaying an image.
+
+The image formats supported (png, jpg, gif, bmp,...) depend on your gtk version 
+and os. 
+
 
 == the nsp image type ==
 
@@ -110,7 +119,24 @@ im.save["toto.png","png"]
 
 == display a nsp image ==
 
-In nsp near all gtk widgets are interfaced so it is possible to display images in various ways. You could have a look at the gtk2 nsp demonstration scripts (`nsp2/demos/gtk2`). Nevertheless there is no _quick and easy image visualization function_ yet, so here is a very basic one you can complete/adapt to your needs.
+In nsp near all gtk widgets are interfaced so it is possible to display images in various ways. You could have a look at the gtk2 nsp demonstration scripts (`nsp2/demos/gtk2`). 
+For example this very short example can be used:
+
+{{{
+function show_image(file) 
+  window = gtkwindow_new()
+  vbox = gtkvbox_new(homogeneous=%f,spacing=8);
+  window.add[vbox]
+  image= gtkimage_new('file',gtk_logo);
+  vbox.pack_start[image,expand=%f,fill=%f,padding=0]
+  window.show_all[]
+endfunction
+
+gtk_logo = getenv('NSP')+'/demos/gtk2/libplus/gtk-logo-rgb.gif";
+show_image(gtk_logo);
+}}}
+
+If image is too large you can insert scrollbars or resize the image. resizing is described now, 
 
 {{{
 function basic_image_draw(im, maxsize=1000, title="")
