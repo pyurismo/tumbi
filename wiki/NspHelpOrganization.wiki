@@ -40,7 +40,7 @@ Remarks:
 
   This chapter present operations, functions and methods which can be applied on or are useful for all kind of array oriented data type (and sometime on other ones)
 
-   # indexing arrays (and insertion, extraction, deletion)
+   # ~~indexing arrays (and assignment, extraction, deletion)~~
    # sub2ind
    # ndind2ind
    # ~~size~~, ~~length~~, ~~numel~~
