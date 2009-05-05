@@ -45,7 +45,7 @@ Remarks:
    # ndind2ind
    # ~~size~~, ~~length~~, ~~numel~~
    # ~~perm_elem~~
-   # concatr concatd
+   # ~~concatenation of mtrices, concatr concatd~~
    # ~~matrix~~, ~~redim~~ et reshape
    # ~~repmat~~ - replicate a matrix
    # ~~perms~~ - generate all permutations of a vector
