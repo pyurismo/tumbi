@@ -147,10 +147,11 @@ This one don't yet exist. May be we can put it inside numerics ?
   # ~~rank~~
   # svd
   # ~~lu~~ - LU factorization (for full matrix)
+  # ~~umfpack_create,umfpack_solve~~ - LU factorization (for sparse matrix)   
   # det
   # inv 
   # ~~chol~~ - Cholesky factorization (for full matrix) 
-  # ~~umfpack_create,umfpack_solve~~ - LU factorization (for sparse matrix) 
+  # ~~Cholmod, cholmod_create~~ - Cholesky factorization (for sparse matrix)
   # ~~spec~~ - matrix spectrum, eigenvalues and eigenvectors
   # gspec
   # ~~solve~~ - solve a linear system
