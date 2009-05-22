@@ -259,6 +259,12 @@ Function related to the string matrix data type.
 
   to be done once the new graphics will be available ?
 
+===Play and record sound samples===
+
+  # ~~play~~ - play audio samples using portaudio
+  # ~~playfile~~ - play a sound file using libsndile and portaudio
+  # ~~player-create~~ - creates a player object
+  # ~~record~~ - record sound samples with portaudio 
 
 =latex help related explanations=
 
