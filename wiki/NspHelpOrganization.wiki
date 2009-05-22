@@ -284,7 +284,6 @@ is in its own text file
 \end{Verbatim}
 }}}
 
-Caution: currently there are some problems of copy-paste inside the nsp command window with webkit-gtk as help browser (due to some coding of the blank char).
 
 ==the summary chapter file==
 
