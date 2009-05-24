@@ -130,14 +130,12 @@ Possibly this chapter could be split in the future...
 
 ===signal processing === 
 
-This one don't yet exist. May be we can put it inside numerics ?
-
-  # fft, ifft
+  # ~~fft, ifft~~
   # fft2, ifft2
   # conv
   # conv2
   # rot90, fliplr, flipud
-  # fftshift, ifftshift
+  # ~~fftshift, ifftshift~~
 
 
 ===linear algebra===
