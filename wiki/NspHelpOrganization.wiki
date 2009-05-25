@@ -15,7 +15,7 @@ Remarks:
   * functions/methods/topics already documented are ~~strikeout~~ (but the corresponding help page could be completed and improved in many cases).
   * many functions already in nsp have not been yet referenced in this note (work in progress, don't hesitate to complete this note). 
   * [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manual.html A snapshot of the current help pages]. 
-  * Don't hesitate to post comments here about the manual.
+  * Don't hesitate to post comments here (at the end of this wiki page) about the manual.
 
 ==organization squeleton==
 
