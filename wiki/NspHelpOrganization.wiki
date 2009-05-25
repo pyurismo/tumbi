@@ -7,12 +7,15 @@
 ==introduction==
 Here is a proposal for help organization (to be completed, don't hesitate !). Currently some chapters of this proposal don't yet exist (and waiting for such an organization we have put many help pages in a "misc chapter").
 
+
 Remarks:
   * a help page could be referenced by several chapters (for instance the umfpack page is referenced both by the data type and the linear algebra chapters).
   * In fact the "summary page" of each chapter should be written by hand and this lets an additionnal freedom to organize the chapter presentation.
   * a page (which is a latex file) can contain the description of several functions (examples: min, max, minmax functions, sum and prod functions, complex, real, imag functions).
   * functions/methods/topics already documented are ~~strikeout~~ (but the corresponding help page could be completed and improved in many cases).
   * many functions already in nsp have not been yet referenced in this note (work in progress, don't hesitate to complete this note). 
+  * [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manual.html A snapshot of the current help pages]. 
+  * Don't hesitate to post comments here about the manual.
 
 ==organization squeleton==
 
@@ -131,11 +134,11 @@ Possibly this chapter could be split in the future...
 ===signal processing === 
 
   # ~~fft, ifft~~
+  # ~~fftshift, ifftshift~~
   # fft2, ifft2
   # conv
   # conv2
   # rot90, fliplr, flipud
-  # ~~fftshift, ifftshift~~
 
 
 ===linear algebra===
