@@ -55,6 +55,17 @@ Remarks:
    # ~~isvector~~, ~~isscalar~~, ~~isempty~~
    # is, type - query object type -
 
+===programming===
+
+  This chapter don't yet exist. It should expose the main nsp language structures...
+
+   # function, endfunction - keywords delimiting a function definition 
+   # is, type - query object type
+   # for and while loops, break - loop constructs
+   # if, select - tests
+   # try catch 
+   # ....
+
 ===numbers (properties, display,...)===
 
    # ~~format~~ - number printing and display format
