@@ -356,7 +356,7 @@ svd (which is defined in nsp but not currently documented) returns always the si
 
 (thanks to M. Fuentes). In scilab `deff` lets to define a function from strings. 
 It doesn't exist in nsp but you can replace `deff` with `execstr` (which is available
-both nsp and scilab). So in place of:
+both in nsp and scilab). So in place of:
 {{{
     deff("y=car(x)","y=x.^2")
 }}}
