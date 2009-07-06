@@ -136,6 +136,7 @@ Possibly this chapter could be split in the future...
   # ~~interp2d~~ - eval a bicubic interpolation spline or sub-spline 
   # ~~intg~~ - one dimensional integration over a finite or infinite interval 
   # ~~int2d~~ - two dimensional integration over a rectangle or a set of triangles 
+  # ~~int3d~~ - three dimensional integration over a parallelepiped or a set of tetrahedra 
   # ~~ode~~ - ordinary differential equations solver 
   # ~~fsolve~~ - non linear equations solver 
   # ~~fsolve_lsq~~ - non linear least square solver 
