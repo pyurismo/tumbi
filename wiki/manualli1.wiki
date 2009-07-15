@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>print</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,3,section+,next,notoc*,html --> 
+<meta name="src" content="manual.tex" /> 
+<meta name="date" content="2009-04-14 15:07:00" /> 
+<link rel="stylesheet" type="text/css" href="manual.css" /> 
+</head><body 
+>
+   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+href="manualch1.html" >prev</a>] [<a 
+href="manualch1.html#tailmanualch1.html" >prev-tail</a>] [<a 
+href="#tailmanualli1.html">tail</a>] [<a 
+href="manualch1.html#manualli1.html" >up</a>] </p></div>
+   <h3 class="likesectionHead"><a 
+ id="x3-20001"></a>print</h3>
+<!--l. 5--><p class="noindent" ><div class="manref"></p>
+<div class="flushleft" 
+>
+<!--l. 5--><p class="noindent" >
+ <a 
+ id="print"></a> <span 
+class="cmtt-10x-x-109">print </span>&#x2013;                                            print variable value in the current output stream<br />
+<a 
+ id="fprint"></a> <span 
+class="cmtt-10x-x-109">fprint </span>&#x2013;                                                             print variable value in a file stream<br />
+<a 
+ id="sprint"></a> <span 
+class="cmtt-10x-x-109">sprint </span>&#x2013;                                                          print variable value in a string matrix</p></div>
+<!--l. 9--><p class="noindent" ></div>
+</p>
+<!--l. 12--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x3-30001"></a><span 
+class="cmbx-10x-x-109">Calling sequence</span></span>
+                                                                                    
+
+                                                                                    
+</p>
+   <div class="verbatim">
+&#32;&#32;&#32;print(object&#32;[,options])
+&#32;<br />&#32;&#32;&#32;fprint(fd,object&#32;[,options])
+&#32;<br />&#32;&#32;&#32;S=sprint(fd,object&#32;[,options])
+&#32;<br />&#32;&#32;&#32;where&#32;named&#32;options&#32;are
+&#32;<br />&#32;&#32;&#32;as_read=boolean,&#32;depth=int,indent=int,&#32;latex=boolean,name=string,table=boolean)
+</div>
+<!--l. 19--><p class="nopar" >
+</p>
+<!--l. 22--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x3-40001"></a><span 
+class="cmbx-10x-x-109">Parameters</span></span>
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmtt-10x-x-109">object</span>: object to be printed.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10x-x-109">as_read</span>: object is to be printed in such a way that the result can be parsed back by
+     nsp.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10x-x-109">depth</span>: control, for recursive objects, the depth at which printing is done.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10x-x-109">indent</span>: indentation level.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10x-x-109">name</span>: string used to override the variable name.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10x-x-109">latex</span>: print in a <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span>matrix style.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10x-x-109">table</span>: use table style instead of matrix style in <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span></li></ul>
+<!--l. 36--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x3-50001"></a><span 
+class="cmbx-10x-x-109">Description</span></span>
+</p><!--l. 36--><p class="noindent" > prints the given variable in the current output stream (<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">print</span></span></span>), or in a file steam (<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">fprint</span></span></span>), or in a
+string matric (<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">sprint</span></span></span>). The file stream <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10x-x-109">fd</span></span></span> is an object of type <a 
+href="#File">File</a>    which is created with <a 
+href="#fopen">fopen</a>   .
+                                                                                    
+
+                                                                                    
+</p>
+<!--l. 43--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x3-60001"></a><span 
+class="cmbx-10x-x-109">Examples</span></span>
+</p>
+   <div class="fancyvrb" id="fancyvrb1">
+<a 
+ id="x3-6002r1"></a><span 
+class="cmtt-10x-x-109">&#32;</span><span 
+class="cmtt-10x-x-109">&#32;</span><span 
+class="cmtt-10x-x-109">&#32;</span><span 
+class="cmtt-10x-x-109">&#32;</span><span 
+class="cmtt-10x-x-109">&#32;</span><span 
+class="cmtt-10x-x-109">&#32;l</span><span 
+class="cmtt-10x-x-109">&#32;=list(rand(3,3),%t,</span><span 
+class="cmtt-10x-x-109">&#32;67,</span><span 
+class="cmtt-10x-x-109">&#32;&#x0022;scilab&#x0022;,list(5,6));</span>
+<br class="fancyvrb" /><a 
+ id="x3-6004r2"></a><span 
+class="cmtt-10x-x-109">&#32;</span><span 
+class="cmtt-10x-x-109">&#32;</span><span 
+class="cmtt-10x-x-109">&#32;</span><span 
+class="cmtt-10x-x-109">&#32;</span><span 
+class="cmtt-10x-x-109">&#32;</span><span 
+class="cmtt-10x-x-109">&#32;print(l,depth=0);</span>
+   </div>
+<!--l. 50--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x3-70001"></a><span 
+class="cmbx-10x-x-109">See also</span></span>
+   <a 
+href="#file">file</a>    <a 
+href="#fopen">fopen</a>    <a 
+href="#File">File</a>
+</p>
+   <!--l. 20--><div class="crosslinks"><p class="noindent">[<a 
+href="manualch1.html" >prev</a>] [<a 
+href="manualch1.html#tailmanualch1.html" >prev-tail</a>] [<a 
+href="manualli1.html" >front</a>] [<a 
+href="manualch1.html#manualli1.html" >up</a>] </p></div>
+<!--l. 20--><p class="indent" >   <a 
+ id="tailmanualli1.html"></a>  </p> 
+</body></html> 
