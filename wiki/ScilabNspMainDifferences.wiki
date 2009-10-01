@@ -19,7 +19,7 @@ Nsp don't come with an integrated editor like scipad (there is a kind of edit wi
 ----
 = No ieee settings =
 
-In scilab the function ieee(mode) lets to choose between 3 behaviors when a division by zero is met (raise an error (mode=0), raise a warning (mode=1) or tell nothing (mode=2)). There is no such feature in nsp. Note that like most numerical libraries used by scilab are not sensitive to this ieee mode, many divisions by zero cannot be not detected using mode=0 or 1.
+In scilab the function ieee(mode) lets to choose between 3 behaviors when a division by zero is met (raise an error (mode=0), raise a warning (mode=1) or tell nothing (mode=2)). There is no such feature in nsp. Note that like most numerical libraries used by scilab are not sensitive to this ieee mode, many divisions by zero cannot be detected using mode=0 or 1.
 
 ----
 = The famous scalar./vector ambiguity =
