@@ -150,7 +150,7 @@ Possibly this chapter could be split in the future...
   # fft2, ifft2
   # conv
   # conv2
-  # rot90, fliplr, flipud
+  # ~~rot90, fliplr, flipud~~
 
 
 ===linear algebra===
