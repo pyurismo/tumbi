@@ -22,7 +22,8 @@ Remarks:
 ===data_types===
 
   # ~~Object~~ - Nsp general object
-  # ~~Mat~~ - matrix of numbers 
+  # ~~Mat~~ - matrix of real and complex numbers (floating points numbers)
+  # IMat - matrix of integers (int8, uint8, int16, uint16, int32, uint32, int64, uint64)
   # ~~Smat~~ - matrix of strings 
   # ~~Bmat~~ - boolean matrix 
   # ~~Pmat~~ - polynomial matrix 
