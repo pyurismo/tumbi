@@ -102,7 +102,7 @@ This chapter don't yet exist (already existing help pages are in the misc chapte
   # ~~sum, prod~~
   # ~~cumsum, cumprod~~
   # ~~diff~~
-  # triu, tril
+  # ~~triu, tril~~
   # ~~diag~~, setdiag
   # ~~min, max, minmax~~
   # ~~scale_cols, scale_rows~~
