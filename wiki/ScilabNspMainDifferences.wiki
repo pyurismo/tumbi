@@ -252,9 +252,10 @@ With scilab this is done with the `type` or `typeof` functions. In nsp you could
 || matrix of real/complex numbers || `%types.Mat` || `"Mat"` || `"m"` ||
 || sparse matrix (of real/complex) || `%types.SpColMat` || `"SpColMat"` || `"sp"` ||
 || matrix of strings || `%types.SMat` || `"SMat"` || `"s"` ||
-|| matrix of cells || `%types.SMat` || `"Cells"` || `"ce"` ||
+|| matrix of cells || `%types.Cells` || `"Cells"` || `"ce"` ||
 || list ||`%types.List` || `"List"` || `"l"` ||
 || matrix of polynomials || `%types.PMat` || `"PMat"` || `"p"` ||
+|| matrix of booleans || `%types.BMat` || `"BMat"` || `"b"` ||
 || hash table || `%types.Hash` || `"Hash"` || `"h"` ||
 || function (macro) || `%types.PList` || `"PList"` || `"pl"` ||
 || function (primitive) || `%types.Func` || `"Func"` || `"f"` ||
