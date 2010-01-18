@@ -153,8 +153,8 @@ Possibly this chapter could be split in the future...
 
   * basic statistic functions
   # ~~mean~~ - arithmetic mean, arithmetic trimmed mean, weighted mean
-  # var - variance and weighted variance
-  # std - standard deviation and weighted standard deviation
+  # ~~var~~ - variance and weighted variance
+  # ~~std~~ - standard deviation and weighted standard deviation
   # median - median computation   
 
   * special stat func
