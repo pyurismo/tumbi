@@ -144,6 +144,17 @@ Possibly this chapter could be split in the future...
   # ~~derivative~~ - approximation of first and second derivatives of a function
   # optim
 
+===random number generation, statistics functions===
+
+  # ~~grand~~ - random number generation (currently in the misc chapter)
+  # rand - grand shortcut for U([0,1))
+  # randn - grand shortcut for N(0,1)
+
+  # ~~mean~~ - arithmetic mean, arithmetic trimmed mean, weighted mean
+  # var - variance and weighted variance
+  # std - standard deviation and weighted standard deviation
+  # median - median computation   
+
 ===signal processing === 
 
   # ~~fft, ifft~~
