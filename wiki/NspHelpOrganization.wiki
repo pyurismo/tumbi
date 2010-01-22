@@ -155,7 +155,8 @@ Possibly this chapter could be split in the future...
   # ~~mean~~ - arithmetic mean, arithmetic trimmed mean, weighted mean
   # ~~var~~ - variance and weighted variance
   # ~~std~~ - standard deviation and weighted standard deviation
-  # median - median computation   
+  # ~~median~~ - median computation   
+  # cov - covariance and weighted covariance  
 
   * special stat func
   # ~~pdf~~ - probability density or mass functions
