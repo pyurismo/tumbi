@@ -147,7 +147,7 @@ Possibly this chapter could be split in the future...
 ===random numbers generation, statistics functions, density and cdf functions===
 
   * random numbers generation
-  # ~~grand~~ - random number generation (currently in the misc chapter)
+  # ~~grand~~ - random number generation
   # rand - grand shortcut for U([0,1))
   # randn - grand shortcut for N(0,1)
 
