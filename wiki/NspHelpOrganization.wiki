@@ -53,6 +53,7 @@ Remarks:
    # ~~matrix~~, ~~redim~~ et reshape
    # ~~repmat~~ - replicate a matrix
    # ~~perms~~ - generate all permutations of a vector
+   # nchoosek - compute binomial coef or generate all subsets of size k of a set. 
    # ~~isvector~~, ~~isscalar~~, ~~isempty~~
    # is, type - query object type -
 
