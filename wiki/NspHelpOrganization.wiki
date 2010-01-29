@@ -109,6 +109,10 @@ This chapter don't yet exist (already existing help pages are in the misc chapte
   # add, blas_ger, blas_apxy
   # ~~dot~~ - scalar product of 2 vectors (or matrices) 
   # ~~cross~~ - cross product of 2 vectors
+  # spones
+  # full
+  # sparse
+
 
 ===searching and sorting===
 
@@ -150,6 +154,7 @@ Possibly this chapter could be split in the future...
   # ~~grand~~ - random number generation
   # rand - grand shortcut for U([0,1))
   # randn - grand shortcut for N(0,1)
+  # sprand - uniform or normal random numbers in sparse matrix
 
   * basic statistic functions
   # ~~mean~~ - arithmetic mean, arithmetic trimmed mean, weighted mean
