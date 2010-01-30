@@ -151,6 +151,7 @@ Possibly this chapter could be split in the future...
 
   * random numbers generation
   # ~~grand~~ - random number generation
+  # rand_discrete - random number generation for given user finite discrete distributions
   # rand - grand shortcut for U([0,1))
   # randn - grand shortcut for N(0,1)
   # sprand - uniform or normal random numbers in sparse matrix
@@ -164,7 +165,7 @@ Possibly this chapter could be split in the future...
 
   * special stat func
   # ~~pdf~~ - probability density or mass functions
-  # kcdf, kcdflim
+  # kcdf, kcdflim - kolmogorov and limit kolmogorov cdf functions
   # ~~cdfbet~~ - beta cdf and invcdf function 
   # ~~cdfbin~~ - binomial cdf and invcdf function 
   # ~~cdfchi~~ - chi square cdf and invcdf function 
@@ -229,6 +230,7 @@ don't yet exist.(already existing help pages are in the misc chapter).
 
   * elementary transcendental
   # sqrt
+  # hypot
   # exp, log, lop1p
   # sin, asin, sinpi, cos, acos, tan, atan
   # sinh, asinh, cosh, acosh, tanh, atanh
