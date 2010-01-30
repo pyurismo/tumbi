@@ -89,8 +89,6 @@ Remarks:
 
 ===basic functions or methods for numerical matrices===
 
-This chapter don't yet exist (already existing help pages are in the misc chapter). 
-
   # real and complex numbers, floating point number (link to floating point and integer numbers properties)
   # empty matrices rules
   # ~~format~~ (display of matrices, which is also referenced by the previous chapter)
