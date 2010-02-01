@@ -153,7 +153,11 @@ The same problem arises when you compare to numerical vector says `x op y` where
 {{{
  b = [] <= 1
 }}}
-the result should be the same size than [], that is an empty (boolean) matrix. In *scilab* this rule is generally used but not for the `==` and `~=` operators while *nsp* applies the rule for all comparizon operators. 
+the result should be the same size than `[]`, that is an empty (boolean) matrix. In *scilab* this rule is generally used but not for the `==` and `~=` operators while *nsp* applies the rule for all comparizon operators. 
+
+Note that to compare 2 objects `x` and `y` (of same or different type), nsp has
+the `equal` method `x.equal[y]` which is more efficient that something like
+`and(x==y)`.
 
 ==other shortcut involving a scalar and a vector or matrix==
 
