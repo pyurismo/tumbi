@@ -37,7 +37,7 @@ Remarks:
   # ~~gdate~~ - days representation 
   # ~~Umfpack~~ - datatype for LU factorization of sparse matrices 
   # ~~Cholmod~~ - datatype for Cholesky factorization of sparse matrices
-  # SpColMat - sparse matrix
+  # ~~SpColMat~~ - sparse matrix
   # GdkPixbuf - nsp image type (currently see the ImagesInNsp wikipage)
 
 ===basic arrays functions===
