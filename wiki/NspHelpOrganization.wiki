@@ -102,7 +102,7 @@ Remarks:
   # ~~cumsum, cumprod~~
   # ~~diff~~
   # ~~triu, tril~~
-  # ~~diag~~, setdiag
+  # ~~diag~~, ~~setdiag~~
   # ~~min, max, minmax~~
   # ~~scale_cols, scale_rows~~
   # add, blas_ger, blas_apxy
