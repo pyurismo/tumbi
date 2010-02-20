@@ -153,7 +153,7 @@ Possibly this chapter could be split in the future...
   # ~~grand~~ - random number generation
   # rand_discrete - random number generation for given user finite discrete distributions
   # rand - grand shortcut for U([0,1))
-  # randn - grand shortcut for N(0,1)
+  # ~~randn~~ - grand shortcut for N(0,1)
   # sprand - uniform or normal random numbers in sparse matrix
 
   * basic statistic functions
