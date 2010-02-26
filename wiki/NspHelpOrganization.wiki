@@ -163,7 +163,7 @@ Possibly this chapter could be split in the future...
   # ~~median~~ - median computation   
   # ~~cov~~ - covariance and weighted covariance  
   # ~~mad~~ - median of absolute deviations around the median or mean of absolute deviations around the mean
-  # quantile - quantile computations
+  # ~~quantile~~ - quantile computations
 
   * special stat func
   # ~~pdf~~ - probability density or mass functions
