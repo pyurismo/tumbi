@@ -364,7 +364,8 @@ svd (which is defined in nsp but not currently documented) returns always the si
 }}}
 
 ----
-= deff =
+= equivalence for unexistent functions = 
+== deff ==
 
 (thanks to M. Fuentes). In scilab `deff` lets to define a function from strings. 
 It doesn't exist in nsp but you can replace `deff` with `execstr` (which is available
@@ -376,3 +377,8 @@ use:
 {{{
     execstr(["function y=car(x)";"y=x.^2";"endfunction"])
 }}}
+
+== listfiles == 
+
+used to get a list of files in a string matrix. This function exists in nsp 
+but with a different name `glob`. 
