@@ -71,7 +71,8 @@ Remarks:
 ===numbers (properties, display,...)===
 
    # ~~format~~ - number printing and display format
-   # ~~number_properties~~ - determine floating-point parameters 
+   # ~~number_properties~~ - determine floating-point parameters
+   # intmin, intmax - min and max for integer types (IMat)
    # ~~frexp~~ - dissect floating-point numbers into base 2 exponent and mantissa
    # ~~isreal~~ - check if a variable has real or complex entries
    # ~~complex~~ - build complex numbers from real and imaginary parts
