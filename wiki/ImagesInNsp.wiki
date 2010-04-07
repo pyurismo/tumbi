@@ -8,6 +8,12 @@ You can use the `gdk_pixbuf_new_from_file` function:
 {{{
 im = gdk_pixbuf_new_from_file(image_file_name);
 }}}
+for example:
+{{{
+fname = getenv('NSP')+'/demos/gtk2/libplus/nsp.svg";
+im = gdk_pixbuf_new_from_file(fname);
+}}}
+
 to obtain in nsp an object containing a gdk GdkPixbuf object. As explained in gtk documentation the GdkPixbuf structure contains information that describes an image in memory. 
 
 You can also use 
@@ -51,6 +57,9 @@ There are some methods which apply on such objects, alas not already documented 
 Some (basic) examples:
 
 {{{
+fname = getenv('NSP')+'/demos/gtk2/libplus/nsp.svg";
+im = gdk_pixbuf_new_from_file(fname);
+
 W = im.get_width[]
 H = im.get_height[]
 bool = im.get_has_alpha[]
