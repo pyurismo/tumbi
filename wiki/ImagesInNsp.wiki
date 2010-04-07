@@ -10,7 +10,7 @@ im = gdk_pixbuf_new_from_file(image_file_name);
 }}}
 for example:
 {{{
-fname = getenv('NSP')+'/demos/gtk2/libplus/nsp.svg";
+fname = getenv('NSP')+'/demos/gtk2/libplus/nsp.svg';
 im = gdk_pixbuf_new_from_file(fname);
 }}}
 
