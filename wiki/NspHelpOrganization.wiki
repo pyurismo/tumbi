@@ -53,7 +53,7 @@ Remarks:
    # ~~matrix~~, ~~redim~~ et reshape
    # ~~repmat~~ - replicate a matrix
    # ~~perms~~ - generate all permutations of a vector
-   # nchoosek - compute binomial coef or generate all subsets of size k of a set. 
+   # ~~nchoosek~~ - compute binomial coef or generate all subsets of size k of a set. 
    # ~~isvector~~, ~~isscalar~~, ~~isempty~~
    # is, type - query object type -
 
@@ -168,6 +168,8 @@ Possibly this chapter could be split in the future...
 
   * special stat func
   # ~~pdf~~ - probability density or mass functions
+  # cdf - cumulative probability density functions
+  # icdf - inverse cumulative probability density functions (quantile functions)
   # kcdf, kcdflim - kolmogorov and limit kolmogorov cdf functions
   # ~~cdfbet~~ - beta cdf and invcdf function 
   # ~~cdfbin~~ - binomial cdf and invcdf function 
@@ -197,7 +199,7 @@ Possibly this chapter could be split in the future...
   # the backslash operator
   # ~~qr~~ - QR factorization
   # ~~rank~~
-  # svd
+  # ~~svd~~
   # ~~lu~~ - LU factorization (for full matrix)
   # ~~umfpack_create,umfpack_solve~~ - LU factorization (for sparse matrix)   
   # det
@@ -218,7 +220,7 @@ Possibly this chapter could be split in the future...
   # expm
   # solve_banded
   # lsq
-  # schur
+  # ~~schur~~
   # hess
   # balanc
 
