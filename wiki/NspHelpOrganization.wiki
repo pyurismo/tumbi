@@ -218,9 +218,12 @@ Possibly this chapter could be split in the future...
   # ~~lower_upper_bandwidths~~ - computes lower and upper bandwidths
   # ~~pmult~~ - special matrix multiplication
   # expm
+  # ~~logm~~
+  # ~~sqrtm~~
   # solve_banded
   # lsq
   # ~~schur~~
+  # ~~qz~~
   # hess
   # balanc
 
