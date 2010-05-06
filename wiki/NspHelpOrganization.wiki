@@ -217,7 +217,7 @@ Possibly this chapter could be split in the future...
   # ~~istriangular~~ - upper or lower triangular test
   # ~~lower_upper_bandwidths~~ - computes lower and upper bandwidths
   # ~~pmult~~ - special matrix multiplication
-  # expm
+  # ~~expm~~
   # ~~logm~~
   # ~~sqrtm~~
   # solve_banded
