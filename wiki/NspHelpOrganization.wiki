@@ -203,7 +203,7 @@ Possibly this chapter could be split in the future...
   # ~~lu~~ - LU factorization (for full matrix)
   # ~~umfpack_create,umfpack_solve~~ - LU factorization (for sparse matrix)   
   # det
-  # inv 
+  # ~~inv~~ 
   # ~~chol~~ - Cholesky factorization (for full matrix) 
   # ~~Cholmod, cholmod_create~~ - Cholesky factorization (for sparse matrix)
   # ~~spec~~ - matrix spectrum, eigenvalues and eigenvectors
