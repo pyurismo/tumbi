@@ -86,7 +86,8 @@ Remarks:
    # ~~primes~~ - computes prime numbers
    # ~~isprime~~ - primality test
    # ~~factor~~ - prime factorization of an integer
-   # clean, floor, ceil, round
+   # clean
+   # ~~floor, ceil, int, fix, round~~
 
 ===basic functions or methods for numerical matrices===
 
