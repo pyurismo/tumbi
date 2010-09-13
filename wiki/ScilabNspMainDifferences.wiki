@@ -382,3 +382,7 @@ use:
 
 used to get a list of files in a string matrix. This function exists in nsp 
 but with a different name `glob`. 
+
+== mgetl and mputl ==
+
+These two function exists in nsp under the name getfile and putfile.
