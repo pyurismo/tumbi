@@ -386,3 +386,7 @@ but with a different name `glob`.
 == mgetl and mputl ==
 
 These two function exists in nsp under the name getfile and putfile.
+
+== psi ==
+
+These function exists in nsp under the name digamma
