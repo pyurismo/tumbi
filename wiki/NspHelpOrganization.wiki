@@ -288,50 +288,50 @@ Function related to the string matrix data type.
 
 ===Files, I/O, system functions===
 
-# Control execution
- ## ~~exec~~ - executes file contents 
+ * Control execution
+ # ~~exec~~ - executes file contents 
 
-# Input/Output
-## ~~File~~ - file data type 
-## ~~fopen~~ - creates a file stream 
-## ~~print~~ - print variable value in the current output stream
-## ~~fprint~~ - print variable value in a file stream
-## ~~sprint~~ - print variable value in a string matrix 
-## ~~put˙matrix~~ - (method) print a matrix in a file stream
-## ~~fprintfMat~~ - print a matrix in a file
-## ~~scanf~~ - scanf input format conversion 
-## ~~fscanf~~ - fscanf input format conversion 
-## ~~sscanf~~ - sscanf input format conversion 
-## ~~get˙matrix~~ - (method) read a matrix from a file stream
-## ~~fscanfMat~~ - read a matrix in a file
-## ~~save~~ - machine independent binary save of variables
-## ~~load~~ - load saved objects with save
+ * Input/Output
+ # ~~File~~ - file data type 
+ # ~~fopen~~ - creates a file stream 
+ # ~~print~~ - print variable value in the current output stream
+ # ~~fprint~~ - print variable value in a file stream
+ # ~~sprint~~ - print variable value in a string matrix 
+ # ~~put˙matrix~~ - (method) print a matrix in a file stream
+ # ~~fprintfMat~~ - print a matrix in a file
+ # ~~scanf~~ - scanf input format conversion 
+ # ~~fscanf~~ - fscanf input format conversion 
+ # ~~sscanf~~ - sscanf input format conversion 
+ # ~~get˙matrix~~ - (method) read a matrix from a file stream
+ # ~~fscanfMat~~ - read a matrix in a file
+ # ~~save~~ - machine independent binary save of variables
+ # ~~load~~ - load saved objects with save
 
-# Files and pathnames
-## ~~cd~~ - changes current directory 
-## ~~chdir~~ - changes current directory 
-## ~~file~~ - file and pathnames
-## ~~getcwd~~ - get current directory 
-## ~~ls~~ - list directory contents 
-## ~~pwd~~ - print current directory 
-## ~~registry~~ - get and set values of the windows registry
-## ~~who~~ - get current variables
+ * Files and pathnames
+ # ~~cd~~ - changes current directory 
+ # ~~chdir~~ - changes current directory 
+ # ~~file~~ - file and pathnames
+ # ~~getcwd~~ - get current directory 
+ # ~~ls~~ - list directory contents 
+ # ~~pwd~~ - print current directory 
+ # ~~registry~~ - get and set values of the windows registry
+ # ~~who~~ - get current variables
 
-# Dynamic library management
-## ~~addinter~~ - dynamic interface loader
-## ~~c-link~~ - check entries from dynamic library 
-## ~~ilib-for-link~~ - create a dynamic library and call link 
-## ~~link~~ - add entries from dynamic library 
-## ~~ulink~~ - unload dynamic library 
+ * Dynamic library management
+ # ~~addinter~~ - dynamic interface loader
+ # ~~c-link~~ - check entries from dynamic library 
+ # ~~ilib-for-link~~ - create a dynamic library and call link 
+ # ~~link~~ - add entries from dynamic library 
+ # ~~ulink~~ - unload dynamic library 
 
-# Miscellaneous
-## ~~exists~~ - checks for variables
-## ~~localtime~~ - get the current time
-## ~~input~~ - wait for user keyboard input 
-## ~~timer~~ - elapsed cpu time between timer calls 
-## ~~cputime~~ - elapsed cpu time since session start 
-## ~~toc~~ - elapsed time since tic call
-## ~~tic~~ - set a timer start  # ~~File~~ - file data type
+ * Miscellaneous
+ # ~~exists~~ - checks for variables
+ # ~~localtime~~ - get the current time
+ # ~~input~~ - wait for user keyboard input 
+ # ~~timer~~ - elapsed cpu time between timer calls 
+ # ~~cputime~~ - elapsed cpu time since session start 
+ # ~~toc~~ - elapsed time since tic call
+ # ~~tic~~ - set a timer start  # ~~File~~ - file data type
 
 
 ===Gui===
