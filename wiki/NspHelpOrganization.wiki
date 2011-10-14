@@ -169,8 +169,8 @@ Possibly this chapter could be split in the future...
 
   * special stat func
   # ~~pdf~~ - probability density or mass functions
-  # cdf - cumulative probability density functions
-  # icdf - inverse cumulative probability density functions (quantile functions)
+  # ~~cdf~~ - cumulative probability density functions
+  # ~~icdf~~ - inverse cumulative probability density functions (quantile functions)
   # kcdf, kcdflim - kolmogorov and limit kolmogorov cdf functions
   # ~~cdfbet~~ - beta cdf and invcdf function 
   # ~~cdfbin~~ - binomial cdf and invcdf function 
@@ -190,8 +190,7 @@ Possibly this chapter could be split in the future...
   # ~~fft, ifft~~
   # ~~fftshift, ifftshift~~
   # fft2, ifft2
-  # conv
-  # conv2
+  # conv, conv2 (non existent functions)
   # ~~rot90, fliplr, flipud~~
 
 
@@ -286,14 +285,53 @@ Function related to the string matrix data type.
   # ~~tolower~~ - convert letter to lower case
   # ~~toupper~~ - convert letter to upper case
 
-===I/O functions===
 
-   This chapter don't yet exist.
+===Files, I/O, system functions===
 
-  # ~~File~~ - file data type
-  # fscanfMat - read a matrix
-  # fprintfMat - write a matrix 
-  # printf - print in the nsp console
+# Control execution
+ ## ~~exec~~ - executes file contents 
+
+# Input/Output
+## ~~File~~ - file data type 
+## ~~fopen~~ - creates a file stream 
+## ~~print~~ - print variable value in the current output stream
+## ~~fprint~~ - print variable value in a file stream
+## ~~sprint~~ - print variable value in a string matrix 
+## ~~put˙matrix~~ - (method) print a matrix in a file stream
+## ~~fprintfMat~~ - print a matrix in a file
+## ~~scanf~~ - scanf input format conversion 
+## ~~fscanf~~ - fscanf input format conversion 
+## ~~sscanf~~ - sscanf input format conversion 
+## ~~get˙matrix~~ - (method) read a matrix from a file stream
+## ~~fscanfMat~~ - read a matrix in a file
+## ~~save~~ - machine independent binary save of variables
+## ~~load~~ - load saved objects with save
+
+# Files and pathnames
+## ~~cd~~ - changes current directory 
+## ~~chdir~~ - changes current directory 
+## ~~file~~ - file and pathnames
+## ~~getcwd~~ - get current directory 
+## ~~ls~~ - list directory contents 
+## ~~pwd~~ - print current directory 
+## ~~registry~~ - get and set values of the windows registry
+## ~~who~~ - get current variables
+
+# Dynamic library management
+## ~~addinter~~ - dynamic interface loader
+## ~~c-link~~ - check entries from dynamic library 
+## ~~ilib-for-link~~ - create a dynamic library and call link 
+## ~~link~~ - add entries from dynamic library 
+## ~~ulink~~ - unload dynamic library 
+
+# Miscellaneous
+## ~~exists~~ - checks for variables
+## ~~localtime~~ - get the current time
+## ~~input~~ - wait for user keyboard input 
+## ~~timer~~ - elapsed cpu time between timer calls 
+## ~~cputime~~ - elapsed cpu time since session start 
+## ~~toc~~ - elapsed time since tic call
+## ~~tic~~ - set a timer start  # ~~File~~ - file data type
 
 
 ===Gui===
