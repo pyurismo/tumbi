@@ -32,7 +32,7 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
   [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli1.html#Q1-2-2 current data_types chapter]
 
   Some missed pages:
-  # GdkPixbuf - nsp image type (this is nevertheless documented in the ImagesInNsp wikipage)
+   # GdkPixbuf - nsp image type (this is nevertheless documented in the ImagesInNsp wikipage)
 
 ==basic arrays functions==
 
