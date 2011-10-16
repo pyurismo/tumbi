@@ -23,7 +23,7 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
  # you can suggest improvments:
  * in the general organization
  * in the organization of a given chapter 
- * in a given help page which is not clear, etc...
+ * in a given help page which is not clear, which lacks some examples, etc...
 
 =existent chapters=
 
