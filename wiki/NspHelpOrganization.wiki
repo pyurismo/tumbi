@@ -84,14 +84,14 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
   Possibly this chapter will be split in the future...
 
   Some missed pages:
-  # optim
+   # optim
 
 ==signal processing == 
 
   [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli108.html#Q1-109-715 current signal processing chapter]
 
   Some missed pages:
-  # fft2, ifft2
+   # fft2, ifft2
 
 ==searching and sorting (find, search, sort, set functions...)==
 
@@ -105,14 +105,14 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 
   Some missed pages:
 
-  # the backslash operator
-  # det
-  # gspec
-  # solve_banded
-  # lsq
-  # hess
-  # balanc
-  # lsmr
+   # the backslash operator
+   # det
+   # gspec
+   # solve_banded
+   # lsq
+   # hess
+   # balanc
+   # lsmr
 
 ==random numbers generation, statistics functions, density and cdf functions==
 
@@ -120,9 +120,9 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 
   Some missed pages:
 
-  # rand_discrete - random number generation for given user finite discrete distributions
-  # sprand - uniform or normal random numbers in sparse matrix
-  # kcdf, kcdflim - kolmogorov and limit kolmogorov cdf functions
+   # rand_discrete - random number generation for given user finite discrete distributions
+   # sprand - uniform or normal random numbers in sparse matrix
+   # kcdf, kcdflim - kolmogorov and limit kolmogorov cdf functions
 
 ==Gui==
   
