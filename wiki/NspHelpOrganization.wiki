@@ -104,7 +104,6 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
   [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli124.html#Q1-125-863 current linear algebra chapter]
 
   Some missed pages:
-
    # the backslash operator
    # det
    # gspec
