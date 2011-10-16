@@ -118,7 +118,6 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
   [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli145.html#Q1-146-1016 current chapter]
 
   Some missed pages:
-
    # rand_discrete - random number generation for given user finite discrete distributions
    # sprand - uniform or normal random numbers in sparse matrix
    # kcdf, kcdflim - kolmogorov and limit kolmogorov cdf functions
