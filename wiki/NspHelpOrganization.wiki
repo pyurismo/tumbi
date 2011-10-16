@@ -7,8 +7,7 @@ This wiki page gives some informations on the nsp help which is still not comple
 is also to have some feed-back from users which can post comments at the end of this wiki page. 
 
 The nsp help is organized as a collection of chapters, each one being a list of
-functions/methods/topics. [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manual.html A snapshot of the current help
-pages]. Here, for each chapter,  we list some functions not already documented and also some missed chapters together
+functions/methods/topics. See [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manual.html a snapshot of the current help pages]. Here, for each chapter,  we list some functions not already documented and also some missed chapters together
 with a list of functions they should contain (waiting for a complete set of chapters we have put some already documented
 help pages in a misc chapter).
 
