@@ -155,7 +155,6 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 ==programming==
 
   It should expose the main nsp language structures...
-
    # function, endfunction - keywords delimiting a function definition 
    # is, type - query object type
    # for and while loops, break - loop constructs
@@ -166,21 +165,21 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 ==elementary and special math func==
 
   * elementary
-  # modulo, mod
-  # floor, ceil, round, clean
+   # modulo, mod
+   # floor, ceil, round, clean
 
   * elementary transcendental
-  # sqrt
-  # hypot
-  # exp, log, lop1p
-  # sin, asin, sinpi, cos, acos, tan, atan
-  # sinh, asinh, cosh, acosh, tanh, atanh
+   # sqrt
+   # hypot
+   # exp, log, lop1p
+   # sin, asin, sinpi, cos, acos, tan, atan
+   # sinh, asinh, cosh, acosh, tanh, atanh
 
   * special math func
-  # gamma, gammaln
-  # erf, erfc
-  # bessel
-  # ....
+   # gamma, gammaln
+   # erf, erfc
+   # bessel
+   # ....
 
 
 
