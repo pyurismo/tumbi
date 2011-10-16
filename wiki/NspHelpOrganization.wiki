@@ -173,11 +173,12 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
    # hypot
    # exp, log, lop1p
    # sin, asin, sinpi, cos, acos, tan, atan
+   # sinpi, cospi, tanpi, cotanpi
    # sinh, asinh, cosh, acosh, tanh, atanh
 
   * special math func
-   # gamma, gammaln
-   # erf, erfc
+   # gamma, gammaln, digamma
+   # erf, erfc, erfcx
    # bessel
    # ....
 
