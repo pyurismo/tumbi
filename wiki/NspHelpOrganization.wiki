@@ -21,18 +21,12 @@ help pages in a misc chapter).
 
 =existent chapters=
 
-==data_types==
-
- [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli1.html#Q1-2-2 current data type chapter]
-
- Some missed pages:
+==data_types==[http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli1.html#Q1-2-2 current chapter]
+Some missed pages:
   # GdkPixbuf - nsp image type (this is nevertheless documented in the ImagesInNsp wikipage)
 
-==basic arrays functions==
-
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli20.html#Q1-21-136 current basic arrays functions chapter]
-
- Some missed pages:
+==basic arrays functions==[http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli20.html#Q1-21-136 current chapter]
+Some missed pages:
    # sub2ind
    # ndind2ind
    # is, type - query object type -
