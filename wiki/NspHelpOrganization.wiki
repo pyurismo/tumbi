@@ -21,8 +21,7 @@ help pages in a misc chapter).
 
 =existent chapters=
 
-==data_types==
-[http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli1.html#Q1-2-2 current chapter]
+==data_types [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli1.html#Q1-2-2 current chapter]==
 Some missed pages:
   # GdkPixbuf - nsp image type (this is nevertheless documented in the ImagesInNsp wikipage)
 
