@@ -12,8 +12,7 @@ with a list of functions they should contain (waiting for a complete set of chap
 help pages in a misc chapter).
 
 =a few remarks about the organization=
-  * an help page could be referenced by several chapters (for instance the umfpack page is referenced both by the data
-  type and the linear algebra chapters).
+  * an help page could be referenced by several chapters (for instance the umfpack page is referenced both by the data type and the linear algebra chapters).
   * the "summary page" of each chapter should be written by hand and this lets an additionnal freedom to organize the chapter presentation.
   * a page (which is a latex file) can contain the description of several functions (examples: min, max, minmax functions, sum and prod functions, complex, real, imag functions).
 
