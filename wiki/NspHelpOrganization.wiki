@@ -21,12 +21,17 @@ help pages in a misc chapter).
 
 =existent chapters=
 
-==data_types [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli1.html#Q1-2-2 current chapter]==
+==data_types== 
+
+[http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli1.html#Q1-2-2 current chapter]
+
 Some missed pages:
   # GdkPixbuf - nsp image type (this is nevertheless documented in the ImagesInNsp wikipage)
 
 ==basic arrays functions==
+
 [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli20.html#Q1-21-136 current chapter]
+
 Some missed pages:
    # sub2ind
    # ndind2ind
@@ -34,7 +39,7 @@ Some missed pages:
 
 ==basic functions or methods for numerical matrices==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli32.html#Q1-33-214 current basic functions or methods for numerical matrices chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli32.html#Q1-33-214 current chapter]
 
  Some missed pages:
   # real and complex numbers, floating point number (link to floating point and integer numbers properties)
