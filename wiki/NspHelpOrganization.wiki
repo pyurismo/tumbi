@@ -1,65 +1,156 @@
-#summary discussion about how to organize the nsp help
+#summary informations about the nsp help
 
 <wiki:toc max_depth="3" />
 
-=organization=
+=introduction=
+This wiki page gives some informations on the nsp help which is still not completed. Its purpose
+is also to have some feed-back from users which can post comments at the end of this wiki page. 
 
-==introduction==
-Here is a proposal for help organization (to be completed, don't hesitate !). Currently some chapters of this proposal don't yet exist (and waiting for such an organization we have put many help pages in a "misc chapter").
+The nsp help is organized as a collection of chapters, each one being a list of
+functions/methods/topics. [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manual.html A snapshot of the current help
+pages]. Here, for each chapter,  we list some functions not already documented and also some missed chapters together
+with a list of functions they should contain (waiting for a complete set of chapters we have put some already documented
+help pages in a misc chapter).
 
-
-Remarks:
-  * a help page could be referenced by several chapters (for instance the umfpack page is referenced both by the data type and the linear algebra chapters).
-  * In fact the "summary page" of each chapter should be written by hand and this lets an additionnal freedom to organize the chapter presentation.
+=a few remarks about the organization=
+  * an help page could be referenced by several chapters (for instance the umfpack page is referenced both by the data
+  type and the linear algebra chapters).
+  * the "summary page" of each chapter should be written by hand and this lets an additionnal freedom to organize the chapter presentation.
   * a page (which is a latex file) can contain the description of several functions (examples: min, max, minmax functions, sum and prod functions, complex, real, imag functions).
-  * functions/methods/topics already documented are ~~strikeout~~ (but the corresponding help page could be completed and improved in many cases).
-  * many functions already in nsp have not been yet referenced in this note (work in progress, don't hesitate to complete this note). 
-  * [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manual.html A snapshot of the current help pages]. 
-  * Don't hesitate to post comments here (at the end of this wiki page) about the manual.
 
-==organization squeleton==
 
-===data_types===
+=existent chapters=
 
-  # ~~Object~~ - Nsp general object
-  # ~~Mat~~ - matrix of real and complex numbers (floating points numbers)
-  # ~~IMat~~ - matrix of integers (int8, uint8, int16, uint16, int32, uint32, int64, uint64)
-  # ~~Smat~~ - matrix of strings 
-  # ~~Bmat~~ - boolean matrix 
-  # ~~Pmat~~ - polynomial matrix 
-  # ~~List~~ - list of nsp objects 
-  # ~~Cells~~ - matrix of nsp objects 
-  # ~~hash~~ - hash tables 
-  # ~~MaxMat~~ - Max plus matrix 
-  # ~~File~~ - file data type 
-  # ~~Serial~~ - Container for nsp serialized object 
-  # ~~SndFile~~ - sound file data type 
-  # ~~gdate~~ - days representation 
-  # ~~Umfpack~~ - datatype for LU factorization of sparse matrices 
-  # ~~Cholmod~~ - datatype for Cholesky factorization of sparse matrices
-  # ~~SpColMat~~ - sparse matrix
-  # GdkPixbuf - nsp image type (currently see the ImagesInNsp wikipage)
+==data_types==
 
-===basic arrays functions===
+ [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli1.html#Q1-2-2 current data type chapter]
 
-  This chapter present operations, functions and methods which can be applied on or are useful for all kind of array oriented data type (and sometime on other ones)
+ Some missed pages:
+  # GdkPixbuf - nsp image type (this is nevertheless documented in the ImagesInNsp wikipage)
 
-   # ~~indexing arrays (and assignment, extraction, deletion)~~
+==basic arrays functions==
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli20.html#Q1-21-136 current basic arrays functions chapter]
+
+ Some missed pages:
    # sub2ind
    # ndind2ind
-   # ~~size~~, ~~length~~, ~~numel~~
-   # ~~perm_elem~~
-   # ~~concatenation of mtrices, concatr concatd~~
-   # ~~matrix~~, ~~redim~~ et reshape
-   # ~~repmat~~ - replicate a matrix
-   # ~~perms~~ - generate all permutations of a vector
-   # ~~nchoosek~~ - compute binomial coef or generate all subsets of size k of a set. 
-   # ~~isvector~~, ~~isscalar~~, ~~isempty~~
    # is, type - query object type -
 
-===programming===
+==basic functions or methods for numerical matrices==
 
-  This chapter don't yet exist. It should expose the main nsp language structures...
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli32.html#Q1-33-214 current basic functions or methods for numerical matrices chapter]
+
+ Some missed pages:
+  # real and complex numbers, floating point number (link to floating point and integer numbers properties)
+  # empty matrices rules
+  # : operator
+  # usual operators +, -, *, /, .*, ./, ^, .^
+  # add, blas_ger, blas_apxy  (a short description is available in the Mat data type help page)
+  # spones
+  # full
+  # sparse
+
+==String manipulation==
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli48.html#Q1-49-319 current strings chapter]
+
+  No missed pages ?
+
+==numbers (properties, display,...)==
+
+   [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli66.html#Q1-67-405 current number chapter]
+
+  Some missed pages:
+   # intmin, intmax - min and max for integer types (IMat)
+   # clean
+
+==miscellaneous==
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli80.html#Q1-81-491 current misc chapter]
+
+  help pages from this chapter will be dispatched in future new chapters
+
+==numerics (ode, f(x)=0, integrals, interpolation, optimization,...)==
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli93.html#Q1-94-570 current numerics chapter]
+
+  Possibly this chapter will be split in the future...
+
+  Some missed pages:
+  # optim
+
+==signal processing == 
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli108.html#Q1-109-715 current signal processing chapter]
+
+  Some missed pages:
+  # fft2, ifft2
+
+==searching and sorting (find, search, sort, set functions...)==
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli112.html#Q1-113-740 current searching and sorting chapter]
+
+  No missed pages ?
+
+==linear algebra==
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli124.html#Q1-125-863 current linear algebra chapter]
+
+  Some missed pages:
+
+  # the backslash operator
+  # det
+  # gspec
+  # solve_banded
+  # lsq
+  # hess
+  # balanc
+  # lsmr
+
+==random numbers generation, statistics functions, density and cdf functions==
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli145.html#Q1-146-1016 current chapter]
+
+  Some missed pages:
+
+  # rand_discrete - random number generation for given user finite discrete distributions
+  # sprand - uniform or normal random numbers in sparse matrix
+  # kcdf, kcdflim - kolmogorov and limit kolmogorov cdf functions
+
+==Gui==
+  
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli170.html#Q1-171-1183 current chapter]
+
+  Currently only old scilab gui functions are described may be we have to put here all 
+  gtk stuff which is available from nsp.
+
+==Graphics==
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli179.html#Q1-180-1231 current chapter]
+
+  Most functions are not documented. 
+
+
+==Files, I/O, system functions==
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli183.html#Q1-184-1251 current chapter]
+
+  No missed pages ?
+
+
+===Play and record sound samples===
+
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli202.html#Q1-203-1357 current chapter]
+
+  No missed pages ?
+
+
+=non existent chapters=
+
+==programming==
+
+  It should expose the main nsp language structures...
 
    # function, endfunction - keywords delimiting a function definition 
    # is, type - query object type
@@ -68,169 +159,7 @@ Remarks:
    # try catch 
    # ....
 
-===numbers (properties, display,...)===
-
-   # ~~format~~ - number printing and display format
-   # ~~number_properties~~ - determine floating-point parameters
-   # intmin, intmax - min and max for integer types (IMat)
-   # ~~frexp~~ - dissect floating-point numbers into base 2 exponent and mantissa
-   # ~~isreal~~ - check if a variable has real or complex entries
-   # ~~complex~~ - build complex numbers from real and imaginary parts
-   # ~~real~~ - extract real part of a complex scalar, vector or matrix
-   # ~~imag~~ - extract imaginary part of a complex scalar, vector or matrix
-   # ~~angle, arg~~ - compute argument of a complex (or real) scalar, vector or matrix
-   # ~~isfinite~~ - check for ”Finite” entries 
-   # ~~isnan~~ - check for ”NaN” entries 
-   # ~~isinf~~ - check for ”Infinite entries 
-   # ~~nearfloat~~ - get previous or next floating-point number
-   # ~~primes~~ - computes prime numbers
-   # ~~isprime~~ - primality test
-   # ~~factor~~ - prime factorization of an integer
-   # clean
-   # ~~floor, ceil, int, fix, round~~
-
-===basic functions or methods for numerical matrices===
-
-  # real and complex numbers, floating point number (link to floating point and integer numbers properties)
-  # empty matrices rules
-  # ~~format~~ (display of matrices, which is also referenced by the previous chapter)
-  # ~~linspace~~, ~~logspace~~
-  # : operator
-  # ~~ndgrid~~
-  # usual operators +, -, *, /, .*, ./, ^, .^
-  # ~~zeros, ones~~
-  # ~~eye~~
-  # ~~sum, prod~~
-  # ~~cumsum, cumprod~~
-  # ~~diff~~
-  # ~~triu, tril~~
-  # ~~diag~~, ~~setdiag~~
-  # ~~min, max, minmax~~
-  # ~~scale_cols, scale_rows~~
-  # add, blas_ger, blas_apxy
-  # ~~dot~~ - scalar product of 2 vectors (or matrices) 
-  # ~~cross~~ - cross product of 2 vectors
-  # spones
-  # full
-  # sparse
-
-
-===searching and sorting===
-
-Find, search, sort, set functions...
-
-  # ~~find~~ - returns indices of the true or non zeros components of a vector or matrix
-  # ~~mfind~~ - find indices of elements of a numerical matrix satisfying some inequalities
-  # ~~has~~ - (method) test if a vector or list has a given element
-  # ~~bsearch~~ - binary search 
-  # ~~sort~~ - general sort function 
-  # ~~unique~~ - compute unique components of a vector or of a list 
-  # ~~union~~ - compute the union of two vectors or two lists 
-  # ~~setdiff~~ - compute the set difference between two vectors or two lists
-  # ~~intersect~~ - compute the set intersection of two vectors or two lists
-  # ~~setxor~~ - computes elements exclusive to two vectors or two lists
-  # ~~issorted~~ - sort test
-
-===numerics (ode, f(x)=0, integrals, interpolation, optimization,...)===
-
-Possibly this chapter could be split in the future...
-
-  # ~~linear_interpn~~ - n dimensional linear interpolation 
-  # ~~splin~~ - build a cubic interpolation spline or sub-spline 
-  # ~~interp~~ - eval a cubic interpolation spline or sub-spline 
-  # ~~splin2d~~ - build a bicubic interpolation spline or sub-spline 
-  # ~~interp2d~~ - eval a bicubic interpolation spline or sub-spline 
-  # ~~intg~~ - one dimensional integration over a finite or infinite interval 
-  # ~~int2d~~ - two dimensional integration over a rectangle or a set of triangles 
-  # ~~int3d~~ - three dimensional integration over a parallelepiped or a set of tetrahedra 
-  # ~~ode~~ - ordinary differential equations solver 
-  # ~~fsolve~~ - non linear equations solver 
-  # ~~fsolve_lsq~~ - non linear least square solver 
-  # ~~derivative~~ - approximation of first and second derivatives of a function
-  # optim
-
-===random numbers generation, statistics functions, density and cdf functions===
-
-  * random numbers generation
-  # ~~grand~~ - random number generation
-  # rand_discrete - random number generation for given user finite discrete distributions
-  # ~~rand~~ - grand shortcut for U([0,1))
-  # ~~randn~~ - grand shortcut for N(0,1)
-  # sprand - uniform or normal random numbers in sparse matrix
-
-  * basic statistic functions
-  # ~~mean~~ - arithmetic mean, arithmetic trimmed mean, weighted mean
-  # ~~var~~ - variance and weighted variance
-  # ~~std~~ - standard deviation and weighted standard deviation
-  # ~~median~~ - median computation   
-  # ~~cov~~ - covariance and weighted covariance  
-  # ~~mad~~ - median of absolute deviations around the median or mean of absolute deviations around the mean
-  # ~~quantile~~ - quantile computations
-
-  * special stat func
-  # ~~pdf~~ - probability density or mass functions
-  # ~~cdf~~ - cumulative probability density functions
-  # ~~icdf~~ - inverse cumulative probability density functions (quantile functions)
-  # kcdf, kcdflim - kolmogorov and limit kolmogorov cdf functions
-  # ~~cdfbet~~ - beta cdf and invcdf function 
-  # ~~cdfbin~~ - binomial cdf and invcdf function 
-  # ~~cdfchi~~ - chi square cdf and invcdf function 
-  # ~~cdfchn~~ - non central chi square cdf and invcdf function 
-  # ~~cdff~~ - f cdf and invcdf function 
-  # ~~cdffnc~~ - non central f cdf and invcdf function 
-  # ~~cdfgam~~ - gamma cdf and invcdf function 
-  # ~~cdfnbn~~ - negative binomial cdf and invcdf function 
-  # ~~cdfnor~~ - normal cdf and invcdf function 
-  # ~~cdfpoi~~ - poisson cdf and invcdf function 
-  # ~~cdft~~ - student t cdf and invcdf function 
-  # ~~cdftnc~~ - non central student t cdf and invcdf function
-
-===signal processing === 
-
-  # ~~fft, ifft~~
-  # ~~fftshift, ifftshift~~
-  # fft2, ifft2
-  # conv, conv2 (non existent functions)
-  # ~~rot90, fliplr, flipud~~
-
-
-===linear algebra===
-
-  # the backslash operator
-  # ~~qr~~ - QR factorization
-  # ~~rank~~
-  # ~~svd~~
-  # ~~lu~~ - LU factorization (for full matrix)
-  # ~~umfpack_create,umfpack_solve~~ - LU factorization (for sparse matrix)   
-  # det
-  # ~~inv~~ 
-  # ~~chol~~ - Cholesky factorization (for full matrix) 
-  # ~~Cholmod, cholmod_create~~ - Cholesky factorization (for sparse matrix)
-  # ~~spec~~ - matrix spectrum, eigenvalues and eigenvectors
-  # gspec
-  # ~~solve~~ - solve a linear system
-  # ~~kernel~~ - computes an orthonormal basis of the null space of a matrix
-  # ~~orth~~ - computes an orthonormal basis of the range of a matrix
-  # ~~norm~~ - vector and matrix norm
-  # ~~rcond~~ - estimation of the reciprocal condition in 1-norm
-  # ~~issymmetric~~ - symmetry or hermitian test
-  # ~~istriangular~~ - upper or lower triangular test
-  # ~~lower_upper_bandwidths~~ - computes lower and upper bandwidths
-  # ~~pmult~~ - special matrix multiplication
-  # ~~expm~~
-  # ~~logm~~
-  # ~~sqrtm~~
-  # solve_banded
-  # lsq
-  # ~~schur~~
-  # ~~qz~~
-  # hess
-  # balanc
-
-
-===elementary and special math func===
-
-don't yet exist.(already existing help pages are in the misc chapter). 
+==elementary and special math func==
 
   * elementary
   # modulo, mod
@@ -247,116 +176,9 @@ don't yet exist.(already existing help pages are in the misc chapter).
   # gamma, gammaln
   # erf, erfc
   # bessel
-  # ~~legendre~~
   # ....
 
 
-===String manipulation===
-
-Function related to the string matrix data type.
-
-  # ~~ascii~~ - ascii conversion 
-  # ~~capitalize~~ - capitalize strings
-  # ~~catenate~~ - string concatenation 
-  # ~~concat~~ - string matrices concatenation 
-  # ~~getfile~~ - return the contents of a file in a column string vector 
-  # ~~isalnum~~ - checks for an alphanumeric character
-  # ~~isalpha~~ - checks for an alphabetic character
-  # ~~isascii~~ - checks for 7-bit unsigned char value that fits into the ASCII character set
-  # ~~isdigit~~ - checks for a digit (0 through 9)
-  # ~~isgraph~~ - checks for any printable character except space
-  # ~~islower~~ - checks for a lower-case character
-  # ~~isprint~~ - checks for any printable character including space
-  # ~~ispunct~~ - checks for any printable character which is not a space or an alphanumeric character
-  # ~~isspace~~ - checks for white-space characters
-  # ~~isupper~~ - checks for an uppercase letter
-  # ~~isxdigit~~ - checks for a hexadecimal digits
-  # ~~length~~ - length of object 
-  # ~~m2s,string~~ - convert matrix and object to string matrix 
-  # ~~part~~ - substring extraction from indices
-  # ~~putfile~~ - write a string matrix in a file in column order mode 
-  # ~~regexp,regsub~~ - search, substitution based on regular expressions
-  # ~~split~~ - string splitting
-  # ~~strindex~~ - search occurences of a string in a string
-  # ~~strcmp~~ - compare two string with strcmp 
-  # ~~stripblanks~~ - removes leading and trailing white-space characters
-  # ~~strstr~~ - locate a substring in a string matrix
-  # ~~strsubst~~ - sub-string substitution in a string matrix
-  # ~~tolower~~ - convert letter to lower case
-  # ~~toupper~~ - convert letter to upper case
-
-
-===Files, I/O, system functions===
-
- * Control execution
- # ~~exec~~ - executes file contents 
-
- * Input/Output
- # ~~File~~ - file data type 
- # ~~fopen~~ - creates a file stream 
- # ~~print~~ - print variable value in the current output stream
- # ~~fprint~~ - print variable value in a file stream
- # ~~sprint~~ - print variable value in a string matrix 
- # ~~put˙matrix~~ - (method) print a matrix in a file stream
- # ~~fprintfMat~~ - print a matrix in a file
- # ~~scanf~~ - scanf input format conversion 
- # ~~fscanf~~ - fscanf input format conversion 
- # ~~sscanf~~ - sscanf input format conversion 
- # ~~get˙matrix~~ - (method) read a matrix from a file stream
- # ~~fscanfMat~~ - read a matrix in a file
- # ~~save~~ - machine independent binary save of variables
- # ~~load~~ - load saved objects with save
-
- * Files and pathnames
- # ~~cd~~ - changes current directory 
- # ~~chdir~~ - changes current directory 
- # ~~file~~ - file and pathnames
- # ~~getcwd~~ - get current directory 
- # ~~ls~~ - list directory contents 
- # ~~pwd~~ - print current directory 
- # ~~registry~~ - get and set values of the windows registry
- # ~~who~~ - get current variables
-
- * Dynamic library management
- # ~~addinter~~ - dynamic interface loader
- # ~~c-link~~ - check entries from dynamic library 
- # ~~ilib-for-link~~ - create a dynamic library and call link 
- # ~~link~~ - add entries from dynamic library 
- # ~~ulink~~ - unload dynamic library 
-
- * Miscellaneous
- # ~~exists~~ - checks for variables
- # ~~localtime~~ - get the current time
- # ~~input~~ - wait for user keyboard input 
- # ~~timer~~ - elapsed cpu time between timer calls 
- # ~~cputime~~ - elapsed cpu time since session start 
- # ~~toc~~ - elapsed time since tic call
- # ~~tic~~ - set a timer start  # ~~File~~ - file data type
-
-
-===Gui===
-
-  Currently only old scilab gui functions are described may be we have to put here the gtk stuff
- 
-  # ~~x_choices~~ - interactive dialog using a small subset of Gtk widgets
-  # ~~x_choose~~ - interactive choices
-  # ~~x_dialog~~ - gtk dialog
-  # ~~xgetfile~~ - dialog to get a file or folder path
-  # ~~x_matrix~~ - edit a matrix
-  # ~~x_mdialog~~ - dialogs
-  # ~~x_message_modeless~~ - a message in a Gtk modeless window
-  # ~~x_message~~ - a message in a Gtk window
-
-===Graphics===
-
-  to be done once the new graphics will be available ?
-
-===Play and record sound samples===
-
-  # ~~play~~ - play audio samples using portaudio
-  # ~~playfile~~ - play a sound file using libsndile and portaudio
-  # ~~player-create~~ - creates a player object
-  # ~~record~~ - record sound samples with portaudio 
 
 =latex help related explanations=
 
