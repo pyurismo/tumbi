@@ -18,7 +18,7 @@ help pages in a misc chapter).
 
 =users feedback=
 
-If you want to suggest some improvments don't hesitate to write a comment at this end of this page. For instance :
+If you want to suggest some improvments don't hesitate to write a comment at this end of this page (you need just a google account, see [https://accounts.google.com google account]). For instance :
  # if you need the help page of a function which is still not documented (btw you can suggest one or two (or more) chapter from which it can be referenced).
  # you can suggest improvments:
  * in the general organization
