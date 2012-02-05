@@ -111,7 +111,6 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
    # lsq
    # hess
    # balanc
-   # lsmr
 
 ==random numbers generation, statistics functions, density and cdf functions==
 
