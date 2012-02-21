@@ -52,7 +52,7 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
   # empty matrices rules
   # : operator
   # usual operators +, -, *, /, .*, ./, ^, .^
-  # add, blas_ger (a short description is available in the Mat data type help page)
+  # add (a short description is available in the Mat data type help page)
   # spones
   # full
   # sparse
