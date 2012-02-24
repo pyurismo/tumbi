@@ -139,8 +139,11 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 
   [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli187.html current chapter]
 
-  No missed pages ?
-
+   Some missed pages:
+    #system - send command to operating system
+    #spawn - 
+    #spawn_sync - 
+    #spawn_async -
 
 ==Play and record sound samples==
 
