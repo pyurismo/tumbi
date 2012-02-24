@@ -29,14 +29,14 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 
 ==data_types== 
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli1.html#Q1-2-2 current data_types chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli1.html current data_types chapter]
 
   Some missed pages:
    # GdkPixbuf - nsp image type (this is nevertheless documented in the ImagesInNsp wikipage)
 
 ==basic arrays functions==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli20.html#Q1-21-136 current basic arrays functions chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli20.html current basic arrays functions chapter]
 
   Some missed pages:
    # sub2ind
@@ -45,7 +45,7 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 
 ==basic functions or methods for numerical matrices==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli32.html#Q1-33-214 current basic functions or methods for numerical matrices chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli32.html current basic functions or methods for numerical matrices chapter]
 
  Some missed pages:
   # real and complex numbers, floating point number (link to floating point and integer numbers properties)
@@ -59,13 +59,13 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 
 ==strings==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli50.html#Q1-51-331 current strings chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli50.html current strings chapter]
 
   No missed pages ?
 
 ==numbers (properties, display,...)==
 
-   [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli68.html#Q1-69-417 current numbers chapter]
+   [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli68.html current numbers chapter]
 
   Some missed pages:
    # intmin, intmax - min and max for integer types (IMat)
@@ -73,13 +73,13 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 
 ==miscellaneous==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli82.html#Q1-83-503 current misc chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli82.html current misc chapter]
 
   help pages from this chapter will be dispatched in future new chapters
 
 ==numerics (ode, f(x)=0, integrals, interpolation, optimization,...)==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli95.html#Q1-96-582 current numerics chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli95.html current numerics chapter]
 
   Possibly this chapter will be split in the future...
 
@@ -88,20 +88,20 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 
 ==signal processing == 
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli111.html#Q1-112-736 current signal processing chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli111.html current signal processing chapter]
 
   Some missed pages:
    # fft2, ifft2
 
 ==searching and sorting (find, search, sort, set functions...)==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli115.html#Q1-116-761 current searching and sorting chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli115.html current searching and sorting chapter]
 
   No missed pages ?
 
 ==linear algebra==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli127.html#Q1-128-884 current linear algebra chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli127.html current linear algebra chapter]
 
   Some missed pages:
    # the backslash operator
@@ -114,7 +114,7 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 
 ==random numbers generation, statistics functions, density and cdf functions==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli149.html#Q1-150-1046 current chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli149.html current chapter]
 
   Some missed pages:
    # rand_discrete - random number generation for given user finite discrete distributions
@@ -123,28 +123,28 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
 
 ==Gui==
   
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli174.html#Q1-175-1213 current chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli174.html current chapter]
 
   Currently only old scilab gui functions are described may be we have to put here all 
   gtk stuff which is available from nsp.
 
 ==Graphics==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli183.html#Q1-184-1261 current chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli183.html current chapter]
 
   Most functions are not documented. 
 
 
 ==Files, I/O, system functions==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli187.html#Q1-188-1281 current chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli187.html current chapter]
 
   No missed pages ?
 
 
 ==Play and record sound samples==
 
-  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli206.html#Q1-207-1387 current chapter]
+  [http://www.iecn.u-nancy.fr/~pincon/nsp/nsp_manual/manualli206.html current chapter]
 
   No missed pages ?
 
