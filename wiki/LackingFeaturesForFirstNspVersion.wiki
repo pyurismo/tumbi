@@ -1,4 +1,3 @@
-
 = Introduction =
 
 In this wiki page we will try to list the features that
@@ -12,9 +11,9 @@ of this page.
 
 = A first list =
 
-== complete the help pages ==
+== complete the help ==
 
-This is important so as to known what is already implemented.
-
+This seems important so as to known what is already implemented.
+Note that the 
 
  
