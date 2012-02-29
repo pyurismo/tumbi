@@ -11,9 +11,11 @@ of this page.
 
 = A first list =
 
-== complete the help ==
+# complete the help: this is important so as to known what is already implemented. Note that the NspHelpOrganization provides some information about the current help state.
 
-This seems important so as to known what is already implemented.
-Note that the 
+# provide functions to read/write mat files: such functions already exists in a toolbox so it will not much work. Moreover as octave, scilab, (FreeMat ?) have such feature
+it will let a user to be able to exchange datas between them.
+
+# to be continued 
 
  
