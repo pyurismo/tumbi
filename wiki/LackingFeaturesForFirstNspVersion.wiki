@@ -4,7 +4,7 @@
 
 = Introduction = 
 In this wiki page we will try to list the features that
-nsp lacks for a first public version, or in other words
+lack in nsp for a first public version, or in other words
 what should be "nsp base". The list should not be too
 long so as the lacking features could be implemented,
 says, before the end of this year.If you think that 
