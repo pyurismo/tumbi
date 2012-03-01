@@ -1,4 +1,4 @@
-#summary a list of lacking features for the first nsp version
+#summary a list of missing features for the first nsp version
 
 <wiki:toc max_depth="3" />
 
@@ -6,7 +6,7 @@
 In this wiki page we will try to list the features that
 lack in nsp for a first public version, or in other words
 what should be "nsp base". The list should not be too
-long so as the lacking features could be implemented,
+long so as the missing features could be implemented,
 says, before the end of this year.If you think that 
 nsp really needs such feature or want to comment about
 already listed ones you could post a message at the end
