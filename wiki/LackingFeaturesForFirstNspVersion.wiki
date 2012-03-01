@@ -15,7 +15,7 @@ of this page.
 = A first list =
 
  # complete the help: this is important so as to known what is already implemented. Note that the NspHelpOrganization provides some information about the current help state.
- # provide functions to read/write mat files: such functions already exists in a toolbox so it will not much work. Moreover as octave and scilab have these features it will let a user to be able to exchange datas between them. This is important like some computations started with nsp could be continued easily with octave or scilab (because the user needs feature xxxx not in nsp but in one other such software).  
+ # provide functions to read/write mat files: such functions already exists in a toolbox so it will not much work. Moreover as octave and scilab have these features it will let a user to be able to exchange datas between them. This is important, for instance a computation started with nsp could be continued easily with octave or scilab (because the user needs feature xxxx not in nsp but in the other software).  
  # graphics: nsp had first some graphics features that ressembles to the old scilab graphics but a new (object) graphic system is under construction: it should be documented (help pages), completed/tested (such that some basic graphics features will work). We could choose those basic features we want for this first version.
 
 = Users comments =
