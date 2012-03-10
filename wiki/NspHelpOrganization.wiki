@@ -55,6 +55,7 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
   # spones
   # full
   # sparse
+  # nnz
 
 ==strings==
 
