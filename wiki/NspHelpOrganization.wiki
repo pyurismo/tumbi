@@ -52,10 +52,11 @@ If you want to suggest some improvments don't hesitate to write a comment at thi
   # : operator
   # usual operators +, -, *, /, .*, ./, ^, .^
   # add (a short description is available in the Mat data type help page)
-  # spones
-  # full
-  # sparse
-  # nnz
+  # spones (the description is available in the SpColMat data type)
+  # speye (the description is available in the SpColMat data type)
+  # full (the description is available in the SpColMat data type)
+  # sparse (the description is available in the SpColMat data type)
+  # nnz (the description is available in the SpColMat data type)
 
 ==strings==
 
