@@ -16,11 +16,11 @@ endfunction
 The nsp interpretor (written in C language) uses itself the 
 recursive features of the C language and so recursivity with
 nsp is restricted by the size of the stack reserved by the OS to the nsp process when it is launched. Moreover until now nsp doesn't test the current stack size and, as a result, a crash
-can occur when using such recursive functions. Under unix/linux, if you meet such problem you can solve it by increasing the process stack size. Under bash you can use the ulimit command for that purpose :
+can occur when using such recursive functions. For instance fact(400) can crash nsp (depending on the ulimit -s see here after). Under unix/linux, if you meet such problem you can solve it by increasing the process stack size. Under bash you can use the ulimit command for that purpose :
 
 {{{
 ulimit -s    # return the actual stack size (8192 by default ?)
 ulimit -s 32000   #  new size is about 4 times bigger than previous one
 }}}
 
-Then start again nsp. 
+Then start again nsp.
