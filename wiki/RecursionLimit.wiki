@@ -20,7 +20,7 @@ can occur when using such recursive functions. Under unix/linux, if you meet suc
 
 {{{
 ulimit -s    # return the actual stack size (8192 by default ?)
-ulimit -s 32000   #  new size is about 4 times bigger than previous size
+ulimit -s 32000   #  new size is about 4 times bigger than previous one
 }}}
 
 Then start again nsp. 
