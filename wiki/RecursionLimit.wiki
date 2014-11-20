@@ -1,5 +1,7 @@
-=Some words about the recursion limit for nsp functions=
 #summary about the recursion limit for nsp functions
+
+=Some words about the recursion limit for nsp functions=
+
 
 Nsp functions can be recursive, here is the usual example of the
 factorial function :
