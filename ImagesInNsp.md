@@ -1,0 +1,187 @@
+
+
+## load an image in nsp from a file ##
+
+You can use the `gdk_pixbuf_new_from_file` function:
+```
+im = gdk_pixbuf_new_from_file(image_file_name);
+```
+for example:
+```
+fname = getenv('NSP')+'/demos/gtk2/libplus/nsp.svg';
+im = gdk_pixbuf_new_from_file(fname);
+```
+
+to obtain in nsp an object containing a gdk GdkPixbuf object. As explained in gtk documentation the GdkPixbuf structure contains information that describes an image in memory.
+
+You can also use
+```
+gtkimage_new('file',gtk_logo);
+```
+if you want a widget displaying an image.
+
+The image formats supported (png, jpg, gif, bmp,...) depend on your gtk version
+and os.
+
+
+## the nsp image type ##
+
+The loaded image im is a nsp object of type `GdkPixbuf`:
+```
+type(im,"string")
+ans	=		s (1x1)
+
+  GdkPixbuf
+```
+In the following we also call such object _nsp images_ (but
+`GdkPixBuf` is the real name).
+
+You could test if `im` is a _nsp image_ using:
+```
+type(im,"string") == "GdkPixbuf"
+```
+or with the `is` function:
+```
+is(im,%types.GdkPixbuf)
+```
+(see http://code.google.com/p/tumbi/wiki/ScilabNspMainDifferences#Testing_argument_type).
+
+## methods related to nsp images ##
+
+There are some methods which apply on such objects, alas not already documented (this page is a first try) but are nsp equivalent of methods defined in gdk for such objects. You can have a look at the gdk pixbuffer documentation:
+
+> http://library.gnome.org/devel/gdk-pixbuf/stable
+
+Some (basic) examples:
+
+```
+fname = getenv('NSP')+'/demos/gtk2/libplus/nsp.svg";
+im = gdk_pixbuf_new_from_file(fname);
+
+W = im.get_width[]
+H = im.get_height[]
+bool = im.get_has_alpha[]
+L = im.get_bits_per_sample[]
+```
+
+Another one which lets to create a new image by scaling:
+
+```
+im_new = im.scale_simple[W/2,H/2,"GDK_INTERP_BILINEAR"]
+```
+
+You can have an overview of all available methods in nsp with:
+```
+im.get_method_names[]  
+```
+or better with:
+```
+im.get_method_names[0] 
+```
+to get methods specific for these objects (and not methods herited from father object classes).
+
+## get R, G, B and alpha matrices from a nsp image ##
+
+You can get R, G, B (and alpha channel if any) using:
+```
+C = pixbuftocells(im)
+```
+`C{1},C{2},C{3}` are R,G,B matrices with intensities values (integers between `[0,255]`)
+If the alpha channel is present (that is if `im.get_has_alpha[]` return TRUE) a fourth
+matrix `C{4}` is present. Currently these matrices are Mat object that is matrices made of double precision numbers.
+
+## create a nsp image from R, G, B and alpha matrices ##
+
+The `cellstopixbuf` function lets to create an image from 3 matrices (or 4 if the alpha channel is provided) :
+```
+im = cellstopixbuf(C)
+```
+where `C` is an array of (3 or 4) cells which are matrices (all of same size and all with integer values between 0 and 255). These array of cells could be build with:
+```
+C = { R, G, B };   // or C = { R, G, B, A };
+```
+
+## create a nsp image from a graphic window ##
+
+It is possible to save the current graphic window as a _nsp image_ using:
+```
+im = xget_pixbuf()
+```
+If you have several graphic windows opened, you can select the active one with:
+```
+xset("window",win_number)
+```
+
+## save a nsp image to a file ##
+
+Use the `save` method:
+```
+im.save[ file_name, type]
+```
+
+Example:
+```
+im.save["toto.png","png"]
+```
+
+## display a nsp image ##
+
+In nsp near all gtk widgets are interfaced so it is possible to display images in various ways. You could have a look at the gtk2 nsp demonstration scripts (`nsp2/demos/gtk2`).
+For example this very short example can be used:
+
+```
+function show_image(file) 
+  window = gtkwindow_new()
+  vbox = gtkvbox_new(homogeneous=%f,spacing=8);
+  window.add[vbox]
+  image= gtkimage_new('file',file);
+  vbox.pack_start[image,expand=%f,fill=%f,padding=0]
+  window.show_all[]
+endfunction
+
+gtk_logo = getenv('NSP')+'/demos/gtk2/libplus/gtk-logo-rgb.gif";
+show_image(gtk_logo);
+```
+
+If image is too large you can insert scrollbars or resize the image. resizing is described now,
+
+```
+function basic_image_draw(im, maxsize=1000, title="")
+
+   // im: image (pixbuf) to draw
+   // maxsize: limit the max size of the image to maxsize pixels
+   // title: a scalar string (window title) 
+
+   if ( ~is(im,%types.GdkPixbuf) ) then
+      error("first argument should be an image (a GdkPixbuf object)")
+   end
+   window = gtkwindow_new()
+   window.set_title[title]
+   window.set_border_width[2]
+   frame = gtkframe_new();
+   // limit max size of the image to maxsize
+   w = im.get_width[]
+   h = im.get_height[]
+   if max(w,h) > maxsize then
+      // scale the image to limit its max size to maxsize
+      if w >= h then
+         new_w = maxsize;
+	 new_h = round(maxsize*h/w)
+      else
+         new_h = maxsize
+         new_w = round( maxsize*w/h)
+      end
+      im = im.scale_simple[new_w,new_h,"GDK_INTERP_BILINEAR"]       
+   end
+   frame.add[gtkimage_new("pixbuf",im)];
+   window.add[frame]
+   window.show_all[]
+endfunction
+```
+
+Some usages:
+```
+basic_image_draw(im)
+basic_image_draw(im, title="a title")
+basic_image_draw(im, title="a title", maxsize=200)
+```

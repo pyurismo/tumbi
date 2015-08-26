@@ -1,0 +1,21 @@
+
+
+# Introduction #
+In this wiki page we will try to list the features that
+lack in nsp for a first public version, or in other words
+what should be "nsp base". The list should not be too
+long so as the missing features could be implemented,
+says, before the end of this year.If you think that
+nsp really needs such feature or want to comment about
+already listed ones you could post a message at the end
+of this page.
+
+# A first list #
+
+  1. complete the help: this is important so as to known what is already implemented. Note that the NspHelpOrganization provides some information about the current help state.
+  1. provide functions to read/write mat files: such functions already exists in a toolbox so it will not much work. Moreover as octave and scilab have these features it will let a user to be able to exchange datas between them. This is important, for instance a computation started with nsp could be continued easily with octave or scilab (because the user needs feature xxxx not in nsp but in the other software).
+  1. graphics: nsp has had first some graphic features similar to the ones of the "old scilab graphic system" but a new (object) graphic system is under construction: it should be documented (help pages), completed/tested in order that some basic graphic features will work. We could choose those basic features we want for this first version.
+
+# Users comments #
+
+> This part will list users comments about wanted features

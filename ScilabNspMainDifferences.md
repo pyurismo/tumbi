@@ -1,0 +1,428 @@
+
+
+
+---
+
+# No stacksize #
+
+With nsp, you don't need to play with the famous stacksize scilab instruction to get or retrieve memory from the system.
+
+
+---
+
+# Loading of .sci files #
+
+With scilab you can load pure .sci function file (a file with only function definitions) with `getf` command or the more general `exec` command. In nsp `getf` doesn't exist so **use**  `exec`.
+
+
+---
+
+# Editor #
+
+Nsp don't come with an integrated editor like scipad (there is a kind of edit window but without the minimal basic features of a editor). So you have to use an external one (emacs, nedit, vi, ...)
+
+
+---
+
+# No ieee settings #
+
+In scilab the function ieee(mode) lets to choose between 3 behaviors when a division by zero is met (raise an error (mode=0), raise a warning (mode=1) or tell nothing (mode=2)). There is no such feature in nsp. Note that like most numerical libraries used by scilab are not sensitive to this ieee mode, many divisions by zero cannot be detected using mode=0 or 1.
+
+
+---
+
+# The famous scalar./vector ambiguity #
+
+The element-wise `./` division is used normaly on two vectors or matrices of same size but as a shortcut, one can be a scalar, so one used expressions like:
+```
+y = 1./(1 + x.^2)
+```
+Here a problem arises with scilab because the . just after the 1 is considered as part of the number and so the operator seen by the interpretor is just `/` and not `./`. So you have to either put a blank between the 1 and the point or a pair of paranthesis, etc... In nsp the point is attributed to the operator. Btw note that in nsp `scalar/matrix` is not defined.
+
+
+---
+
+# Build a non existing vector with a loop #
+
+If x don't exist and is created with a loop:
+```
+for i=1:5, x(i) = i, end
+```
+scilab will create a column vector while nsp (and matlab) create a row vector.
+Note that it is the same if x was initially a scalar.
+
+
+---
+
+<a href='Hidden comment: = Build a row of a matrix element by element (row concatenation) =
+
+With scilab and nsp, you could use both a space or a comma as a separator between two elements:
+
+```
+x = [0  1  %e  %pi]  // or x = [0, 1,  %e,  %pi]
+```
+
+but the behavior could be different when an element is given by a non constant expression like in:
+
+```
+x = [0  -1  -sin(2)-3 ]
+```
+
+With scilab you will get a 1x3 vector x = [0 ,  -1  , -sin(2)-3 ], while in nsp you will get a 1x1 vector x = [-1-sin(2)-3 ]. In nsp we recommend to use only comma to separate row elements (so you could use any blank chars to improve the presentation of
+any non constant expression.
+
+----
+'></a>
+
+# Behavior in case of error #
+
+When the scilab interpretor met an (non catched) error, a message is displayed and the control returns at the first prompt level. With nsp the interpretor make a pause just after the line of code which raises the error. So you can examine the local variables, enter instructions, etc... If you don't like this behavior, just enter `quit` to return at the first prompt level. Here is a simple example. Enter the following function:
+```
+function C = foo(A,B)
+   C = A*B
+endfunction
+```
+Then:
+```
+-nsp->A = rand(2,3); B = rand(2,3); // A*B should raise an error in foo
+-nsp->foo(A,B)  // try
+Error:	Incompatible dimensions
+	==>(A*B)
+	line 2 of file foo.sci
+Error in body evaluation of function foo (file 'foo.sci')
+	Entering a pause in function foo
+-nsp-1->size(A)  // the pause let the user to investigate
+ans	=		r (1x2)
+
+ |  2  3 |
+-nsp-1->size(B)
+ans	=		r (1x2)
+
+ |  2  3 |
+-nsp-1->quit   // OK I understand what is going on, so I enter quit
+	returning from foo with error
+	==>foo(A,B)
+```
+
+
+---
+
+# Empty matrices #
+
+Scilab only knows the `0x0` empty matrix. In nsp we have chosen to follow the matlab way of using `0x0`, `mx0` and `0xn` empty matrices (which was suggested to matlab by several users). Expressions like `zeros(0,n)`, `ones(m,0)`, `rand(0,n)`, `randn(m,0)` give such empty matrices. To test  if a matrix is empty (in the general meaning) you can use the `isempty` function:
+```
+  if isempty(A) then
+     ....
+```
+**Don't use**:
+```
+  if A == [] then
+```
+As the `isempty` function is known by scilab you can write portable code. Note that if you want to test if a matrix `A` is exactly the `0x0` empty matrix (and not a `3x0` empty matrix) you have to use:
+```
+A.equal[[]]  // or A.equal[zeros(0,0)]
+```
+And to test if `A` is the `3x0` empty matrix:
+```
+A.equal[zeros(3,0)]
+```
+Multiplying a `mx0` empty matrix to a `0xn` empty matrix will give a `mxn` matrix of zeros.
+
+
+---
+
+# Operations between a scalar and a vector or a matrix #
+
+## addition, substraction between a scalar and a vector or a matrix ##
+
+The matlab language follows the rules of linear algebra, if _A<sub>1</sub>_ and _A<sub>2</sub>_ are 2 matrices, _A<sub>1</sub> + A<sub>2</sub>_ and _A<sub>1</sub> - A<sub>2</sub>_ are well defined if there have the same size, but there is an exception. One of them could be a scalar (that is a `1x1` matrix).
+Suppose that _A_ is a _m x n_ matrix, and _s_ a scalar, then in all cases we have:
+```
+  s + A  ->  B a m x n matrix (with B(i,j) = s + A(i,j))
+  s - A  ->  B a m x n matrix (with B(i,j) = s - A(i,j))
+  A + s  ->  B a m x n matrix (with B(i,j) = s + A(i,j))
+  A - s  ->  B a m x n matrix (with B(i,j) = A(i,j) - s)
+```
+And this is true for any possible values for _m_ and _n_ 0 comprised. So when _A_ is empty we get a matrix _B_ which is empty (of same size than A). In **scilab the rule is different in this case**: when _A_ is an empty matrix (so the 0x0 empty matrix) then _s + [.md](.md)_ is equal to _s_. In **nsp have choosen the matlab behavior**. In many cases its results in shorter pieces of code. Here is an example. Suppose you want to code the following function:
+```
+   runge(x) = 1 / (1 + x^2)
+```
+With a matlab-like environment you certainly want to code the function such that it returns a vector y if x is a vector (with y(i) = runge(x(i)) and you want that y is empty if x is so. The following code can be used in nsp (or in matlab if you remove the `endfunction` keyword):
+```
+function y = runge(x)
+  y = 1 ./ (1 + x.^2)
+endfunction
+```
+But in scilab such a code don't return the empty matrix if x is empty. You have to add a test:
+```
+function y = runge(x)
+  if isempty(x) then
+     y = []
+  else
+     y = 1 ./ (1 + x.^2)
+  end
+endfunction
+```
+
+## comparizons between a scalar and a vector or matrix ##
+
+The same problem arises when you compare to numerical vector says `x op y` where op could be `==`, `~=`, `<=`, `<`, `>=`, `>'. Normally both `x` and `y` should be of same size and the result is a boolean vector `b` with `b(i)` true if `x(i) op y(i)` is true. Like before it is allowed that one can be a scalar and the result should be a boolean vector of same size than the other operand. So if you compare:
+```
+ b = [] <= 1
+```
+the result should be the same size than `[]`, that is an empty (boolean) matrix. In **scilab** this rule is generally used but not for the `==` and `~=` operators while **nsp** applies the rule for all comparizon operators.
+
+Note that to compare 2 objects `x` and `y` (of same or different type), nsp has
+the `equal` method `x.equal[y]` which is more efficient that something like
+`and(x==y)`.
+
+## other shortcut involving a scalar and a vector or matrix ##
+
+There are some functions which take normally 2 (or more) matrices of same size and output a matrix of this given size (examples: `min(A1,A2,...)`, `max(A1,A2,...)`) and often the shortcut of using a scalar in place of a matrix is really practical. So such functions could have 2 differents arguments size `1 x 1` (aka scalar) and an other one `m x n` (all arguments which are not scalar should be a same size  `m x n`). When this shortcut is used the result should be of size `m x n` but you can met some **differences** between scilab and nsp in the case `m` or `n` is 0 (we don't say that nsp is completly clear and regular on this, only that the behavior between scilab and nsp could be different in these special cases). To be continued with examples...
+
+
+---
+
+# If test and boolean operators #
+
+In scilab boolean operators may have a different behavior when a boolean expression is embedded in a if statement or not. Here is an example:
+```
+x = 1
+b = x <= 0 & x(2)==1  // this raise an error because x has only one component
+if ( x <= 0 & x(2)==1 ) then, b=%t, else, b=%f, end // this work
+```
+The reason of the shortcut in the if statement is that like the first test `x <= 0` is false and the operator is an _and_ there is no need to evaluate the second boolean expression. This is really practical in a large number of cases (this is the rule used by many language like C). Nevertheless as the boolean operator in the matlab-like
+language have a meaning with vector it is not possible to do this outside an if statement. For example you could have the following case:
+```
+x = 1;
+y = rand(1,5);
+b = x <= 0 & y <= 0.5;
+```
+Here the second expression leads to a boolean vector of size `1 x 5` so the final result is a `1 x 5` boolean vector of false value which was impossible to guess without evaluating at least the dimension of the second expression. Btw in a _if ( boolean\_exp )_
+expression if the _boolean\_exp_ returns a vector, the and product of the components is done to decide if the test is true or false.
+
+In nsp (and in matlab, octave) to benefit of shortcut boolean evaluations, you must use the dedicated operators `&&` and `||`. They can be used outside an if or a while with the same behavior but they are essentially useful in this context. So in nsp:
+```
+x = 1
+b = x <= 0 & x(2)==1  // this raise an error because x has only one component
+b = x <= 0 && x(2)==1 // don't raise an error
+```
+
+
+---
+
+# Zeros, ones #
+
+In scilab if `A` is a matrix already defined then `zeros(A)` and `ones(A)` returns a matrix  filled with `0` or `1` of same size than `A`. In matlab you have to use `zeros(size(A))` and `ones(size(A))` to get the same effect. We have finally choose the matlab way. Note that nsp still uses `rand(A)`, `randn(A)` to produce random matrix ([0,1) uniform deviates and N(0,1) normal deviates) but this may be change to be consistent with ones and zeros. For all these functions you could use the usual syntax (`zeros(m,n)`, `ones(m,n)`, `rand(m,n)`) to be compatible among scilab, matlab, nsp, octave, freemat.
+
+
+---
+
+# Graphics #
+
+Nsp graphics are under development. Currently nsp graphics consists in the old scilab graphic mode cleaned but an "object system" is in under construction. We will try to tell more about this subject.
+
+Some differences (with old scilab graphics):
+
+  * Sgrayplot don't exist in nsp under this name but as an named option of grayplot (`shade=%t`).
+  * It is possible to use different colormaps in a same graphic window (the color specification refers to the last setted colormap) :
+```
+    x = linspace(0,2*%pi,60); z = cos(x')*cos(x);
+    xbasc()
+    subplot(1,2,1);
+    xset("colormap", hotcolormap(128))
+    grayplot(x,x,z,shade=%t)
+    subplot(1,2,2);
+    xset("colormap", jetcolormap(128))
+    plot3d1(x,x,z)
+```
+  * There is no legend function, with plot2d you can use `leg="leg1@leg2"` and `leg_pos=string`  to specify the legend position. Btw to learn about optional named argument without looking in the documentation, you can enter at the prompt a call with a stupid name as optional argument like `plot2d(x,x,toto=0)`. The error answer should display all the valid optional named argument available for the function. Moreover in some cases (string arguments restricted in a list) you could also get the list of the valid entries. To see what is available for the leg\_pos optional named argument, try:
+```
+    x = linspace(0,2*%pi,60)';
+    xbasc()
+    plot2d(x,[cos(x),sin(x)],style=[2,5],leg="cosine@sine",leg_pos="foo")
+```
+
+
+
+---
+
+# Optional named arguments #
+
+Management of function 's optional named arguments is simpler than in scilab. You list them after the other arguments and add a default value. Here is an example with 2 optional named arguments:
+```
+function x = myfsolve(f,x0, tol=%eps, meth="secant")
+
+   // 
+   .............
+endfunction
+```
+The fact that `tol` and `meth`, the 2 last formal arguments, are initialised transforms them in optional named argument. Calls to myfsolve can take the forms:
+```
+x = myfsolve(f,x0) 
+x = myfsolve(f,x0, meth="regula falsi")
+x = myfsolve(f,x0, tol=1e-6, meth="newton")
+x = myfsolve(f,x0, meth="newton", tol=1e-6)
+```
+that is _optional named arguments could be in any order_. Inside the code you don't have to play with the `exists(tol,"local")`. When the default init value could be long or depends on other parameters you can use a special value like `myoptional=[]`. And then test the value against  `[]` to initialize the variable:
+```
+function x = foo(A, x, tol=[])
+  // we want to initialize tol in function of the number of rows of A
+  if tol.equal[[]] then, tol = %eps*size(A,1), end
+   ....
+endfunction
+```
+
+
+---
+
+# Testing argument type #
+
+## introduction ##
+With scilab this is done with the `type` or `typeof` functions. In nsp you could use the `type` function or the `is` function but the nsp `type` function doesn't work like the scilab 's one. Before going further we must say that the type of an object in nsp (such as a matrix of real/complex numbers, a matrix of strings, an array of cells, a list, a function, ...) is itself an abstract object call of "type" _type_. But to be easier to manipulate, each different _type_, have 2 synonyms one is a string and the other a short string. Moreover there is a default variable `%types` (an hash table) which contains all the different _types_ in nsp, here is a table for main object types :
+
+| usual name | in hash table  |  string  |  short string |
+|:-----------|:---------------|:---------|:--------------|
+| matrix of real/complex numbers | `%types.Mat`   | `"Mat"`  | `"m"`         |
+| sparse matrix (of real/complex) | `%types.SpColMat` | `"SpColMat"` | `"sp"`        |
+| matrix of strings | `%types.SMat`  | `"SMat"` | `"s"`         |
+| matrix of cells | `%types.Cells` | `"Cells"` | `"ce"`        |
+| list       |`%types.List`   | `"List"` | `"l"`         |
+| matrix of polynomials | `%types.PMat`  | `"PMat"` | `"p"`         |
+| matrix of booleans | `%types.BMat`  | `"BMat"` | `"b"`         |
+| hash table | `%types.Hash`  | `"Hash"` | `"h"`         |
+| function (macro) | `%types.PList` | `"PList"` | `"pl"`        |
+| function (primitive) | `%types.Func`  | `"Func"` | `"f"`         |
+
+## testing argument type using type ##
+The string synonym of the _type_ of an object Obj is got using `type(Obj,"string")` and the short string synonym with `type(Obj,"short")`. So testing if `Obj` is a matrix of real or complex numbers could be done with :
+```
+if type(Obj,"string") == "Mat" then
+if type(Obj,"short") == "m" then
+```
+Something which seems also possible would be to use:
+```
+if type(Obj) == %types.Mat then
+```
+but the operator == is not defined for the type _type_ so you have to use the equal method:
+```
+if type(Obj).equal[%types.Mat]
+```
+or the `is` function.
+
+## testing argument type using is ##
+Testing if `Obj` is a matrix of real/complex number could be done with:
+```
+if is(Obj,%types.Mat) then
+```
+
+## some examples ##
+Very often you should wait for a real scalar `c` or a real vector `x`, such tests could be done with:
+```
+if is(c,%types.Mat) && isreal(c) && isscalar(c) then
+if type(c,"short")=="m" && isreal(c) && isscalar(c) then
+if type(c,"string")=="Mat" && isreal(c) && isscalar(c) then
+...
+if is(x,%types.Mat) && isreal(x) && isvector(x) then
+...
+```
+
+> Here you see another differences with scilab (what is &&) which have been discussed below.
+
+
+---
+
+# Tlist,mlist #
+
+Nsp don't have these scilab structures but have hash tables. Depending of your use of tlist/mlist in a scilab code, it could be easy to replace your code or not. In nsp a call of the form:
+```
+t = tlist(["toto","x","y"], val_x, val_y)
+```
+creates an hash-table with 2 fields "x" and "y" (exactly like a scilab tlist) and with 2 additional fields:
+  1. `type` which, in this example, has the value "toto"
+  1. `tlist` which is a boolean (%t)
+For a `mlist` the only difference is that the field _tlist_ of the hash table is replaced by the field _mlist_. To test if a field _name_ (a key) exists in a nsp hash table `h` you can use:
+```
+h.iskey["name"]
+```
+
+## easy changes (or no changes at all) ##
+Any expression involving only the fields "x" and "y" (e.g. `t.x` and `t.y` will behave like for a scilab tlist (`t.x = expression` will change the field value and `t.x` could be used in any expression to get the field value).
+
+A first change occurs if you test the type of your tlist in a scilab code:
+```
+if typeof(t) == "toto" then
+```
+should be changed in:
+```
+if t.type == "toto" then
+```
+May be the following is more robust (as t should be an hash table which should have type as key):
+```
+if is(t,%types.Hash) && t.iskey["type"] && t.type == "toto" then
+```
+
+## cubersome changes ##
+Scilab tlist/mlist are also useful to define new data types with overloading features. You can have defined `+,-,*,/,\,...` for the new type toto and used expressions like `t*u + b`. This is currently not possible in nsp. Like for scilab you must provide functions which do these operations, but you can't substitute, says, toto\_mult\_toto by `*`.
+
+
+---
+
+# Hypermatrices #
+
+Nsp don't yet have hypermatrices. If you need such a feature, there are several functions (not yet documented) which can help (to simulate nd arrays by 1d or 2d arrays):
+  * ndind2ind
+  * sub2ind
+  * ndgrid
+to be continued with an example.
+
+
+---
+
+# Some slight differences in various functions #
+
+## spec ##
+(thanks to M. Fuentes). In nsp, spec behaves differently than scilab spec function (or matlab eig) when the eigenvectors are needed, that is with two output arguments:
+```
+    [lambda, V] = spec(A)
+```
+There are two differences :
+  * the eigenvalues _lambda_ are given in a vector (like in the simple call `lambda = spec(A)`) and not in a diagonal matrix
+  * the eigenvalues vector is the first output argument, the matrix of eigenvectors _V_ coming second.
+spec is documented in the help.
+
+## svd ##
+svd (which is defined in nsp but not currently documented) returns always the singular values in a vector, even for call which returns left and right singular vectors:
+```
+    [U,sigma,V] = svd(A)
+```
+
+
+---
+
+# equivalence for unexistent functions #
+## deff ##
+
+(thanks to M. Fuentes). In scilab `deff` lets to define a function from strings.
+It doesn't exist in nsp but you can replace `deff` with `execstr` (which is available
+both in nsp and scilab). So in place of:
+```
+    deff("y=car(x)","y=x.^2")
+```
+use:
+```
+    execstr(["function y=car(x)";"y=x.^2";"endfunction"])
+```
+
+## listfiles ##
+
+used to get a list of files in a string matrix. This function exists in nsp
+but with a different name `glob`.
+
+## mgetl and mputl ##
+
+These two function exists in nsp under the name getfile and putfile.
+
+## psi ##
+
+These function exists in nsp under the name digamma
